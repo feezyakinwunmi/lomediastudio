@@ -87,7 +87,7 @@ export default function Testimonials() {
   return (
     <motion.section 
          ref={sectionRef}
-         className="relative bg-gray-100 py-20 overflow-hidden"
+         className="relative bg-gray-100 rounded-t-2xl py-20 overflow-hidden"
          style={{
            opacity: sectionOpacity,
            y: sectionY,
@@ -98,7 +98,7 @@ export default function Testimonials() {
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={`orb-${i}`}
-            className="absolute rounded-full bg-red-500/5 blur-3xl"
+            className="absolute rounded-full bg-purple-900/5 blur-3xl"
             style={{
               width: `${200 + i * 80}px`,
               height: `${200 + i * 80}px`,
@@ -128,12 +128,12 @@ export default function Testimonials() {
           className="text-center mb-12"
         >
           <div className="inline-block mb-3">
-            <div className="bg-red-500/10 rounded-full px-4 py-1 border border-red-500/20">
-              <span className="text-red-500 text-sm font-semibold">Testimonials</span>
+            <div className="bg-purple-900/10 rounded-full px-4 py-1 border border-purple-900/20">
+              <span className="text-purple-900 text-sm font-semibold">Testimonials</span>
             </div>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-            What Our <span className="text-red-500">Customers</span> Are Saying
+            What Our <span className="text-purple-900">Customers</span> Are Saying
           </h2>
           <p className="text-gray-600 text-base max-w-2xl mx-auto">
             Real stories from designers and teams who love working with us
@@ -165,7 +165,7 @@ export default function Testimonials() {
                       src={testimonial.image} 
                       alt={testimonial.name}
                       whileHover={{ scale: 1.05 }}
-                      className="w-12 h-12 rounded-full object-cover ring-2 ring-red-500/30" 
+                      className="w-12 h-12 rounded-full object-cover ring-2 ring-purple-900/30" 
                     />
                     <div>
                       <p className="font-semibold text-gray-900">{testimonial.name}</p>
@@ -180,7 +180,7 @@ export default function Testimonials() {
                         key={i}
                         className={`w-4 h-4 ${
                           i < testimonial.rating 
-                            ? 'fill-red-500 text-red-500' 
+                            ? 'fill-purple-900 text-purple-900' 
                             : 'text-gray-300'
                         }`}
                       />
@@ -228,7 +228,7 @@ export default function Testimonials() {
                       src={testimonial.image} 
                       alt={testimonial.name}
                       whileHover={{ scale: 1.05 }}
-                      className="w-12 h-12 rounded-full object-cover ring-2 ring-red-500/30" 
+                      className="w-12 h-12 rounded-full object-cover ring-2 ring-purple-900/30" 
                     />
                     <div>
                       <p className="font-semibold text-gray-900">{testimonial.name}</p>
@@ -243,7 +243,7 @@ export default function Testimonials() {
                         key={i}
                         className={`w-4 h-4 ${
                           i < testimonial.rating 
-                            ? 'fill-red-500 text-red-500' 
+                            ? 'fill-purple-900 text-purple-900' 
                             : 'text-gray-300'
                         }`}
                       />
@@ -309,7 +309,7 @@ export default function Testimonials() {
               whileHover={{ scale: 1.05 }}
               className="text-center"
             >
-              <div className="text-2xl font-bold text-red-500">{stat.value}</div>
+              <div className="text-2xl font-bold text-purple-900">{stat.value}</div>
               <div className="text-xs text-gray-500">{stat.label}</div>
             </motion.div>
           ))}

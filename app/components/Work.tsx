@@ -7,7 +7,7 @@ const projects = [
   {
     title: "Ethereal Dreams",
     category: "Music Video",
-    color: "bg-red-500",
+    color: "bg-purple-900",
   },
   {
     title: "Urban Pulse",
@@ -27,7 +27,7 @@ export default function Work() {
       <div className="max-w-7xl mx-auto">
         <AnimatedSection>
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            Featured <span className="text-red-500">Work</span>
+            Featured <span className="text-purple-900">Work</span>
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
             Each project is a unique story, meticulously crafted to leave a lasting impression.
@@ -49,7 +49,7 @@ export default function Work() {
                 </div>
                 <div className="mt-4">
                   <h3 className="text-xl font-semibold">{project.title}</h3>
-                  <p className="text-red-500">{project.category}</p>
+                  <p className="text-purple-900">{project.category}</p>
                 </div>
               </motion.div>
             </AnimatedSection>

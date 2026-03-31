@@ -25,8 +25,8 @@ const services = [
     icon: Video, 
     title: "Event Videography", 
     desc: "Professional event coverage capturing every moment with cinematic precision and storytelling.",
-    color: "text-red-500",
-    bgColor: "bg-red-500/10"
+    color: "text-purple-900",
+    bgColor: "bg-purple-900/10"
   },
   { 
     icon: Music, 
@@ -114,7 +114,7 @@ export default function Services() {
   return (
      <motion.section 
       ref={sectionRef}
-      className="relative bg-gray-100 py-20 overflow-hidden"
+      className="relative rounded-t-3xl bg-gray-100 px-4 py-20 overflow-hidden"
       style={{
         opacity: sectionOpacity,
         y: sectionY,
@@ -125,7 +125,7 @@ export default function Services() {
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={`bg-${i}`}
-            className="absolute rounded-full bg-gradient-to-r from-red-500/5 to-purple-500/5 blur-3xl"
+            className="absolute rounded-full bg-gradient-to-r from-purple-900/5 to-purple-500/5 blur-3xl"
             style={{
               width: `${300 + i * 50}px`,
               height: `${300 + i * 50}px`,
@@ -162,8 +162,8 @@ export default function Services() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <div className="bg-red-500/10 backdrop-blur-sm rounded-full px-6 py-2 border border-red-500/20">
-              <span className="text-red-500 font-semibold text-sm">What We Offer</span>
+            <div className="bg-purple-900/10 backdrop-blur-sm rounded-full px-6 py-2 border border-purple-900/20">
+              <span className="text-purple-900 font-semibold text-sm">What We Offer</span>
             </div>
           </motion.div>
           
@@ -172,9 +172,9 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+            className="text-4xl md:text-5xl font-bold text-black mb-4"
           >
-            Our <span className="text-red-500">Services</span>
+            Our <span className="bg-gradient-to-r from-purple-900 to-red-600 bg-clip-text text-transparent  ">Services</span>
           </motion.h2>
           
           <motion.p
@@ -240,7 +240,7 @@ export default function Services() {
                   
                   {/* Title */}
                   <motion.h3 
-                    className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-500 transition-colors duration-300"
+                    className="text-xl font-bold text-black mb-3 group-hover:text-purple-900 transition-colors duration-300"
                   >
                     {service.title}
                   </motion.h3>
@@ -252,7 +252,7 @@ export default function Services() {
                   
                   {/* Decorative line */}
                   <motion.div 
-                    className="h-0.5 bg-red-500/30 rounded-full mt-4"
+                    className="h-0.5 bg-purple-900/30 rounded-full mt-4"
                     initial={{ width: 0 }}
                     whileInView={{ width: "100%" }}
                     transition={{ duration: 0.5, delay: idx * 0.05 + 0.3 }}
@@ -275,7 +275,7 @@ export default function Services() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg transition-all duration-300"
+            className="bg-purple-900 hover:bg-red-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg transition-all duration-300"
           >
             View All Services
           </motion.button>

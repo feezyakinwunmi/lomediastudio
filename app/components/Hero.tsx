@@ -121,14 +121,14 @@ export default function Hero() {
   return (
     <section 
       ref={sectionRef}
-      className="relative bg-gradient-to-br from-gray-50 to-gray-100 min-h-[100vh] flex items-center py-16 overflow-hidden"
+      className="relative bg-black min-h-[100vh] flex items-center sm:py-16  overflow-hidden"
     >
       {/* Moving Background Lines */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(5)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent"
+            className="absolute h-px bg-gradient-to-r from-transparent via-purple-900/30 to-transparent"
             style={{
               top: `${20 + i * 15}%`,
               left: 0,
@@ -150,7 +150,7 @@ export default function Hero() {
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={`v-${i}`}
-            className="absolute w-px bg-gradient-to-b from-transparent via-red-500/30 to-transparent"
+            className="absolute w-px bg-gradient-to-b from-transparent via-purple-900/30 to-transparent"
             style={{
               left: `${30 + i * 25}%`,
               top: 0,
@@ -227,12 +227,12 @@ export default function Hero() {
                     className="object-cover"
                     priority
                   />
-                            <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/80 to-red-900/70" />
+                 <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-900/80 to-red-900/70" />
 
                   
                   {/* Slide Overlay Text */}
                   <motion.div 
-                    className="absolute bottom-8 left-8 bg-black/50 backdrop-blur-md rounded-xl p-4 max-w-[300px]"
+                    className="absolute bottom-8 left-8 bg-white/50 backdrop-blur-md rounded-xl p-4 max-w-[300px]"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
@@ -245,7 +245,7 @@ export default function Hero() {
 
               {/* Inner glow effect */}
               <motion.div 
-                className="absolute inset-0 bg-gradient-to-tr from-red-500/20 via-transparent to-red-500/20 pointer-events-none"
+                className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 via-transparent to-purple-900/20 pointer-events-none"
                 animate={{
                   opacity: [0.3, 0.6, 0.3],
                 }}
@@ -264,7 +264,7 @@ export default function Hero() {
                     onClick={() => goToSlide(idx)}
                     className={`transition-all duration-300 rounded-full ${
                       currentSlide === idx 
-                        ? 'w-8 h-2 bg-red-500' 
+                        ? 'w-8 h-2 bg-purple-900' 
                         : 'w-2 h-2 bg-white/50 hover:bg-white/80'
                     }`}
                   />
@@ -274,14 +274,14 @@ export default function Hero() {
               {/* Navigation Buttons */}
               <button
                 onClick={prevSlide}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 backdrop-blur-sm transition-all z-20"
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/50 hover:bg-white/70 text-white rounded-full p-2 backdrop-blur-sm transition-all z-20"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
               
               <button
                 onClick={nextSlide}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 backdrop-blur-sm transition-all z-20"
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/50 hover:bg-white/70 text-white rounded-full p-2 backdrop-blur-sm transition-all z-20"
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
@@ -289,7 +289,7 @@ export default function Hero() {
               {/* Auto-play Toggle */}
               <button
                 onClick={toggleAutoPlay}
-                className="absolute top-4 left-4 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 backdrop-blur-sm transition-all z-20"
+                className="absolute top-4 left-4 bg-white/50 hover:bg-white/70 text-white rounded-full p-2 backdrop-blur-sm transition-all z-20"
               >
                 {isAutoPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
               </button>
@@ -306,7 +306,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <motion.h1 
-                className="text-black text-2xl md:text-5xl font-bold leading-tight tracking-tight"
+                className="text-white text-2xl md:text-5xl font-bold leading-tight tracking-tight"
                 animate={{
                   textShadow: [
                     "0px 0px 0px rgba(239, 68, 68, 0)",
@@ -325,10 +325,10 @@ export default function Hero() {
                   <div className='mt-[-25px] sm:mt-0' >Studio Agency</div>
                 </div>
                 {/* add linear gradient box */}
-<div className="absolute h-10 rounded-xl mr-2 mt-15 inset-0 bg-gradient-to-br from-black via-black to-red-900/70 sm:hidden" />
+<div className="absolute h-10 rounded-xl mr-2 mt-15 inset-0 bg-gradient-to-br from-black via-black to-purple-900/70 sm:hidden" />
 
                 <motion.span 
-                  className="text-red-500 mt-[20px] ml-2 sm:mt-[-100px]  inline-block"
+                  className="bg-gradient-to-r from-purple-900 to-red-600 bg-clip-text text-transparent mt-[20px] ml-2 sm:mt-[-100px]  inline-block"
                   animate={{
                     scale: [1, 1.02, 1],
                   }}
@@ -359,11 +359,11 @@ export default function Hero() {
               }}
             >
               <div className="relative w-full h-full">
-                <div className="absolute inset-0 border-[5px] border-red-500 rounded-full" />
+                <div className="absolute inset-0 border-[5px] border-purple-900 rounded-full" />
                 <motion.svg 
                   width="78" 
                   height="78" 
-                  className="text-red-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                  className="text-purple-900 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                   animate={{
                     rotate: -360,
                   }}
@@ -403,7 +403,7 @@ export default function Hero() {
               >
                 <div className="flex gap-4">
                   <motion.div 
-                    className="w-12 h-12 bg-orange-500/90 rounded-2xl flex items-center justify-center flex-shrink-0"
+                    className="w-12 h-12 bg-gradient-to-r from-purple-900 to-red-600  rounded-2xl flex items-center justify-center flex-shrink-0"
                     animate={{
                       rotate: [0, 10, -10, 0],
                     }}
@@ -431,7 +431,7 @@ export default function Hero() {
                   </div>
                 </div>
                 <motion.p 
-                  className="text-black text-[13px] mt-4 leading-snug"
+                  className="text-white text-[13px] mt-4 leading-snug"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.8 }}

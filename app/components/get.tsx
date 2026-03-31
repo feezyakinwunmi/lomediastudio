@@ -37,35 +37,35 @@ export default function Get() {
       title: "Cost Effective Solution",
       description: "Get high-quality design work at a fraction of the cost.",
       icon: TrendingUp,
-      color: "text-red-500",
-      bgColor: "bg-red-500/10",
+      color: "text-purple-900",
+      bgColor: "bg-purple-900/10",
       graphData: [4, 6, 5, 7, 4, 8, 6, 9, 7, 8]
     },
     {
       title: "Tailor-made Design",
       description: "We've got the expertise to make your vision a reality.",
       icon: Sparkles,
-      color: "text-red-500",
-      bgColor: "bg-red-500/10",
+      color: "text-purple-900",
+      bgColor: "bg-purple-900/10",
       isNew: true
     },
     {
       title: "Scalable as You Grow",
       description: "We're ready to meet your evolving needs.",
       icon: Rocket,
-      color: "text-red-500",
-      bgColor: "bg-red-500/10"
+      color: "text-purple-900",
+      bgColor: "bg-purple-900/10"
     }
   ];
 
   const apps = [
     { name: 'Figma', icon: SiFigma, color: 'bg-purple-500' },
-    { name: 'Notion', icon: SiNotion, color: 'bg-black' },
+    { name: 'Notion', icon: SiNotion, color: 'bg-white' },
     { name: 'Slack', icon: SiSlack, color: 'bg-emerald-500' },
-    { name: 'X', icon: SiX, color: 'bg-white' },
+    { name: 'X', icon: SiX, color: 'bg-black' },
     { name: 'Discord', icon: SiDiscord, color: 'bg-indigo-500' },
-    { name: 'GitHub', icon: SiGithub, color: 'bg-gray-700' },
-    { name: 'Vercel', icon: SiVercel, color: 'bg-black' },
+    { name: 'GitHub', icon: SiGithub, color: 'bg-gray-300' },
+    { name: 'Vercel', icon: SiVercel, color: 'bg-white' },
     { name: 'Google', icon: SiGoogle, color: 'bg-blue-500' },
   ];
 
@@ -78,7 +78,7 @@ export default function Get() {
   return (
     <motion.section 
       ref={sectionRef}
-      className="relative bg-gray-100 py-20 overflow-hidden"
+      className="relative bg-black py-20 overflow-hidden"
       style={{
         opacity: sectionOpacity,
         y: sectionY,
@@ -89,7 +89,7 @@ export default function Get() {
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={`orb-${i}`}
-            className="absolute rounded-full bg-red-500/5 blur-3xl"
+            className="absolute rounded-full bg-purple-900/5 blur-3xl"
             style={{
               width: `${200 + i * 80}px`,
               height: `${200 + i * 80}px`,
@@ -119,14 +119,14 @@ export default function Get() {
           className="text-center mb-12"
         >
           <div className="inline-block mb-3">
-            <div className="bg-red-500/10 rounded-full px-4 py-1 border border-red-500/20">
-              <span className="text-red-500 text-sm font-semibold">Why Choose Us</span>
+            <div className="bg-purple-900/10 rounded-full px-4 py-1 border border-purple-900/20">
+              <span className="text-purple-900 text-sm font-semibold">Why Choose Us</span>
             </div>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-            Everything You Need to <span className="text-red-500">Succeed</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+            Everything You Need to <span className="text-purple-900">Succeed</span>
           </h2>
-          <p className="text-gray-600 text-base max-w-2xl mx-auto">
+          <p className="text-gray-300 text-base max-w-2xl mx-auto">
             Comprehensive solutions designed to help your business grow and thrive
           </p>
         </motion.div>
@@ -143,7 +143,7 @@ export default function Get() {
               whileHover={{ y: -5 }}
               className="group"
             >
-              <div className="relative bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-2xl p-6 h-full transition-all duration-300 group-hover:shadow-xl group-hover:bg-white/90">
+              <div className="relative bg-black/80 backdrop-blur-lg border border-gray-100/50 rounded-2xl p-6 h-full transition-all duration-300 group-hover:shadow-xl group-hover:bg-black/90">
                 {/* Icon */}
                 <div className={`w-12 h-12 ${card.bgColor} rounded-xl flex items-center justify-center mb-4`}>
                   <card.icon className={`w-6 h-6 ${card.color}`} />
@@ -155,7 +155,7 @@ export default function Get() {
                       {card.graphData.map((height, i) => (
                         <motion.div
                           key={i}
-                          className="bg-red-500 rounded-t w-3"
+                          className="bg-purple-900 rounded-t w-3"
                           initial={{ height: 0 }}
                           whileInView={{ height: `${height * 6}px` }}
                           transition={{ duration: 0.5, delay: 0.2 + i * 0.05 }}
@@ -167,16 +167,16 @@ export default function Get() {
 
                 {card.isNew && (
                   <div className="mb-4">
-                    <div className="inline-flex items-center gap-1.5 bg-red-500/10 text-red-500 text-xs px-3 py-1 rounded-full">
-                      <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+                    <div className="inline-flex items-center gap-1.5 bg-purple-900/10 text-purple-900 text-xs px-3 py-1 rounded-full">
+                      <div className="w-2 h-2 bg-purple-900 rounded-full animate-pulse" />
                       NEW
                     </div>
                     <p className="text-xs text-gray-500 mt-1">Latest design</p>
                   </div>
                 )}
 
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{card.title}</h3>
-                <p className="text-gray-600 text-sm">{card.description}</p>
+                <h3 className="text-xl font-bold text-white mb-2">{card.title}</h3>
+                <p className="text-gray-300 text-sm">{card.description}</p>
               </div>
             </motion.div>
           ))}
@@ -192,9 +192,9 @@ export default function Get() {
             viewport={{ once: true }}
             className="group"
           >
-            <div className="relative bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-2xl p-6 transition-all duration-300 group-hover:shadow-xl group-hover:bg-white/90 h-full">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Workflow Integration</h3>
-              <p className="text-gray-600 text-sm mb-6">
+            <div className="relative bg-black/80 backdrop-blur-lg border border-gray-100/50 rounded-2xl p-6 transition-all duration-300 group-hover:shadow-xl group-hover:bg-black/90 h-full">
+              <h3 className="text-xl font-bold text-white mb-2">Workflow Integration</h3>
+              <p className="text-gray-300 text-sm mb-6">
                 Seamlessly connect all your existing apps and tools.
               </p>
 
@@ -208,7 +208,7 @@ export default function Get() {
                     whileHover={{ scale: 1.05, y: -2 }}
                     className={`${app.color} rounded-xl p-3 flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl`}
                   >
-                    <app.icon className="w-6 h-6 text-white" />
+                    <app.icon className="w-6 h-6 text-black" />
                   </motion.div>
                 ))}
               </div>
@@ -223,9 +223,9 @@ export default function Get() {
             viewport={{ once: true }}
             className="group"
           >
-            <div className="relative bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-2xl p-6 transition-all duration-300 group-hover:shadow-xl group-hover:bg-white/90 h-full">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Collaborate Real-time</h3>
-              <p className="text-gray-600 text-sm mb-6">
+            <div className="relative bg-black/80 backdrop-blur-lg border border-gray-100/50 rounded-2xl p-6 transition-all duration-300 group-hover:shadow-xl group-hover:bg-black/90 h-full">
+              <h3 className="text-xl font-bold text-white mb-2">Collaborate Real-time</h3>
+              <p className="text-gray-300 text-sm mb-6">
                 Work together seamlessly with your team, anywhere in the world.
               </p>
 
@@ -237,7 +237,7 @@ export default function Get() {
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3, delay: 0.4 + i * 0.1 }}
-                      className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-600 font-semibold text-sm"
+                      className="w-10 h-10 rounded-full border-2 border-black bg-gradient-to-br from-gray-100 to-gray-300 flex items-center justify-center text-gray-300 font-semibold text-sm"
                     >
                       {String.fromCharCode(65 + i)}
                     </motion.div>
@@ -245,7 +245,7 @@ export default function Get() {
                 </div>
 
                 <motion.div 
-                  className="bg-red-500 text-white text-sm font-medium px-4 py-2 rounded-full flex items-center gap-2"
+                  className="bg-purple-900 text-black text-sm font-medium px-4 py-2 rounded-full flex items-center gap-2"
                   animate={{
                     scale: [1, 1.05, 1],
                   }}
@@ -257,19 +257,19 @@ export default function Get() {
                 >
                   <Users className="w-4 h-4" />
                   <span>12 active now</span>
-                  <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
+                  <div className="w-2 h-2 bg-black rounded-full animate-pulse" />
                 </motion.div>
               </div>
 
               {/* Collaboration stats */}
-              <div className="mt-6 pt-4 border-t border-gray-200">
+              <div className="mt-6 pt-4 border-t border-gray-100">
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-500">Messages sent</span>
-                  <span className="text-gray-900 font-semibold">2,847</span>
+                  <span className="text-white font-semibold">2,847</span>
                 </div>
                 <div className="flex justify-between text-sm mt-2">
                   <span className="text-gray-500">Files shared</span>
-                  <span className="text-gray-900 font-semibold">156</span>
+                  <span className="text-white font-semibold">156</span>
                 </div>
               </div>
             </div>
@@ -291,9 +291,9 @@ export default function Get() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: 0.5 + i * 0.05 }}
               whileHover={{ scale: 1.05 }}
-              className="bg-white/80 backdrop-blur-sm hover:bg-white border border-gray-200 text-gray-700 text-sm px-5 py-2 rounded-full flex items-center gap-2 transition-all cursor-pointer shadow-sm hover:shadow-md"
+              className="bg-black/80 backdrop-blur-sm hover:bg-black border border-gray-100 text-gray-300 text-sm px-5 py-2 rounded-full flex items-center gap-2 transition-all cursor-pointer shadow-sm hover:shadow-md"
             >
-              <Star className="w-3 h-3 text-red-500" />
+              <Star className="w-3 h-3 text-purple-900" />
               {feature}
             </motion.div>
           ))}

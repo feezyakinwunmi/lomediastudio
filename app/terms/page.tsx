@@ -127,7 +127,7 @@ export default function TermsOfService() {
             className="text-center text-white"
           >
             <div className="inline-block mb-4">
-              <div className="bg-red-500/20 backdrop-blur-sm rounded-full px-4 py-1 border border-red-500/30">
+              <div className="bg-purple-900/20 backdrop-blur-sm rounded-full px-4 py-1 border border-purple-900/30">
                 <span className="text-red-400 text-sm font-semibold">Legal</span>
               </div>
             </div>
@@ -182,8 +182,8 @@ export default function TermsOfService() {
                 className="bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-2xl p-8 hover:shadow-lg transition-all"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-red-500/10 rounded-xl flex items-center justify-center">
-                    <section.icon className="w-5 h-5 text-red-500" />
+                  <div className="w-10 h-10 bg-purple-900/10 rounded-xl flex items-center justify-center">
+                    <section.icon className="w-5 h-5 text-purple-900" />
                   </div>
                   <h2 className="text-2xl font-bold text-gray-900">{section.title}</h2>
                 </div>
@@ -207,8 +207,8 @@ export default function TermsOfService() {
             className="bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-2xl p-8 mt-8"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-red-500/10 rounded-xl flex items-center justify-center">
-                <AlertCircle className="w-5 h-5 text-red-500" />
+              <div className="w-10 h-10 bg-purple-900/10 rounded-xl flex items-center justify-center">
+                <AlertCircle className="w-5 h-5 text-purple-900" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900">Cancellation Policy</h2>
             </div>
@@ -236,8 +236,8 @@ export default function TermsOfService() {
             className="bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-2xl p-8 mt-8"
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-red-500/10 rounded-xl flex items-center justify-center">
-                <Globe className="w-5 h-5 text-red-500" />
+              <div className="w-10 h-10 bg-purple-900/10 rounded-xl flex items-center justify-center">
+                <Globe className="w-5 h-5 text-purple-900" />
               </div>
               <h2 className="text-2xl font-bold text-gray-900">Governing Law</h2>
             </div>
@@ -258,7 +258,7 @@ export default function TermsOfService() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.3 }}
-            className="bg-gradient-to-r from-red-500 to-red-600 rounded-2xl p-8 mt-8 text-white text-center"
+            className="bg-gradient-to-r from-purple-900 to-red-600 rounded-2xl p-8 mt-8 text-white text-center"
           >
             <h2 className="text-2xl font-bold mb-4">Questions About Our Terms?</h2>
             <p className="mb-6 opacity-90">
@@ -268,7 +268,7 @@ export default function TermsOfService() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-red-500 px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all"
+                className="bg-white text-purple-900 px-6 py-2 rounded-full font-semibold hover:shadow-lg transition-all"
               >
                 Contact Us
               </motion.button>

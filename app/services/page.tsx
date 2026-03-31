@@ -195,7 +195,7 @@ const services = [
     icon: Palette,
     color: "red",
     image: "/bg5.jpg",
-    bgGradient: "from-red-500/20 to-rose-500/20",
+    bgGradient: "from-purple-900/20 to-rose-500/20",
     shape: "polygon(0% 10%, 100% 0%, 100% 100%, 0% 90%)",
     description: "Comprehensive brand identity development from logo design to complete visual language systems that make your brand memorable and recognizable.",
     detailedDescription: "We help you build a brand that resonates with your audience. From strategy to visual identity, we create cohesive brand experiences that differentiate you from competitors and build lasting connections.",
@@ -392,7 +392,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           {/* Expand Button */}
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="text-red-500 text-sm font-medium flex items-center gap-1 hover:gap-2 transition-all"
+            className="text-purple-900 text-sm font-medium flex items-center gap-1 hover:gap-2 transition-all"
           >
             {isExpanded ? 'Show Less' : 'Learn More'}
             <ArrowRight className={`w-3 h-3 transition-transform ${isExpanded ? 'rotate-90' : ''}`} />
@@ -492,7 +492,7 @@ export default function ServicesPage() {
               transition={{ duration: 0.6 }}
               className="inline-block mb-4 "
             >
-              <div className="bg-red-500/20 backdrop-blur-sm rounded-full px-4 py-1 border border-red-500/30">
+              <div className="bg-purple-900/20 backdrop-blur-sm rounded-full px-4 py-1 border border-purple-900/30">
                 <span className="text-red-400 text-sm font-semibold">What We Offer</span>
               </div>
             </motion.div>
@@ -504,7 +504,7 @@ export default function ServicesPage() {
               className="text-5xl md:text-7xl font-bold mb-6"
             >
               Comprehensive Creative
-              <span className="text-red-500 block">Solutions</span>
+              <span className="text-purple-900 block">Solutions</span>
             </motion.h1>
             
             <motion.p
@@ -561,8 +561,8 @@ export default function ServicesPage() {
             className="text-center mb-12"
           >
             <div className="inline-block mb-3">
-              <div className="bg-red-500/10 rounded-full px-4 py-1 border border-red-500/20">
-                <span className="text-red-500 text-sm font-semibold">Why Choose Us</span>
+              <div className="bg-purple-900/10 rounded-full px-4 py-1 border border-purple-900/20">
+                <span className="text-purple-900 text-sm font-semibold">Why Choose Us</span>
               </div>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -610,8 +610,8 @@ export default function ServicesPage() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-xl p-6 text-center"
               >
-                <div className="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-6 h-6 text-red-500" />
+                <div className="w-12 h-12 bg-purple-900/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-6 h-6 text-purple-900" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-gray-600 text-sm">{item.description}</p>
@@ -632,8 +632,8 @@ export default function ServicesPage() {
             className="text-center mb-12"
           >
             <div className="inline-block mb-3">
-              <div className="bg-red-500/10 rounded-full px-4 py-1 border border-red-500/20">
-                <span className="text-red-500 text-sm font-semibold">FAQ</span>
+              <div className="bg-purple-900/10 rounded-full px-4 py-1 border border-purple-900/20">
+                <span className="text-purple-900 text-sm font-semibold">FAQ</span>
               </div>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -683,7 +683,7 @@ export default function ServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-red-500 to-red-600 rounded-3xl p-12 text-center"
+            className="bg-gradient-to-r from-purple-900 to-red-600 rounded-3xl p-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Elevate Your Brand?
@@ -699,7 +699,7 @@ export default function ServicesPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-red-500 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto hover:shadow-lg transition-all"
+                className="bg-white text-purple-900 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto hover:shadow-lg transition-all"
               >
                 <MessageSquare className="w-5 h-5" />
                 Chat on WhatsApp

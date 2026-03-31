@@ -13,6 +13,7 @@ import {
 //   Linkedin,
 //   Youtube
 } from 'lucide-react';
+import Image from 'next/image'
 import Link from 'next/link';
 
 export default function Footer() {
@@ -52,7 +53,7 @@ export default function Footer() {
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={`footer-orb-${i}`}
-            className="absolute rounded-full bg-red-500/5 blur-3xl"
+            className="absolute rounded-full bg-purple-900/5 blur-3xl"
             style={{
               width: `${300 + i * 100}px`,
               height: `${300 + i * 100}px`,
@@ -87,8 +88,15 @@ export default function Footer() {
             <Link href="/">
               <motion.h2 
                 whileHover={{ scale: 1.05 }}
-                className="text-2xl font-bold bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent mb-4"
+                className="text-2xl font-bold bg-gradient-to-r from-purple-900 to-red-600 bg-clip-text text-transparent mb-4"
               >
+                <Image
+                    src="/logo.png"
+                    alt="LoMediaStudio"
+                    width={82}
+                    height={82}
+                    className="inline-block mr-2"
+                  />
                 LoMediaStudio
               </motion.h2>
             </Link>
@@ -99,15 +107,15 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-400 text-sm">
-                <Mail className="w-4 h-4 text-red-500" />
+                <Mail className="w-4 h-4 text-purple-900" />
                 <span>hello@lomediastudio.com</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400 text-sm">
-                <Phone className="w-4 h-4 text-red-500" />
+                <Phone className="w-4 h-4 text-purple-900" />
                 <span>+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400 text-sm">
-                <MapPin className="w-4 h-4 text-red-500" />
+                <MapPin className="w-4 h-4 text-purple-900" />
                 <span>123 Creative Ave, New York, NY 10001</span>
               </div>
             </div>
@@ -133,7 +141,7 @@ export default function Footer() {
                   >
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-red-500 text-sm transition-colors duration-300"
+                      className="text-gray-400 hover:text-purple-900 text-sm transition-colors duration-300"
                     >
                       {link.name}
                     </Link>
@@ -161,12 +169,12 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white text-sm focus:outline-none focus:border-red-500 transition-colors"
+                className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white text-sm focus:outline-none focus:border-purple-900 transition-colors"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg text-sm font-medium flex items-center gap-2 transition-colors"
+                className="px-4 py-2 bg-purple-900 hover:bg-red-600 text-white rounded-lg text-sm font-medium flex items-center gap-2 transition-colors"
               >
                 Subscribe
                 <ArrowRight className="w-4 h-4" />
@@ -189,7 +197,7 @@ export default function Footer() {
                 href={social.href}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-9 h-9 bg-gray-800 hover:bg-red-500 rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"
+                className="w-9 h-9 bg-gray-800 hover:bg-purple-900 rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"
                 aria-label={social.label}
               >
                 <social.icon className="w-4 h-4" />

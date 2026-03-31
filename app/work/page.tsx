@@ -168,7 +168,7 @@ function FeaturedProject({ project }: { project: any }) {
         <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
           <div className="max-w-2xl">
             <div className="inline-block mb-4">
-              <div className="bg-red-500/20 backdrop-blur-sm rounded-full px-3 py-1 border border-red-500/30">
+              <div className="bg-purple-900/20 backdrop-blur-sm rounded-full px-3 py-1 border border-purple-900/30">
                 <span className="text-red-400 text-xs font-semibold">Featured Project</span>
               </div>
             </div>
@@ -186,7 +186,7 @@ function FeaturedProject({ project }: { project: any }) {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full font-semibold flex items-center gap-2 transition-all"
+                className="bg-purple-900 hover:bg-red-600 text-white px-6 py-2 rounded-full font-semibold flex items-center gap-2 transition-all"
               >
                 View Project
                 <ExternalLink className="w-4 h-4" />
@@ -228,7 +228,7 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
         <div className="p-6">
           <div className="flex justify-between items-start mb-3">
             <div>
-              <span className="text-red-500 text-xs font-semibold uppercase tracking-wider">
+              <span className="text-purple-900 text-xs font-semibold uppercase tracking-wider">
                 {project.categoryName}
               </span>
               <h3 className="text-xl font-bold text-gray-900 mt-1">{project.title}</h3>
@@ -247,7 +247,7 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
               href={project.externalLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-red-500 text-sm font-medium flex items-center gap-1 hover:gap-2 transition-all"
+              className="text-purple-900 text-sm font-medium flex items-center gap-1 hover:gap-2 transition-all"
             >
               View Project
               <ExternalLink className="w-3 h-3" />
@@ -308,7 +308,7 @@ export default function WorkPage() {
               transition={{ duration: 0.6 }}
               className="inline-block mb-4"
             >
-              <div className="bg-red-500/20 backdrop-blur-sm rounded-full px-4 py-1 border border-red-500/30">
+              <div className="bg-purple-900/20 backdrop-blur-sm rounded-full px-4 py-1 border border-purple-900/30">
                 <span className="text-red-400 text-sm font-semibold">Our Portfolio</span>
               </div>
             </motion.div>
@@ -320,7 +320,7 @@ export default function WorkPage() {
               className="text-5xl md:text-7xl font-bold mb-6"
             >
               Creative Works That
-              <span className="text-red-500 block">Inspire & Transform</span>
+              <span className="text-purple-900 block">Inspire & Transform</span>
             </motion.h1>
             
             <motion.p
@@ -353,7 +353,7 @@ export default function WorkPage() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="text-center"
               >
-                <stat.icon className="w-6 h-6 text-red-500 mx-auto mb-2" />
+                <stat.icon className="w-6 h-6 text-purple-900 mx-auto mb-2" />
                 <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
                 <div className="text-xs text-gray-500">{stat.label}</div>
               </motion.div>
@@ -385,7 +385,7 @@ export default function WorkPage() {
                   whileTap={{ scale: 0.95 }}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     selectedCategory === cat.id
-                      ? 'bg-red-500 text-white shadow-lg'
+                      ? 'bg-purple-900 text-white shadow-lg'
                       : 'bg-white/80 backdrop-blur-lg text-gray-600 hover:bg-white border border-gray-200'
                   }`}
                 >
@@ -420,7 +420,7 @@ export default function WorkPage() {
                   }}
                   className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
                     selectedCategory === cat.id
-                      ? 'bg-red-500 text-white'
+                      ? 'bg-purple-900 text-white'
                       : 'bg-white/80 text-gray-600 border border-gray-200'
                   }`}
                 >
@@ -453,7 +453,7 @@ export default function WorkPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-red-500 to-red-600 rounded-3xl p-12 text-center"
+            className="bg-gradient-to-r from-purple-900 to-red-600 rounded-3xl p-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Create Your Masterpiece?
@@ -465,7 +465,7 @@ export default function WorkPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-red-500 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto hover:shadow-lg transition-all"
+                className="bg-white text-purple-900 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto hover:shadow-lg transition-all"
               >
                 Start Your Project
                 <ArrowRight className="w-5 h-5" />

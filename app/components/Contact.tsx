@@ -9,7 +9,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto text-center">
         <AnimatedSection>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Let's Create <span className="text-red-500">Magic</span>
+            Let's Create <span className="text-purple-900">Magic</span>
           </h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
             Ready to bring your vision to life? Get in touch with us today.
@@ -20,7 +20,7 @@ export default function Contact() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-12 py-4 bg-red-500 text-white rounded-full font-semibold text-lg shadow-lg hover:bg-red-600 transition-colors"
+            className="px-12 py-4 bg-purple-900 text-white rounded-full font-semibold text-lg shadow-lg hover:bg-red-600 transition-colors"
           >
             Start Your Project
           </motion.button>

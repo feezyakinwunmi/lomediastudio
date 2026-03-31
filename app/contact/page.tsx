@@ -69,8 +69,8 @@ export default function ContactPage() {
       title: "Email Us",
       details: ["hello@lomediastudio.com", "support@lomediastudio.com"],
       link: "mailto:hello@lomediastudio.com",
-      color: "text-red-500",
-      bgColor: "bg-red-500/10"
+      color: "text-purple-900",
+      bgColor: "bg-purple-900/10"
     },
     {
       icon: Phone,
@@ -151,7 +151,7 @@ export default function ContactPage() {
               transition={{ duration: 0.6 }}
               className="inline-block mb-4"
             >
-              <div className="bg-red-500/20 backdrop-blur-sm rounded-full px-4 py-1 border border-red-500/30">
+              <div className="bg-purple-900/20 backdrop-blur-sm rounded-full px-4 py-1 border border-purple-900/30">
                 <span className="text-red-400 text-sm font-semibold">Get in Touch</span>
               </div>
             </motion.div>
@@ -163,7 +163,7 @@ export default function ContactPage() {
               className="text-5xl md:text-7xl font-bold mb-6"
             >
               Let's Start a
-              <span className="text-red-500 block">Conversation</span>
+              <span className="text-purple-900 block">Conversation</span>
             </motion.h1>
             
             <motion.p
@@ -236,7 +236,7 @@ export default function ContactPage() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all"
+                      className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-purple-900 focus:ring-1 focus:ring-purple-900 transition-all"
                       placeholder="John Doe"
                     />
                   </div>
@@ -250,7 +250,7 @@ export default function ContactPage() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all"
+                      className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-purple-900 focus:ring-1 focus:ring-purple-900 transition-all"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -266,7 +266,7 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all"
+                      className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-purple-900 focus:ring-1 focus:ring-purple-900 transition-all"
                       placeholder="+1 234 567 890"
                     />
                   </div>
@@ -279,7 +279,7 @@ export default function ContactPage() {
                       required
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all"
+                      className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-purple-900 focus:ring-1 focus:ring-purple-900 transition-all"
                     >
                       <option value="">Select a service</option>
                       {services.map((service, idx) => (
@@ -299,7 +299,7 @@ export default function ContactPage() {
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all resize-none"
+                    className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-purple-900 focus:ring-1 focus:ring-purple-900 transition-all resize-none"
                     placeholder="Tell us about your project..."
                   />
                 </div>
@@ -307,7 +307,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={formStatus === 'sending'}
-                  className="w-full bg-red-500 hover:bg-red-600 text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-purple-900 hover:bg-red-600 text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {formStatus === 'sending' ? (
                     <>
@@ -340,8 +340,8 @@ export default function ContactPage() {
               {/* Office Hours */}
               <div className="bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-2xl p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-red-500/10 rounded-xl flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-red-500" />
+                  <div className="w-10 h-10 bg-purple-900/10 rounded-xl flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-purple-900" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">Office Hours</h3>
                 </div>
@@ -358,8 +358,8 @@ export default function ContactPage() {
               {/* Social Links */}
               <div className="bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-2xl p-8">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-red-500/10 rounded-xl flex items-center justify-center">
-                    <Globe className="w-5 h-5 text-red-500" />
+                  <div className="w-10 h-10 bg-purple-900/10 rounded-xl flex items-center justify-center">
+                    <Globe className="w-5 h-5 text-purple-900" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">Connect With Us</h3>
                 </div>
@@ -394,7 +394,7 @@ export default function ContactPage() {
                     transition={{ duration: 0.5, delay: 0.3 + idx * 0.1 }}
                     className="bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-xl p-4 text-center"
                   >
-                    <stat.icon className="w-6 h-6 text-red-500 mx-auto mb-2" />
+                    <stat.icon className="w-6 h-6 text-purple-900 mx-auto mb-2" />
                     <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
                     <div className="text-xs text-gray-500">{stat.label}</div>
                   </motion.div>
@@ -447,8 +447,8 @@ export default function ContactPage() {
             className="text-center mb-12"
           >
             <div className="inline-block mb-3">
-              <div className="bg-red-500/10 rounded-full px-4 py-1 border border-red-500/20">
-                <span className="text-red-500 text-sm font-semibold">FAQ</span>
+              <div className="bg-purple-900/10 rounded-full px-4 py-1 border border-purple-900/20">
+                <span className="text-purple-900 text-sm font-semibold">FAQ</span>
               </div>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -498,7 +498,7 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-red-500 to-red-600 rounded-3xl p-12 text-center"
+            className="bg-gradient-to-r from-purple-900 to-red-600 rounded-3xl p-12 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Start Your Project?
@@ -514,7 +514,7 @@ export default function ContactPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-red-500 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto hover:shadow-lg transition-all"
+                className="bg-white text-purple-900 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto hover:shadow-lg transition-all"
               >
                 <MessageSquare className="w-5 h-5" />
                 Chat on WhatsApp
