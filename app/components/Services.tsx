@@ -72,6 +72,22 @@ const services = [
   }
 ];
 
+// Corrected Swing/Pendulum Animation Variants
+const swingAnimation = {
+  initial: {
+    rotate: 0,
+    scale: 1,
+  },
+  swing: {
+    rotate: [0, 70, -12, 8, -5, 3, 0],
+    scale: [1, 1.05, 1, 1.02, 1, 1, 1],
+    transition: {
+      duration: 0.6,
+      ease: "easeOut" as const,
+    }
+  }
+};
+
 export default function Services() {
   const sectionRef = useRef<HTMLElement>(null);
   
@@ -96,13 +112,12 @@ export default function Services() {
   const headerY = useTransform(smoothProgress, [0.6, 0.9, 1], [0, -30, -50]);
 
   return (
-    <section 
+     <motion.section 
       ref={sectionRef}
-      id="services" 
-      className="relative py-5 px-4 bg-gradient-to-b from-gray-100 to-gray-50 overflow-hidden"
+      className="relative bg-gray-100 py-20 overflow-hidden"
       style={{
         opacity: sectionOpacity,
-        transform: `translateY(${sectionY.get()}px)`,
+        y: sectionY,
       }}
     >
       {/* Animated Background Elements */}
@@ -212,14 +227,13 @@ export default function Services() {
                 />
                 
                 <div className="relative z-10">
-                  {/* Icon Container */}
+                  {/* Icon Container with Swing Animation */}
                   <motion.div
-                    whileHover={{ 
-                      rotate: [0, -5, 5, 0],
-                      scale: 1.1
-                    }}
-                    transition={{ duration: 0.3 }}
-                    className={`w-14 h-14 ${service.bgColor} rounded-xl flex items-center justify-center mb-5 group-hover:shadow-lg transition-all duration-300`}
+                    whileHover="swing"
+                    initial="initial"
+                    variants={swingAnimation}
+                    className={`w-14 h-14 ${service.bgColor} rounded-xl flex items-center justify-center mb-5 group-hover:shadow-lg transition-all duration-300 cursor-pointer`}
+                    style={{ transformOrigin: "top center" }}
                   >
                     <service.icon className={`w-7 h-7 ${service.color}`} />
                   </motion.div>
@@ -267,6 +281,6 @@ export default function Services() {
           </motion.button>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

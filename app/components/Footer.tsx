@@ -89,7 +89,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.05 }}
                 className="text-2xl font-bold bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent mb-4"
               >
-                LomeMediaStudio
+                LoMediaStudio
               </motion.h2>
             </Link>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
