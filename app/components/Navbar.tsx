@@ -51,9 +51,9 @@ export default function Navbar() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="text-xl md:text-2xl font-bold bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent cursor-pointer"
+                  className="text-xl md:text-2xl font-bold text-black bg-clip-text  cursor-pointer"
                 >
-                  LomeMediaStudio
+                  Lo<span className="text-red-500">Media</span>Studio
                 </motion.div>
               </Link>
 
