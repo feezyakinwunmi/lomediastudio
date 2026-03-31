@@ -1,0 +1,272 @@
+"use client";
+
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { useRef } from "react";
+import { 
+  Code2, 
+  Video, 
+  PenTool, 
+  Briefcase, 
+  BookOpen, 
+  Palette,
+  Music,
+  Sparkles
+} from "lucide-react";
+
+const services = [
+  { 
+    icon: Code2, 
+    title: "Web Creation", 
+    desc: "Custom websites and web applications that blend stunning design with powerful functionality.",
+    color: "text-blue-500",
+    bgColor: "bg-blue-500/10"
+  },
+  { 
+    icon: Video, 
+    title: "Event Videography", 
+    desc: "Professional event coverage capturing every moment with cinematic precision and storytelling.",
+    color: "text-red-500",
+    bgColor: "bg-red-500/10"
+  },
+  { 
+    icon: Music, 
+    title: "Recording Studio", 
+    desc: "State-of-the-art audio recording, mixing, and mastering for music, podcasts, and voiceovers.",
+    color: "text-purple-500",
+    bgColor: "bg-purple-500/10"
+  },
+  { 
+    icon: BookOpen, 
+    title: "Book Writing", 
+    desc: "Professional ghostwriting, editing, and publishing services to bring your story to the world.",
+    color: "text-green-500",
+    bgColor: "bg-green-500/10"
+  },
+  { 
+    icon: Palette, 
+    title: "Branding", 
+    desc: "Comprehensive brand identity development from logo design to complete visual language systems.",
+    color: "text-orange-500",
+    bgColor: "bg-orange-500/10"
+  },
+  { 
+    icon: PenTool, 
+    title: "Content Creation", 
+    desc: "Engaging content strategy and production across all platforms to tell your brand's story.",
+    color: "text-pink-500",
+    bgColor: "bg-pink-500/10"
+  },
+  { 
+    icon: Briefcase, 
+    title: "Marketing Strategy", 
+    desc: "Data-driven marketing campaigns that connect with your audience and drive measurable results.",
+    color: "text-indigo-500",
+    bgColor: "bg-indigo-500/10"
+  },
+  { 
+    icon: Sparkles, 
+    title: "Creative Direction", 
+    desc: "Expert creative guidance to elevate your brand and ensure consistent, impactful messaging.",
+    color: "text-yellow-500",
+    bgColor: "bg-yellow-500/10"
+  }
+];
+
+export default function Services() {
+  const sectionRef = useRef<HTMLElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  // Entrance animation
+  const sectionOpacity = useTransform(smoothProgress, [0, 0.3, 0.6], [0, 0.8, 1]);
+  const sectionY = useTransform(smoothProgress, [0, 0.4], [60, 0]);
+  
+  // Scatter animation on exit
+  const cardsScale = useTransform(smoothProgress, [0.6, 0.9, 1], [1, 0.95, 0.9]);
+  const cardsOpacity = useTransform(smoothProgress, [0.6, 0.8, 1], [1, 0.5, 0]);
+  const headerY = useTransform(smoothProgress, [0.6, 0.9, 1], [0, -30, -50]);
+
+  return (
+    <section 
+      ref={sectionRef}
+      id="services" 
+      className="relative py-5 px-4 bg-gradient-to-b from-gray-100 to-gray-50 overflow-hidden"
+      style={{
+        opacity: sectionOpacity,
+        transform: `translateY(${sectionY.get()}px)`,
+      }}
+    >
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={`bg-${i}`}
+            className="absolute rounded-full bg-gradient-to-r from-red-500/5 to-purple-500/5 blur-3xl"
+            style={{
+              width: `${300 + i * 50}px`,
+              height: `${300 + i * 50}px`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              x: [0, 60, -40, 0],
+              y: [0, -50, 30, 0],
+              scale: [1, 1.1, 0.9, 1],
+            }}
+            transition={{
+              duration: 20 + i * 4,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section Header */}
+        <motion.div
+          style={{
+            y: headerY,
+            opacity: cardsOpacity,
+          }}
+          className="text-center mb-16"
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="inline-block mb-4"
+          >
+            <div className="bg-red-500/10 backdrop-blur-sm rounded-full px-6 py-2 border border-red-500/20">
+              <span className="text-red-500 font-semibold text-sm">What We Offer</span>
+            </div>
+          </motion.div>
+          
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+          >
+            Our <span className="text-red-500">Services</span>
+          </motion.h2>
+          
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-gray-600 text-lg max-w-2xl mx-auto"
+          >
+            Comprehensive creative solutions tailored to elevate your brand
+          </motion.p>
+        </motion.div>
+
+        {/* Services Grid */}
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          style={{
+            scale: cardsScale,
+            opacity: cardsOpacity,
+          }}
+        >
+          {services.map((service, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.05 }}
+              viewport={{ once: true, amount: 0.2 }}
+              whileHover={{ 
+                y: -8,
+                transition: { duration: 0.2 }
+              }}
+              className="group"
+            >
+              <div className="relative bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-gray-200/50 transition-all duration-300 group-hover:shadow-2xl group-hover:bg-white/90 h-full">
+                {/* Animated gradient background on hover */}
+                <motion.div
+                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  animate={{
+                    background: [
+                      `radial-gradient(circle at 20% 50%, ${service.color.replace('text', 'bg').replace('-500', '-500/10')} 0%, transparent 70%)`,
+                      `radial-gradient(circle at 80% 50%, ${service.color.replace('text', 'bg').replace('-500', '-500/10')} 0%, transparent 70%)`,
+                      `radial-gradient(circle at 20% 50%, ${service.color.replace('text', 'bg').replace('-500', '-500/10')} 0%, transparent 70%)`,
+                    ],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                  }}
+                />
+                
+                <div className="relative z-10">
+                  {/* Icon Container */}
+                  <motion.div
+                    whileHover={{ 
+                      rotate: [0, -5, 5, 0],
+                      scale: 1.1
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className={`w-14 h-14 ${service.bgColor} rounded-xl flex items-center justify-center mb-5 group-hover:shadow-lg transition-all duration-300`}
+                  >
+                    <service.icon className={`w-7 h-7 ${service.color}`} />
+                  </motion.div>
+                  
+                  {/* Title */}
+                  <motion.h3 
+                    className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-500 transition-colors duration-300"
+                  >
+                    {service.title}
+                  </motion.h3>
+                  
+                  {/* Description */}
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {service.desc}
+                  </p>
+                  
+                  {/* Decorative line */}
+                  <motion.div 
+                    className="h-0.5 bg-red-500/30 rounded-full mt-4"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "100%" }}
+                    transition={{ duration: 0.5, delay: idx * 0.05 + 0.3 }}
+                    viewport={{ once: true }}
+                  />
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+        
+        {/* CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg transition-all duration-300"
+          >
+            View All Services
+          </motion.button>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
