@@ -297,7 +297,7 @@ export default function Hero() {
 
             {/* Animated H1 Text */}
             <motion.div 
-              className="absolute top-10 left-8 max-w-[620px]"
+              className="absolute top-10 md:left-8 max-w-[170px] sm:max-w-[300px] md:max-w-[620px]"
               style={{
                 opacity: contentOpacity,
               }}
@@ -306,7 +306,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <motion.h1 
-                className="text-black text-4xl md:text-5xl font-bold leading-tight tracking-tight"
+                className="text-black text-2xl md:text-5xl font-bold leading-tight tracking-tight"
                 animate={{
                   textShadow: [
                     "0px 0px 0px rgba(239, 68, 68, 0)",
@@ -320,9 +320,15 @@ export default function Hero() {
                   repeatDelay: 3,
                 }}
               >
-                Innovative Studio Agency <br />
+                <div className="flex flex-col sm:flex-row gap-3"> 
+                  <div>Innovative</div>
+                  <div className='mt-[-25px] sm:mt-0' >Studio Agency</div>
+                </div>
+                {/* add linear gradient box */}
+<div className="absolute h-10 rounded-xl mr-2 mt-15 inset-0 bg-gradient-to-br from-black via-black to-red-900/70 sm:hidden" />
+
                 <motion.span 
-                  className="text-red-500 inline-block"
+                  className="text-red-500 mt-[20px] ml-2 sm:mt-[-100px]  inline-block"
                   animate={{
                     scale: [1, 1.02, 1],
                   }}
@@ -332,7 +338,7 @@ export default function Hero() {
                     ease: "easeInOut",
                   }}
                 >
-                  for Modern Brands
+                  for Modern <span className='text-4xl sm:text-5xl'>Brands</span>
                 </motion.span>
               </motion.h1>
             </motion.div>
