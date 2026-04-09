@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
-import { Target, Eye, Zap, Shield, Heart } from 'lucide-react';
+import { Target, Eye, Zap, Shield, Heart, Sparkles, Award, Users, Globe } from 'lucide-react';
 
 export default function MissionVision() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -47,10 +47,27 @@ export default function MissionVision() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  // Key focus areas for Mission
+  const missionFocusAreas = [
+    "Creating visually compelling designs and brand assets",
+    "Producing professional photography and video content",
+    "Developing strategic social media campaigns",
+    "Building strong and consistent visual brand identities",
+    "Delivering storytelling that connects emotionally and culturally"
+  ];
+
+  // Vision aspirations
+  const visionAspirations = [
+    { icon: Globe, text: "Brands communicate with clarity and confidence", color: "text-blue-400" },
+    { icon: Zap, text: "Creative content drives meaningful engagement", color: "text-yellow-400" },
+    { icon: Award, text: "African and global brands represented authentically", color: "text-purple-400" },
+    { icon: Sparkles, text: "A creative ecosystem where ideas grow", color: "text-red-400" }
+  ];
+
   return (
     <motion.section 
       ref={sectionRef}
-      className="relative bg-black py-5 overflow-hidden"
+      className="relative bg-black py-20 overflow-hidden"
       style={{
         opacity: sectionOpacity,
         y: sectionY,
@@ -74,7 +91,7 @@ export default function MissionVision() {
       >
         <div className="relative w-full h-full">
           <motion.div
-            className="absolute inset-0 border border-purple-900/40 rounded-full"
+            className="absolute inset-0 border border-red-500/40 rounded-full"
             animate={{
               scale: [1, 1.08, 1],
               opacity: [0.4, 0.7, 0.4],
@@ -86,7 +103,7 @@ export default function MissionVision() {
           />
           
           <motion.div
-            className="absolute inset-1 border border-red-400/60 rounded-full"
+            className="absolute inset-1 border border-purple-400/60 rounded-full"
             animate={{
               rotate: 360,
             }}
@@ -98,7 +115,7 @@ export default function MissionVision() {
           />
           
           <motion.div
-            className="absolute inset-0 m-auto w-1.5 h-1.5 bg-purple-900 rounded-full"
+            className="absolute inset-0 m-auto w-1.5 h-1.5 bg-red-500 rounded-full"
             animate={{
               scale: [1, 2, 1],
               boxShadow: [
@@ -117,7 +134,7 @@ export default function MissionVision() {
           {[...Array(6)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-0.5 h-0.5 bg-red-400 rounded-full"
+              className="absolute w-0.5 h-0.5 bg-purple-400 rounded-full"
               style={{
                 left: '50%',
                 top: '50%',
@@ -143,7 +160,7 @@ export default function MissionVision() {
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={`orb-${i}`}
-            className="absolute rounded-full bg-purple-900/5 blur-2xl"
+            className="absolute rounded-full bg-red-500/5 blur-2xl"
             style={{
               width: `${150 + i * 40}px`,
               height: `${150 + i * 40}px`,
@@ -163,7 +180,7 @@ export default function MissionVision() {
         ))}
       </div>
 
-      <div className=" mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-[90%] mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header - with scatter animation */}
         <motion.div
           style={{
@@ -173,17 +190,17 @@ export default function MissionVision() {
           className="text-center mb-12"
         >
           <div className="inline-block mb-3">
-            <div className="bg-purple-900/10 rounded-full px-4 py-1 border border-purple-900/20">
-              <span className="text-purple-900 text-sm font-semibold">Our Foundation</span>
+            <div className="bg-red-500/10 rounded-full px-4 py-1 border border-red-500/20">
+              <span className="text-red-500 text-sm font-semibold">Our Foundation</span>
             </div>
           </div>
           
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-            What Drives Us
+            Mission & Vision
           </h2>
           
-          <p className="text-gray-200 text-base max-w-2xl mx-auto">
-            Our mission and vision shape everything we do
+          <p className="text-gray-300 text-base max-w-2xl mx-auto">
+            Guiding principles that shape how we create, collaborate, and deliver results
           </p>
         </motion.div>
 
@@ -204,41 +221,40 @@ export default function MissionVision() {
             onHoverEnd={() => setHoveredCard(null)}
             className="group h-full"
           >
-            <div className="relative bg-black/80 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-gray-200/50 transition-all duration-300 group-hover:shadow-xl group-hover:bg-black/90 h-full flex flex-col">
+            <div className="relative bg-black/80 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-gray-800 transition-all duration-300 group-hover:shadow-xl group-hover:bg-black/90 group-hover:border-red-500/30 h-full flex flex-col">
               <motion.div
                 animate={{
                   rotate: hoveredCard === 'mission' ? [0, 5, -5, 0] : 0,
                   scale: hoveredCard === 'mission' ? 1.1 : 1,
                 }}
                 transition={{ duration: 0.3 }}
-                className="w-12 h-12 bg-purple-900/10 rounded-xl flex items-center justify-center mb-4"
+                className="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center mb-4"
               >
-                <Target className="w-6 h-6 text-purple-900" />
+                <Target className="w-6 h-6 text-red-500" />
               </motion.div>
               
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="text-xl font-bold text-white mb-3">
                 Our Mission
               </h3>
               
-              <p className="text-gray-200 text-sm leading-relaxed mb-4 flex-grow">
-                To empower modern brands with innovative media solutions that transcend traditional boundaries, creating experiences that resonate deeply with audiences and drive meaningful connections.
+              <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                To help brands tell meaningful stories through creative media that inspires, engages, and drives real results.
               </p>
               
-              <div className="grid grid-cols-2 gap-3 mt-auto">
-                {[
-                  { value: "500+", label: "Projects" },
-                  { value: "98%", label: "Satisfaction" },
-                ].map((stat, idx) => (
-                  <motion.div 
-                    key={idx} 
-                    className="bg-gray-50 rounded-lg p-2 text-center"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="text-lg font-bold text-purple-900">{stat.value}</div>
-                    <div className="text-xs text-gray-500">{stat.label}</div>
-                  </motion.div>
-                ))}
+              <p className="text-gray-400 text-xs leading-relaxed mb-4">
+                We focus on delivering high-quality visual and digital content that reflects the true identity of every brand we work with. From concept development to final execution, our goal is to turn ideas into impactful media experiences.
+              </p>
+              
+              <div className="mt-auto">
+                <h4 className="text-xs font-semibold text-red-400 mb-2">Key Focus Areas:</h4>
+                <div className="space-y-1.5">
+                  {missionFocusAreas.slice(0, 3).map((area, idx) => (
+                    <div key={idx} className="flex items-center gap-2">
+                      <div className="w-1 h-1 rounded-full bg-red-500" />
+                      <span className="text-gray-400 text-xs">{area}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
@@ -259,7 +275,7 @@ export default function MissionVision() {
             onHoverEnd={() => setHoveredCard(null)}
             className="group h-full"
           >
-            <div className="relative bg-black/80 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-gray-200/50 transition-all duration-300 group-hover:shadow-xl group-hover:bg-black/90 h-full flex flex-col">
+            <div className="relative bg-black/80 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-gray-800 transition-all duration-300 group-hover:shadow-xl group-hover:bg-black/90 group-hover:border-purple-500/30 h-full flex flex-col">
               <motion.div
                 animate={{
                   rotate: hoveredCard === 'vision' ? [0, 5, -5, 0] : 0,
@@ -271,34 +287,52 @@ export default function MissionVision() {
                 <Eye className="w-6 h-6 text-purple-500" />
               </motion.div>
               
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="text-xl font-bold text-white mb-3">
                 Our Vision
               </h3>
               
-              <p className="text-gray-200 text-sm leading-relaxed mb-4 flex-grow">
-                To become the world's most sought-after creative studio, known for pushing the boundaries of media innovation and setting new standards for brand storytelling.
+              <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                To become a leading creative media studio known for innovation, originality, and excellence in visual storytelling.
               </p>
               
-              <div className="space-y-2 mt-auto">
-                {[
-                  { icon: Zap, text: "Innovation First", color: "text-yellow-500" },
-                  { icon: Shield, text: "Uncompromised Quality", color: "text-blue-500" },
-                  { icon: Heart, text: "Purpose-Driven", color: "text-purple-900" },
-                ].map((item, idx) => (
-                  <motion.div 
-                    key={idx} 
-                    className="flex items-center gap-2 bg-gray-50 rounded-lg p-2"
-                    whileHover={{ x: 5, backgroundColor: "#fef2f2" }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <item.icon className={`w-3 h-3 ${item.color}`} />
-                    <span className="text-gray-200 text-xs">{item.text}</span>
-                  </motion.div>
-                ))}
+              <p className="text-gray-400 text-xs leading-relaxed mb-4">
+                We aim to set the standard for how brands communicate in the digital age—where creativity meets strategy and content goes beyond aesthetics to create real impact.
+              </p>
+              
+              <div className="mt-auto">
+                <h4 className="text-xs font-semibold text-purple-400 mb-2">What We Envision:</h4>
+                <div className="space-y-2">
+                  {visionAspirations.map((item, idx) => (
+                    <motion.div 
+                      key={idx} 
+                      className="flex items-center gap-2"
+                      whileHover={{ x: 5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <item.icon className={`w-3 h-3 ${item.color}`} />
+                      <span className="text-gray-400 text-xs">{item.text}</span>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
         </div>
+
+        {/* Bottom Statement */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="text-center mt-10"
+        >
+          <div className="inline-block bg-gradient-to-r from-red-500/10 to-purple-500/10 rounded-full px-5 py-2 border border-red-500/20">
+            <p className="text-gray-300 text-xs">
+              <span className="text-red-400 font-medium">LO Media Studio</span> is more than a creative unit — it's a storytelling powerhouse built to help brands stand out.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </motion.section>
   );

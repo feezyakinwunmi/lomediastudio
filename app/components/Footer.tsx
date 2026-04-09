@@ -108,7 +108,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-400 text-sm">
                 <Mail className="w-4 h-4 text-purple-900" />
-                <span>hello@lomediastudio.com</span>
+                <span>info@lopublications.com</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400 text-sm">
                 <Phone className="w-4 h-4 text-purple-900" />
@@ -116,7 +116,9 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3 text-gray-400 text-sm">
                 <MapPin className="w-4 h-4 text-purple-900" />
-                <span>123 Creative Ave, New York, NY 10001</span>
+                <span>1551 Lycee Place
+Ottawa, ON K1G4B5
+Canada</span>
               </div>
             </div>
           </motion.div>

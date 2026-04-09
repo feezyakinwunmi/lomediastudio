@@ -3,63 +3,63 @@
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 import { 
-  Code2, 
-  Video, 
-  PenTool, 
-  Briefcase, 
-  BookOpen, 
+  PenTool,
+  TrendingUp,
+  Mail,
+  Camera,
+  MessageCircle,
+  Video,
   Palette,
-  Music,
   Sparkles
 } from "lucide-react";
 
 const services = [
   { 
-    icon: Code2, 
-    title: "Web Creation", 
-    desc: "Custom websites and web applications that blend stunning design with powerful functionality.",
+    icon: PenTool, 
+    title: "Media Content Creation", 
+    desc: "Drive engagement, build authority & convert your audience with strategic media content that performs across platforms.",
     color: "text-blue-500",
     bgColor: "bg-blue-500/10"
   },
   { 
-    icon: Video, 
-    title: "Event Videography", 
-    desc: "Professional event coverage capturing every moment with cinematic precision and storytelling.",
-    color: "text-purple-900",
-    bgColor: "bg-purple-900/10"
-  },
-  { 
-    icon: Music, 
-    title: "Recording Studio", 
-    desc: "State-of-the-art audio recording, mixing, and mastering for music, podcasts, and voiceovers.",
-    color: "text-purple-500",
-    bgColor: "bg-purple-500/10"
-  },
-  { 
-    icon: BookOpen, 
-    title: "Book Writing", 
-    desc: "Professional ghostwriting, editing, and publishing services to bring your story to the world.",
+    icon: TrendingUp, 
+    title: "Digital Marketing", 
+    desc: "Data-driven digital marketing solutions designed to deliver measurable results and grow your brand online.",
     color: "text-green-500",
     bgColor: "bg-green-500/10"
   },
   { 
-    icon: Palette, 
-    title: "Branding", 
-    desc: "Comprehensive brand identity development from logo design to complete visual language systems.",
+    icon: Mail, 
+    title: "Email Marketing", 
+    desc: "Build meaningful relationships with your audience through strategic, data-driven email campaigns that convert.",
+    color: "text-red-500",
+    bgColor: "bg-red-500/10"
+  },
+  { 
+    icon: Camera, 
+    title: "Photography", 
+    desc: "Professional photography that captures your brand's essence and elevates your visual identity.",
     color: "text-orange-500",
     bgColor: "bg-orange-500/10"
   },
   { 
-    icon: PenTool, 
-    title: "Content Creation", 
-    desc: "Engaging content strategy and production across all platforms to tell your brand's story.",
+    icon: MessageCircle, 
+    title: "Storytelling", 
+    desc: "Transform your message into meaningful stories that connect, inspire, and drive action.",
+    color: "text-purple-500",
+    bgColor: "bg-purple-500/10"
+  },
+  { 
+    icon: Video, 
+    title: "Video Production", 
+    desc: "Professional video content that captivates audiences and converts viewers into customers.",
     color: "text-pink-500",
     bgColor: "bg-pink-500/10"
   },
   { 
-    icon: Briefcase, 
-    title: "Marketing Strategy", 
-    desc: "Data-driven marketing campaigns that connect with your audience and drive measurable results.",
+    icon: Palette, 
+    title: "Visual Brand Development", 
+    desc: "Create a powerful, strategic visual identity that positions your brand for visibility and growth.",
     color: "text-indigo-500",
     bgColor: "bg-indigo-500/10"
   },
@@ -125,7 +125,7 @@ export default function Services() {
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={`bg-${i}`}
-            className="absolute rounded-full bg-gradient-to-r from-purple-900/5 to-purple-500/5 blur-3xl"
+            className="absolute rounded-full bg-gradient-to-r from-red-500/5 to-purple-500/5 blur-3xl"
             style={{
               width: `${300 + i * 50}px`,
               height: `${300 + i * 50}px`,
@@ -162,8 +162,8 @@ export default function Services() {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <div className="bg-purple-900/10 backdrop-blur-sm rounded-full px-6 py-2 border border-purple-900/20">
-              <span className="text-purple-900 font-semibold text-sm">What We Offer</span>
+            <div className="bg-red-500/10 backdrop-blur-sm rounded-full px-6 py-2 border border-red-500/20">
+              <span className="text-red-500 font-semibold text-sm">What We Offer</span>
             </div>
           </motion.div>
           
@@ -174,7 +174,7 @@ export default function Services() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold text-black mb-4"
           >
-            Our <span className="bg-gradient-to-r from-purple-900 to-red-600 bg-clip-text text-transparent  ">Services</span>
+            Our <span className="bg-gradient-to-r from-red-600 to-purple-600 bg-clip-text text-transparent">Services</span>
           </motion.h2>
           
           <motion.p
@@ -240,7 +240,7 @@ export default function Services() {
                   
                   {/* Title */}
                   <motion.h3 
-                    className="text-xl font-bold text-black mb-3 group-hover:text-purple-900 transition-colors duration-300"
+                    className="text-xl font-bold text-black mb-3 group-hover:text-red-600 transition-colors duration-300"
                   >
                     {service.title}
                   </motion.h3>
@@ -252,7 +252,7 @@ export default function Services() {
                   
                   {/* Decorative line */}
                   <motion.div 
-                    className="h-0.5 bg-purple-900/30 rounded-full mt-4"
+                    className="h-0.5 bg-red-500/30 rounded-full mt-4"
                     initial={{ width: 0 }}
                     whileInView={{ width: "100%" }}
                     transition={{ duration: 0.5, delay: idx * 0.05 + 0.3 }}
@@ -272,13 +272,15 @@ export default function Services() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-purple-900 hover:bg-red-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg transition-all duration-300"
-          >
-            View All Services
-          </motion.button>
+          <a href="/services">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold shadow-lg transition-all duration-300"
+            >
+              View All Services
+            </motion.button>
+          </a>
         </motion.div>
       </div>
     </motion.section>

@@ -1,4 +1,3 @@
-// app/contact/page.tsx
 'use client';
 
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
@@ -12,11 +11,6 @@ import {
   MessageSquare,
   Send,
   CheckCircle,
-//   Instagram,
-//   Twitter,
-//   Facebook,
-//   Linkedin,
-//   Youtube,
   Globe,
   Building2,
   Users,
@@ -67,64 +61,56 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: "Email Us",
-      details: ["hello@lomediastudio.com", "support@lomediastudio.com"],
-      link: "mailto:hello@lomediastudio.com",
-      color: "text-purple-900",
-      bgColor: "bg-purple-900/10"
+      details: ["info@lopublications.com"],
+      link: "mailto:info@lopublications.com",
+      color: "text-red-500",
+      bgColor: "bg-red-50"
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+1 (555) 123-4567", "+1 (555) 987-6543"],
-      link: "tel:+15551234567",
-      color: "text-green-500",
-      bgColor: "bg-green-500/10"
+      details: ["+514 219 2987"],
+      link: "tel:+5142192987",
+      color: "text-red-500",
+      bgColor: "bg-red-50"
     },
     {
       icon: MessageSquare,
       title: "WhatsApp",
       details: ["+234 801 234 5678", "Available 24/7"],
       link: "https://wa.me/2348012345678",
-      color: "text-emerald-500",
-      bgColor: "bg-emerald-500/10"
+      color: "text-red-500",
+      bgColor: "bg-red-50"
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      details: ["123 Creative Avenue", "New York, NY 10001", "United States"],
-      link: "https://maps.google.com",
-      color: "text-purple-500",
-      bgColor: "bg-purple-500/10"
+      details: ["1551 Lycee Place", "Ottawa, ON K1G4B5", "Canada"],
+      link: "https://maps.google.com/?q=1551+Lycee+Place+Ottawa+ON+K1G4B5",
+      color: "text-red-500",
+      bgColor: "bg-red-50"
     }
   ];
 
   const officeHours = [
-    { day: "Monday - Friday", hours: "9:00 AM - 8:00 PM" },
-    { day: "Saturday", hours: "10:00 AM - 6:00 PM" },
+    { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM EST" },
+    { day: "Saturday", hours: "10:00 AM - 4:00 PM EST" },
     { day: "Sunday", hours: "Closed" }
   ];
 
-//   const socialLinks = [
-//     { icon: Instagram, href: "#", label: "Instagram", color: "hover:text-pink-500" },
-//     { icon: Twitter, href: "#", label: "Twitter", color: "hover:text-blue-400" },
-//     { icon: Facebook, href: "#", label: "Facebook", color: "hover:text-blue-600" },
-//     { icon: Linkedin, href: "#", label: "LinkedIn", color: "hover:text-blue-700" },
-//     { icon: Youtube, href: "#", label: "YouTube", color: "hover:text-red-600" }
-//   ];
-
   const services = [
-    "Web Creation",
-    "Event Videography",
-    "Recording Studio",
-    "Book Writing",
-    "Branding",
-    "Content Creation",
-    "Marketing Strategy",
+    "Media Content Creation",
+    "Digital Marketing",
+    "Email Marketing",
+    "Photography",
+    "Storytelling",
+    "Video Production",
+    "Visual Brand Development",
     "Creative Direction"
   ];
 
   return (
-    <main ref={sectionRef} className="bg-gray-100 overflow-hidden">
+    <main ref={sectionRef} className="bg-gray-100 overflow-hidden pt-20">
       {/* Hero Section */}
       <section className="relative md:py-20 min-h-[50vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-800">
@@ -151,7 +137,7 @@ export default function ContactPage() {
               transition={{ duration: 0.6 }}
               className="inline-block mb-4"
             >
-              <div className="bg-purple-900/20 backdrop-blur-sm rounded-full px-4 py-1 border border-purple-900/30">
+              <div className="bg-red-500/20 backdrop-blur-sm rounded-full px-4 py-1 border border-red-500/30">
                 <span className="text-red-400 text-sm font-semibold">Get in Touch</span>
               </div>
             </motion.div>
@@ -163,7 +149,7 @@ export default function ContactPage() {
               className="text-5xl md:text-7xl font-bold mb-6"
             >
               Let's Start a
-              <span className="text-purple-900 block">Conversation</span>
+              <span className="text-red-500 block">Conversation</span>
             </motion.h1>
             
             <motion.p
@@ -179,9 +165,9 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Methods Grid */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="py-16">
+        <div className="max-w-[90%] mx-auto px-4 sm:px-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {contactMethods.map((method, idx) => (
               <motion.a
                 key={idx}
@@ -192,14 +178,14 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-2xl p-6 text-center group hover:shadow-xl transition-all"
+                className="bg-white border border-gray-200 rounded-2xl p-5 text-center group hover:shadow-xl transition-all"
               >
-                <div className={`w-14 h-14 ${method.bgColor} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
-                  <method.icon className={`w-7 h-7 ${method.color}`} />
+                <div className={`w-12 h-12 ${method.bgColor} rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform`}>
+                  <method.icon className={`w-5 h-5 ${method.color}`} />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{method.title}</h3>
+                <h3 className="text-base font-semibold text-gray-900 mb-1">{method.title}</h3>
                 {method.details.map((detail, i) => (
-                  <p key={i} className="text-gray-600 text-sm">{detail}</p>
+                  <p key={i} className="text-gray-500 text-xs">{detail}</p>
                 ))}
               </motion.a>
             ))}
@@ -208,19 +194,19 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form & Info Section */}
-      <section className="py-20 bg-white/50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-[90%] mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-10">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-2xl p-8"
+              className="bg-white border border-gray-200 rounded-2xl p-6 md:p-8"
             >
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Send us a Message</h2>
-              <p className="text-gray-600 text-sm mb-6">
+              <p className="text-gray-500 text-sm mb-6">
                 Fill out the form below and we'll get back to you within 24 hours.
               </p>
 
@@ -236,7 +222,7 @@ export default function ContactPage() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-purple-900 focus:ring-1 focus:ring-purple-900 transition-all"
+                      className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all"
                       placeholder="John Doe"
                     />
                   </div>
@@ -250,7 +236,7 @@ export default function ContactPage() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-purple-900 focus:ring-1 focus:ring-purple-900 transition-all"
+                      className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -266,7 +252,7 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-purple-900 focus:ring-1 focus:ring-purple-900 transition-all"
+                      className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all"
                       placeholder="+1 234 567 890"
                     />
                   </div>
@@ -279,7 +265,7 @@ export default function ContactPage() {
                       required
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-purple-900 focus:ring-1 focus:ring-purple-900 transition-all"
+                      className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all"
                     >
                       <option value="">Select a service</option>
                       {services.map((service, idx) => (
@@ -299,7 +285,7 @@ export default function ContactPage() {
                     rows={5}
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-purple-900 focus:ring-1 focus:ring-purple-900 transition-all resize-none"
+                    className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all resize-none"
                     placeholder="Tell us about your project..."
                   />
                 </div>
@@ -307,7 +293,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={formStatus === 'sending'}
-                  className="w-full bg-purple-900 hover:bg-red-600 text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-red-500 hover:bg-red-600 text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {formStatus === 'sending' ? (
                     <>
@@ -335,56 +321,72 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="space-y-8"
+              className="space-y-6"
             >
-              {/* Office Hours */}
-              <div className="bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-2xl p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-purple-900/10 rounded-xl flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-purple-900" />
+              {/* Contact Info Cards */}
+              <div className="bg-white border border-gray-200 rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center">
+                    <Mail className="w-4 h-4 text-red-500" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">Office Hours</h3>
+                  <h3 className="text-lg font-bold text-gray-900">Email Us</h3>
+                </div>
+                <a href="mailto:info@lopublications.com" className="text-gray-600 hover:text-red-500 transition-colors text-sm block">
+                  info@lopublications.com
+                </a>
+              </div>
+
+              <div className="bg-white border border-gray-200 rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center">
+                    <Phone className="w-4 h-4 text-red-500" />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">Call Us</h3>
+                </div>
+                <a href="tel:+5142192987" className="text-gray-600 hover:text-red-500 transition-colors text-sm block">
+                  +514 219 2987
+                </a>
+                <span className="text-[11px] text-gray-400 mt-1 block">Mon-Fri, 9am - 6pm EST</span>
+              </div>
+
+              <div className="bg-white border border-gray-200 rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center">
+                    <MapPin className="w-4 h-4 text-red-500" />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">Visit Us</h3>
+                </div>
+                <p className="text-gray-600 text-sm">
+                  1551 Lycee Place<br />
+                  Ottawa, ON K1G4B5<br />
+                  Canada
+                </p>
+              </div>
+
+              {/* Office Hours */}
+              <div className="bg-white border border-gray-200 rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center">
+                    <Clock className="w-4 h-4 text-red-500" />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">Office Hours</h3>
                 </div>
                 <div className="space-y-3">
                   {officeHours.map((item, idx) => (
-                    <div key={idx} className="flex justify-between items-center py-2 border-b border-gray-200 last:border-0">
-                      <span className="text-gray-600">{item.day}</span>
-                      <span className="text-gray-900 font-medium">{item.hours}</span>
+                    <div key={idx} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
+                      <span className="text-gray-600 text-sm">{item.day}</span>
+                      <span className="text-gray-900 font-medium text-sm">{item.hours}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Social Links */}
-              <div className="bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-2xl p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-purple-900/10 rounded-xl flex items-center justify-center">
-                    <Globe className="w-5 h-5 text-purple-900" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900">Connect With Us</h3>
-                </div>
-                {/* <div className="flex gap-4">
-                  {socialLinks.map((social, idx) => (
-                    <motion.a
-                      key={idx}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ y: -3, scale: 1.1 }}
-                      className={`w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 ${social.color} transition-all`}
-                    >
-                      <social.icon className="w-5 h-5" />
-                    </motion.a>
-                  ))}
-                </div> */}
-              </div>
-
               {/* Quick Stats */}
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: Users, value: "500+", label: "Happy Clients" },
-                  { icon: Award, value: "50+", label: "Awards Won" },
-                  { icon: Building2, value: "15+", label: "Countries" },
+                  { icon: Users, value: "50+", label: "Happy Clients" },
+                  { icon: Award, value: "15+", label: "Awards Won" },
+                  { icon: Building2, value: "10+", label: "Countries" },
                   { icon: Sparkles, value: "98%", label: "Satisfaction" }
                 ].map((stat, idx) => (
                   <motion.div
@@ -392,11 +394,11 @@ export default function ContactPage() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 + idx * 0.1 }}
-                    className="bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-xl p-4 text-center"
+                    className="bg-white border border-gray-200 rounded-xl p-4 text-center"
                   >
-                    <stat.icon className="w-6 h-6 text-purple-900 mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
-                    <div className="text-xs text-gray-500">{stat.label}</div>
+                    <stat.icon className="w-5 h-5 text-red-500 mx-auto mb-2" />
+                    <div className="text-xl font-bold text-gray-900">{stat.value}</div>
+                    <div className="text-[11px] text-gray-500">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -406,18 +408,18 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="py-16">
+        <div className="max-w-[90%] mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-2xl overflow-hidden"
+            className="bg-white border border-gray-200 rounded-2xl overflow-hidden"
           >
             <div className="h-[400px] relative">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00369368400567!3d40.71312937933087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a316e6e5c0b%3A0xc5c5e5c5e5c5e5c5!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1641234567890!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.678912345678!2d-75.660123456789!3d45.400123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce05b3c8b5e5e5%3A0x123456789abcdef!2s1551%20Lycee%20Pl%2C%20Ottawa%2C%20ON%20K1G4B5!5e0!3m2!1sen!2sca!4v1641234567890!5m2!1sen!2sca"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -427,9 +429,9 @@ export default function ContactPage() {
                 className="grayscale hover:grayscale-0 transition-all duration-500"
               />
             </div>
-            <div className="p-6 text-center border-t border-gray-200">
+            <div className="p-5 text-center border-t border-gray-200">
               <p className="text-gray-600 text-sm">
-                123 Creative Avenue, New York, NY 10001, United States
+                1551 Lycee Place, Ottawa, ON K1G4B5, Canada
               </p>
             </div>
           </motion.div>
@@ -437,18 +439,18 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white/50">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-[90%] mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-10"
           >
             <div className="inline-block mb-3">
-              <div className="bg-purple-900/10 rounded-full px-4 py-1 border border-purple-900/20">
-                <span className="text-purple-900 text-sm font-semibold">FAQ</span>
+              <div className="bg-red-50 rounded-full px-4 py-1 border border-red-200">
+                <span className="text-red-500 text-sm font-semibold">FAQ</span>
               </div>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -456,7 +458,7 @@ export default function ContactPage() {
             </h2>
           </motion.div>
 
-          <div className="space-y-4">
+          <div className="max-w-3xl mx-auto space-y-4">
             {[
               {
                 q: "How quickly can I expect a response?",
@@ -464,7 +466,7 @@ export default function ContactPage() {
               },
               {
                 q: "Do you offer free consultations?",
-                a: "Yes! We offer a free 30-minute initial consultation to discuss your project and understand your needs."
+                a: "Yes! We offer a free initial consultation to discuss your project and understand your needs."
               },
               {
                 q: "What's your typical project timeline?",
@@ -480,10 +482,10 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-xl p-6"
+                className="bg-white border border-gray-200 rounded-xl p-5"
               >
-                <h3 className="font-semibold text-gray-900 mb-2">{faq.q}</h3>
-                <p className="text-gray-600 text-sm">{faq.a}</p>
+                <h3 className="font-semibold text-gray-900 mb-2 text-sm">{faq.q}</h3>
+                <p className="text-gray-500 text-sm">{faq.a}</p>
               </motion.div>
             ))}
           </div>
@@ -491,34 +493,34 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+      <section className="py-16">
+        <div className="max-w-[90%] mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-purple-900 to-red-600 rounded-3xl p-12 text-center"
+            className="bg-gradient-to-r from-red-600 to-purple-600 rounded-2xl p-8 md:p-12 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
               Ready to Start Your Project?
             </h2>
-            <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-white/90 text-base mb-6 max-w-2xl mx-auto">
               Let's create something extraordinary together. Reach out to us today!
             </p>
             <a
-              href="https://wa.me/2348012345678?text=Hi! I'm interested in starting a project with LomeMediaStudio. Can we discuss?"
+              href="https://wa.me/2348012345678?text=Hi! I'm interested in starting a project with LO Media House. Can we discuss?"
               target="_blank"
               rel="noopener noreferrer"
             >
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-purple-900 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto hover:shadow-lg transition-all"
+                className="bg-white text-red-600 px-6 py-2.5 rounded-full font-semibold flex items-center gap-2 mx-auto hover:shadow-lg transition-all text-sm"
               >
-                <MessageSquare className="w-5 h-5" />
+                <MessageSquare className="w-4 h-4" />
                 Chat on WhatsApp
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4" />
               </motion.button>
             </a>
           </motion.div>

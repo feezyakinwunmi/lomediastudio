@@ -1,13 +1,11 @@
-// app/services/page.tsx
 'use client';
 
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from '@/lib/gsap';
 import Image from 'next/image';
-import Link from 'next/link';
 import { 
   ArrowRight, 
-  Code2, 
   Video, 
   Music, 
   BookOpen, 
@@ -19,7 +17,7 @@ import {
   Clock,
   Award,
   Users,
-  Star,
+  Heart,
   Zap,
   Shield,
   TrendingUp,
@@ -27,8 +25,6 @@ import {
   FileText,
   Share2,
   Eye,
-  Heart,
-  DollarSign,
   Target,
   Layers,
   Smartphone,
@@ -40,274 +36,253 @@ import {
   Edit,
   Megaphone,
   BarChart,
-  MessageSquare
+  MessageSquare,
+  X,
+  Mail,
+  Phone,
+  DollarSign,
+  Star
 } from 'lucide-react';
 
-// Service Categories with Detailed Info
+// Service Data with all the detailed content you provided
 const services = [
   {
     id: 1,
-    title: "Web Creation",
-    icon: Code2,
+    title: "Media Content Creation",
+    icon: PenTool,
     color: "blue",
-    image: "/bg4.jpg",
-    bgGradient: "from-blue-500/20 to-cyan-500/20",
-    shape: "polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%)",
-    description: "Custom websites and web applications that blend stunning design with powerful functionality, creating digital experiences that captivate and convert.",
-    detailedDescription: "We create bespoke digital experiences that not only look beautiful but also drive results. Our web solutions are built with cutting-edge technologies, responsive design, and user-centric approaches to ensure your online presence stands out.",
-    features: [
-      "Custom responsive web design",
-      "E-commerce solutions",
-      "CMS integration (WordPress, Sanity, etc.)",
-      "Performance optimization",
-      "SEO-friendly architecture",
-      "Interactive animations",
-      "Progressive Web Apps (PWA)",
-      "API integration"
+    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2074",
+    shortDesc: "Drive engagement, build authority & convert your audience with strategic media content that performs.",
+    fullDescription: `At LO Media Studio, we don't just create content; we create strategic media experiences that attract, engage, and convert your audience to clients. In today's digital world, your brand's success depends on how well you communicate your message. That communication starts with high-quality media content creation.
+
+Digital success has gone beyond posting randomly. It's now creating content that speaks directly to your audience to inform, entertain, and inspire action. That's exactly what we do at LO Media Studio.
+
+Our media content creation strategy combines creativity, storytelling, and data-driven execution to deliver content that performs across platforms.`,
+    whatItIs: "Media content creation is the process of developing visual, written, and video content that represents your brand online. At LO Media Studio, we help create the right content for the right audience at the right time.",
+    services: [
+      "Video Content Production (Brand videos, Social media reels, Product showcases, Promotional ads)",
+      "Creative Visual Content (Social media graphics, Campaign visuals, Brand identity content, Motion graphics)",
+      "Content Strategy & Storytelling (Define content direction, Understand your audience, Create consistent brand messaging)",
+      "Social Media Content Creation (Scroll-stopping posts, Engaging captions, Platform-specific content)",
+      "Short-Form & Viral Content (TikTok-style content, Instagram Reels, YouTube Shorts)"
     ],
     benefits: [
-      { icon: TrendingUp, text: "Increase conversion rates by up to 40%", highlight: true },
-      { icon: Smartphone, text: "Fully responsive across all devices", highlight: false },
-      { icon: Zap, text: "Lightning-fast load times", highlight: false },
-      { icon: Globe, text: "Global reach with multilingual support", highlight: false }
+      "Increase brand awareness",
+      "Build audience trust",
+      "Drive traffic to your website",
+      "Generate leads and conversions",
+      "Stay ahead of competitors"
     ],
-    process: [
-      "Discovery & Research",
-      "UI/UX Design",
-      "Development",
-      "Testing & QA",
-      "Launch & Deployment",
-      "Ongoing Support"
-    ],
-    whatsappMessage: "Hi! I'm interested in your Web Creation services. Can we discuss my project?"
+    whyChooseUs: "We don't just post content; we post content that converts. Strategy-driven creation, high-quality visuals, platform-specific optimization, and consistent brand storytelling.",
+    whatsappMessage: "Hi! I'm interested in your Media Content Creation services."
   },
   {
     id: 2,
-    title: "Event Videography",
-    icon: Video,
+    title: "Digital Marketing",
+    icon: TrendingUp,
     color: "green",
-    image: "/bg2.jpg",
-    bgGradient: "from-green-500/20 to-emerald-500/20",
-    shape: "polygon(0% 0%, 100% 10%, 100% 90%, 0% 100%)",
-    description: "Professional event coverage capturing every moment with cinematic precision and storytelling that preserves the emotion and energy of your special occasions.",
-    detailedDescription: "From corporate conferences to weddings, our team captures the essence of your events with multiple camera angles, drone footage, and cinematic editing. We tell your story through the lens, creating lasting memories that resonate.",
-    features: [
-      "Multi-camera setup",
-      "Drone aerial footage",
-      "Live streaming capabilities",
-      "Same-day highlight reels",
-      "Professional audio capture",
-      "Cinematic color grading",
-      "Post-event documentary",
-      "Social media ready clips"
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015",
+    shortDesc: "Data-driven digital marketing solutions designed to deliver measurable results and grow your brand.",
+    fullDescription: `At LO Media Studio, we help brands grow, scale, and thrive through strategic digital marketing services designed to deliver measurable results. In today's fast-evolving digital landscape, success requires more than just visibility—it requires the right strategy, the right tools, and the right execution.
+
+Our professional digital marketing solutions are tailored for businesses, organizations, and ministries seeking to increase brand awareness, attract the right audience, and convert engagement into real business growth. We combine creativity, data, and technology to build campaigns that not only reach people but move them to action.
+
+We take a holistic and results-driven approach to digital marketing, ensuring every channel works together to support your overall business goals.`,
+    whatItIs: "Strategic digital marketing that combines creativity, data, and technology to build campaigns that move people to action.",
+    services: [
+      "Social Media Marketing and Advertising",
+      "Search Engine Optimization (SEO)",
+      "Email Marketing and Automation",
+      "Content Marketing and Strategy",
+      "Paid Advertising (Google Ads, Social Ads)",
+      "Brand Positioning and Digital Campaigns",
+      "Analytics, Tracking, and Performance Optimization"
     ],
     benefits: [
-      { icon: Film, text: "Cinematic quality production", highlight: true },
-      { icon: Clock, text: "Rapid turnaround time", highlight: false },
-      { icon: Users, text: "Engage remote audiences", highlight: false },
-      { icon: Award, text: "Award-winning cinematographers", highlight: false }
+      "Increased brand awareness",
+      "Higher quality leads",
+      "Better conversion rates",
+      "Improved ROI on marketing spend",
+      "Data-driven decision making"
     ],
-    process: [
-      "Pre-production Planning",
-      "Site Visit & Scouting",
-      "Equipment Setup",
-      "Live Coverage",
-      "Post-Production",
-      "Delivery & Archiving"
-    ],
-    whatsappMessage: "Hi! I'm interested in your Event Videography services. I have an upcoming event I'd like to discuss."
+    whyChooseUs: "We prioritize consistency, creativity, and clarity. Every campaign is designed to reflect your brand identity while maintaining a strong and unified message across all digital platforms.",
+    whatsappMessage: "Hi! I'm interested in your Digital Marketing services."
   },
   {
     id: 3,
-    title: "Recording Studio",
-    icon: Music,
+    title: "Email Marketing",
+    icon: Mail,
     color: "purple",
-    image: "/bg3.jpg",
-    bgGradient: "from-purple-500/20 to-pink-500/20",
-    shape: "polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%)",
-    description: "State-of-the-art audio recording, mixing, and mastering for music, podcasts, and voiceovers, delivering crystal-clear sound that captures every nuance.",
-    detailedDescription: "Our professional recording studio is equipped with top-tier equipment and acoustically treated rooms to deliver pristine audio quality. Whether you're recording an album, podcast, or voiceover, we ensure your sound is flawless.",
-    features: [
-      "Isolated recording booths",
-      "Professional mixing consoles",
-      "Vocal tuning & editing",
-      "Mastering services",
-      "Podcast production",
-      "Voiceover recording",
-      "Sound design",
-      "Remote collaboration"
+    image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?q=80&w=2070",
+    shortDesc: "Build meaningful relationships with your audience through strategic, data-driven email campaigns.",
+    fullDescription: `At LO Media Studio, we help brands build meaningful, long-term relationships with their audience through strategic email marketing services. In a fast-paced digital world, email remains one of the most effective and direct channels for communication, engagement, and conversion.
+
+Our professional email marketing solutions are designed for businesses, organizations, and ministries looking to nurture leads, retain customers, and drive consistent growth. We go beyond sending emails; we create targeted, data-driven campaigns that deliver the right message to the right audience at the right time.
+
+We begin by understanding your brand, your audience, and your goals. From there, we develop a custom email marketing strategy that aligns with your overall branding and marketing efforts.`,
+    whatItIs: "Strategic email marketing that nurtures leads, retains customers, and drives consistent growth through targeted campaigns.",
+    services: [
+      "Email Strategy Development and Campaign Planning",
+      "Audience Segmentation and List Management",
+      "Engaging Email Content and Copywriting",
+      "Email Design and Branded Templates",
+      "Automated Email Workflows (Welcome series, Follow-ups, Nurturing sequences)",
+      "Newsletter Creation and Distribution",
+      "Performance Tracking, Analytics, and Optimization"
     ],
     benefits: [
-      { icon: Mic, text: "Studio-grade audio quality", highlight: true },
-      { icon: Headphones, text: "Professional monitoring", highlight: false },
-      { icon: Clock, text: "Flexible booking hours", highlight: false },
-      { icon: Award, text: "Experienced sound engineers", highlight: false }
+      "Higher open and click-through rates",
+      "Improved customer retention",
+      "Increased sales and conversions",
+      "Better ROI on marketing spend",
+      "Stronger customer relationships"
     ],
-    process: [
-      "Pre-session Consultation",
-      "Setup & Sound Check",
-      "Recording Session",
-      "Editing & Processing",
-      "Mixing",
-      "Mastering"
-    ],
-    whatsappMessage: "Hi! I'm interested in booking time at your Recording Studio. Can you share availability and rates?"
+    whyChooseUs: "We prioritize personalization and relevance, ensuring your emails feel tailored rather than generic. Every campaign is tracked and optimized for better performance.",
+    whatsappMessage: "Hi! I'm interested in your Email Marketing services."
   },
   {
     id: 4,
-    title: "Book Writing",
-    icon: BookOpen,
+    title: "Photography",
+    icon: Camera,
     color: "orange",
-    image: "/bw.jpg",
-    bgGradient: "from-orange-500/20 to-amber-500/20",
-    shape: "polygon(0% 0%, 100% 0%, 100% 80%, 85% 100%, 0% 100%)",
-    description: "Professional ghostwriting, editing, and publishing services to bring your story to the world, turning your ideas into compelling narratives that captivate readers.",
-    detailedDescription: "Whether you have a story to tell or expertise to share, our team of professional writers and editors helps you craft, refine, and publish your book. From memoirs to business books, we bring your vision to life.",
-    features: [
-      "Ghostwriting services",
-      "Developmental editing",
-      "Copy editing & proofreading",
-      "Book formatting",
-      "Cover design",
-      "Publishing consultation",
-      "Marketing strategy",
-      "Audiobook production"
+    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071",
+    shortDesc: "Professional photography that captures your brand's essence and elevates your visual identity.",
+    fullDescription: `At LO Media Studio, we believe powerful visuals are essential for telling compelling brand stories. Our professional photography services are designed to help businesses, organizations, and ministries capture high-quality images that elevate their brand identity and enhance their marketing efforts.
+
+We specialize in brand photography that communicates your message with clarity and creativity. Whether you need corporate portraits, product photography, event coverage, or lifestyle shoots, our team delivers visually striking images that reflect your brand's personality and values.
+
+Our commercial photography services are tailored to support your digital presence across websites, social media platforms, and marketing campaigns.`,
+    whatItIs: "Professional brand photography that communicates your message with clarity, creativity, and strategic purpose.",
+    services: [
+      "Corporate and Personal Brand Photography",
+      "Product Photography for Businesses and E-commerce",
+      "Event and Conference Coverage",
+      "Social Media Content Photography",
+      "Promotional and Campaign Shoots"
     ],
     benefits: [
-      { icon: FileText, text: "Professional manuscript development", highlight: true },
-      { icon: Award, text: "Industry-standard publishing", highlight: false },
-      { icon: TrendingUp, text: "Increased authority & credibility", highlight: false },
-      { icon: Share2, text: "Global distribution channels", highlight: false }
+      "Professional, polished brand image",
+      "Increased audience trust",
+      "Better engagement on social media",
+      "Higher conversion rates",
+      "Consistent visual identity"
     ],
-    process: [
-      "Initial Consultation",
-      "Outline Development",
-      "Manuscript Writing",
-      "Editing & Revisions",
-      "Design & Formatting",
-      "Publication & Launch"
-    ],
-    whatsappMessage: "Hi! I'm interested in your Book Writing services. I have a book idea I'd like to discuss."
+    whyChooseUs: "We combine creativity, technical expertise, and strategic branding to produce visuals that elevate your brand, engage your audience, and drive business growth.",
+    whatsappMessage: "Hi! I'm interested in your Photography services."
   },
   {
     id: 5,
-    title: "Branding",
-    icon: Palette,
+    title: "Storytelling",
+    icon: MessageCircle,
     color: "red",
-    image: "/bg5.jpg",
-    bgGradient: "from-purple-900/20 to-rose-500/20",
-    shape: "polygon(0% 10%, 100% 0%, 100% 100%, 0% 90%)",
-    description: "Comprehensive brand identity development from logo design to complete visual language systems that make your brand memorable and recognizable.",
-    detailedDescription: "We help you build a brand that resonates with your audience. From strategy to visual identity, we create cohesive brand experiences that differentiate you from competitors and build lasting connections.",
-    features: [
-      "Brand strategy & positioning",
-      "Logo & identity design",
-      "Color palette development",
-      "Typography systems",
-      "Brand guidelines",
-      "Packaging design",
-      "Marketing collateral",
-      "Brand voice & messaging"
+    image: "https://images.unsplash.com/photo-1455849318743-b2233052fcff?q=80&w=2069",
+    shortDesc: "Transform your message into meaningful stories that connect, inspire, and drive action.",
+    fullDescription: `At LO Media Studio, storytelling is at the heart of everything we create. We help brands, organizations, and ministries communicate their vision through powerful, authentic narratives that connect, inspire, and drive action.
+
+In today's digital world, people don't just buy products; they connect with stories. That's why we craft strategic, emotion-driven content that reflects your brand identity and speaks directly to your audience across platforms.
+
+From brand positioning to campaign messaging and documentary-style storytelling, we ensure your voice is clear, consistent, and impactful.`,
+    whatItIs: "Strategic, emotion-driven content that reflects your brand identity and speaks directly to your audience.",
+    services: [
+      "Brand Storytelling and Identity Development",
+      "Scriptwriting for Videos, Ads, and Campaigns",
+      "Documentary and Impact Storytelling",
+      "Social Media Storytelling Strategies",
+      "Campaign Messaging and Narrative Structuring",
+      "Content Direction for Digital Platforms"
     ],
     benefits: [
-      { icon: Target, text: "Clear brand positioning", highlight: true },
-      { icon: Heart, text: "Emotional connection with audience", highlight: false },
-      { icon: TrendingUp, text: "Increased brand recognition", highlight: false },
-      { icon: Shield, text: "Consistent brand identity", highlight: false }
+      "Deeper audience connection",
+      "Increased brand loyalty",
+      "Better message retention",
+      "Higher engagement rates",
+      "Stronger brand identity"
     ],
-    process: [
-      "Discovery & Research",
-      "Brand Strategy",
-      "Visual Concept Development",
-      "Design Refinement",
-      "Brand Guidelines",
-      "Asset Delivery"
-    ],
-    whatsappMessage: "Hi! I'm interested in your Branding services. I need help building/refreshing my brand identity."
+    whyChooseUs: "We don't just tell stories; we create experiences that build trust, strengthen brand loyalty, and position your brand for long-term growth.",
+    whatsappMessage: "Hi! I'm interested in your Storytelling services."
   },
   {
     id: 6,
-    title: "Content Creation",
-    icon: PenTool,
+    title: "Video Production",
+    icon: Video,
     color: "pink",
-    image: "/bg6.jpg",
-    bgGradient: "from-pink-500/20 to-rose-500/20",
-    shape: "polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%)",
-    description: "Engaging content strategy and production across all platforms to tell your brand's story and connect with your audience authentically.",
-    detailedDescription: "Create compelling content that cuts through the noise. Our team develops strategic content that engages your audience, builds trust, and drives action across all digital platforms.",
-    features: [
-      "Content strategy development",
-      "Blog & article writing",
-      "Social media content",
-      "Video content production",
-      "Email marketing campaigns",
-      "Infographic design",
-      "Case studies & white papers",
-      "Content calendar management"
-    ],
-    benefits: [
-      { icon: Megaphone, text: "Increased brand visibility", highlight: true },
-      { icon: BarChart, text: "Measurable engagement metrics", highlight: false },
-      { icon: MessageCircle, text: "Authentic audience connection", highlight: false },
-      { icon: Clock, text: "Consistent content delivery", highlight: false }
+    image: "/bg1.jpg",
+    shortDesc: "Professional video content that captivates audiences and converts viewers into customers.",
+    fullDescription: `At LO Media Studio, we create high-quality video content that brings your ideas to life and positions your brand for visibility, engagement, and results.
+
+From concept development to post-production, our team delivers visually compelling and strategically crafted videos tailored to your goals—whether for marketing, awareness, or storytelling.
+
+We understand that video is one of the most powerful tools in digital marketing today, and we ensure every production reflects excellence, creativity, and purpose.`,
+    whatItIs: "End-to-end video production from concept development to post-production, tailored to your marketing goals.",
+    services: [
+      "Promotional and brand videos",
+      "Corporate and organisational videos",
+      "Event coverage and highlight videos",
+      "Social media content (Reels, Shorts, Ads)",
+      "Interviews and testimonial videos",
+      "Product and commercial video production",
+      "Video editing, color grading, and motion graphics"
     ],
     process: [
-      "Content Audit",
-      "Strategy Development",
-      "Content Creation",
-      "Review & Approval",
-      "Distribution",
-      "Performance Analysis"
+      "Concept Development – Understanding your vision and goals",
+      "Pre-Production – Planning, scripting, and storyboarding",
+      "Production – Filming with professional equipment and crew",
+      "Post-Production – Editing, sound design, and final delivery"
     ],
-    whatsappMessage: "Hi! I'm interested in your Content Creation services. I need help with my content strategy."
+    benefits: [
+      "Increased brand visibility",
+      "Higher engagement rates",
+      "Better conversion metrics",
+      "Professional brand perception",
+      "Shareable, viral-ready content"
+    ],
+    whyChooseUs: "We don't just create content—we create impact. Strategy-first approach, high-quality execution, and results-driven production.",
+    whatsappMessage: "Hi! I'm interested in your Video Production services."
   },
   {
     id: 7,
-    title: "Marketing Strategy",
-    icon: Briefcase,
+    title: "Visual Brand Development",
+    icon: Palette,
     color: "indigo",
-    image: "/bg7.jpg",
-    bgGradient: "from-indigo-500/20 to-blue-500/20",
-    shape: "polygon(0% 0%, 100% 5%, 95% 100%, 5% 100%)",
-    description: "Data-driven marketing campaigns that connect with your audience and drive measurable results across all channels.",
-    detailedDescription: "Transform your marketing with data-driven strategies. We develop comprehensive marketing plans that leverage insights, optimize channels, and deliver measurable ROI for your business.",
-    features: [
-      "Market research & analysis",
-      "Competitor analysis",
-      "Digital marketing strategy",
-      "Social media management",
-      "Email marketing campaigns",
-      "PPC advertising",
-      "SEO optimization",
-      "Analytics & reporting"
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2064",
+    shortDesc: "Create a powerful, strategic visual identity that positions your brand for visibility and growth.",
+    fullDescription: `At LO Media Studio, we help brands move beyond ordinary visuals to create powerful, strategic identities that leave lasting impressions. Our visual brand development services are designed to position businesses, organizations, and ministries for visibility, credibility, and growth in today's competitive digital space.
+
+We specialize in professional brand identity design, crafting distinctive visuals that reflect your brand's voice, values, and purpose. From logo creation to complete brand systems, we develop cohesive and impactful designs that ensure your brand is instantly recognizable across all platforms.
+
+Our branding and marketing approach goes beyond design; we build visual identities that support your overall marketing strategy.`,
+    whatItIs: "Complete visual identity development from logo creation to brand systems that ensure consistency across all platforms.",
+    services: [
+      "Logo and Identity Design",
+      "Brand Color Systems and Typography",
+      "Social Media Branding Kits",
+      "Marketing and Promotional Design Assets",
+      "Brand Guidelines for Consistency"
     ],
     benefits: [
-      { icon: DollarSign, text: "Higher ROI on marketing spend", highlight: true },
-      { icon: Target, text: "Precision targeting", highlight: false },
-      { icon: TrendingUp, text: "Scalable growth strategies", highlight: false },
-      { icon: Eye, text: "Increased brand awareness", highlight: false }
+      "Instant brand recognition",
+      "Consistent visual identity",
+      "Professional brand perception",
+      "Higher customer trust",
+      "Competitive advantage"
     ],
-    process: [
-      "Market Research",
-      "Strategy Development",
-      "Campaign Execution",
-      "Performance Monitoring",
-      "Optimization",
-      "Reporting & Insights"
-    ],
-    whatsappMessage: "Hi! I'm interested in your Marketing Strategy services. I'd like to discuss a marketing plan for my business."
+    whyChooseUs: "We focus on delivering high-impact visual branding solutions that strengthen your brand presence, increase audience engagement, and drive business growth.",
+    whatsappMessage: "Hi! I'm interested in your Visual Brand Development services."
   },
   {
     id: 8,
     title: "Creative Direction",
     icon: Sparkles,
     color: "yellow",
-    image: "/bg8.jpg",
-    bgGradient: "from-yellow-500/20 to-orange-500/20",
-    shape: "polygon(5% 0%, 100% 0%, 95% 100%, 0% 95%)",
-    description: "Expert creative guidance to elevate your brand and ensure consistent, impactful messaging across all touchpoints.",
-    detailedDescription: "Get expert guidance to elevate your creative output. Our creative directors provide strategic oversight, ensuring your brand's visual and narrative consistency across all platforms and campaigns.",
-    features: [
+    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2074",
+    shortDesc: "Expert creative guidance to elevate your brand and ensure consistent, impactful messaging.",
+    fullDescription: `Get expert guidance to elevate your creative output. Our creative directors provide strategic oversight, ensuring your brand's visual and narrative consistency across all platforms and campaigns.
+
+We help you define and communicate your unique value through strategic brand positioning and digital campaigns. Our team develops integrated marketing campaigns that align your messaging, visuals, and communication across all digital channels.
+
+By combining brand storytelling, creative direction, and market insights, we ensure your brand stands out and resonates with your target audience.`,
+    whatItIs: "Strategic creative oversight ensuring your brand's visual and narrative consistency across all platforms.",
+    services: [
       "Creative strategy",
       "Art direction",
       "Campaign conceptualization",
@@ -318,397 +293,387 @@ const services = [
       "Creative workshops"
     ],
     benefits: [
-      { icon: Layers, text: "Cohesive brand experience", highlight: true },
-      { icon: Eye, text: "Enhanced creative quality", highlight: false },
-      { icon: Zap, text: "Faster decision making", highlight: false },
-      { icon: Star, text: "Award-winning expertise", highlight: false }
+      "Cohesive brand experience",
+      "Enhanced creative quality",
+      "Faster decision making",
+      "Award-winning expertise",
+      "Consistent brand messaging"
     ],
-    process: [
-      "Creative Audit",
-      "Strategy Definition",
-      "Concept Development",
-      "Production Oversight",
-      "Quality Assurance",
-      "Final Delivery"
-    ],
-    whatsappMessage: "Hi! I'm interested in your Creative Direction services. I need creative guidance for my brand."
+    whyChooseUs: "We provide strategic creative direction that ensures your brand stands out and resonates with your target audience across all touchpoints.",
+    whatsappMessage: "Hi! I'm interested in your Creative Direction services."
   }
 ];
 
-// Service Card Component
-function ServiceCard({ service, index }: { service: typeof services[0]; index: number }) {
-  const [isExpanded, setIsExpanded] = useState(false);
-  
-  // WhatsApp link with pre-filled message
-  const whatsappNumber = "2348012345678"; // Replace with your actual WhatsApp number
+// Modal Component
+function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0] | null; isOpen: boolean; onClose: () => void }) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isOpen]);
+
+  if (!isOpen || !service) return null;
+
+  const whatsappNumber = "2348012345678";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(service.whatsappMessage)}`;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.05 }}
-      viewport={{ once: true }}
-      className="group"
-    >
-      <div className="bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl">
-        {/* Image Section with Unique Shape */}
-        <div className="relative h-64 overflow-hidden">
-          <Image
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      {/* Backdrop */}
+      <div 
+        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        onClick={onClose}
+      />
+      
+      {/* Modal Content */}
+      <div className="relative bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+        {/* Header with Image */}
+        <div className="relative h-48 md:h-64 overflow-hidden rounded-t-2xl">
+          <img
             src={service.image}
             alt={service.title}
-            fill
-            className="object-cover group-hover:scale-110 transition-transform duration-500"
+            className="object-cover"
           />
-          <div 
-            className="absolute inset-0 bg-gradient-to-br opacity-60"
-            style={{ 
-              background: `linear-gradient(135deg, ${service.bgGradient.split(' ')[0]}, ${service.bgGradient.split(' ')[1] || service.bgGradient.split(' ')[0]})`,
-              clipPath: service.shape
-            }}
-          />
-          <div className="absolute bottom-4 left-4 z-10">
-            <div className={`bg-${service.color}-500/20 backdrop-blur-sm rounded-full px-3 py-1 border border-${service.color}-500/30`}>
-              <span className={`text-${service.color}-400 text-xs font-semibold`}>{service.title}</span>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-colors"
+          >
+            <X className="w-4 h-4 text-white" />
+          </button>
+          <div className="absolute bottom-4 left-6">
+            <div className={`inline-flex p-2 rounded-lg bg-${service.color}-500/20 backdrop-blur-sm mb-2`}>
+              <service.icon className={`w-5 h-5 text-${service.color}-400`} />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-white">{service.title}</h2>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 md:p-8">
+          {/* Short Description */}
+          <p className="text-gray-700 text-base font-medium mb-6">
+            {service.shortDesc}
+          </p>
+
+          {/* Full Description */}
+          <div className="mb-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Overview</h3>
+            <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
+              {service.fullDescription}
+            </p>
+          </div>
+
+          {/* What It Is */}
+          {service.whatItIs && (
+            <div className="mb-6 bg-gray-50 rounded-xl p-4">
+              <h3 className="text-sm font-semibold text-gray-900 mb-1">What It Is</h3>
+              <p className="text-gray-600 text-sm">{service.whatItIs}</p>
+            </div>
+          )}
+
+          {/* Services Offered */}
+          <div className="mb-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">What We Offer</h3>
+            <div className="grid md:grid-cols-2 gap-2">
+              {service.services.map((item, idx) => (
+                <div key={idx} className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-gray-600">{item}</span>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
 
-        <div className="p-6">
-          {/* Title & Description */}
-          <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
-          <p className="text-gray-600 text-sm leading-relaxed mb-4">{service.description}</p>
-
-          {/* Quick Benefits */}
-          <div className="grid grid-cols-2 gap-2 mb-4">
-            {service.benefits.slice(0, 2).map((benefit, idx) => (
-              <div key={idx} className="flex items-center gap-1.5">
-                <benefit.icon className="w-3.5 h-3.5 text-green-500" />
-                <span className="text-xs text-gray-600">{benefit.text}</span>
+          {/* Process (for Video Production) */}
+          {service.process && (
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Our Process</h3>
+              <div className="grid md:grid-cols-2 gap-3">
+                {service.process.map((step, idx) => (
+                  <div key={idx} className="flex items-center gap-2">
+                    <div className="w-6 h-6 rounded-full bg-red-100 text-red-500 flex items-center justify-center text-xs font-bold">
+                      {idx + 1}
+                    </div>
+                    <span className="text-sm text-gray-600">{step}</span>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+          )}
+
+          {/* Benefits */}
+          <div className="mb-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">Key Benefits</h3>
+            <div className="grid md:grid-cols-2 gap-2">
+              {service.benefits.map((benefit, idx) => (
+                <div key={idx} className="flex items-center gap-2">
+                  <Star className="w-4 h-4 text-yellow-500" />
+                  <span className="text-sm text-gray-600">{benefit}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Expand Button */}
-          <button
-            onClick={() => setIsExpanded(!isExpanded)}
-            className="text-purple-900 text-sm font-medium flex items-center gap-1 hover:gap-2 transition-all"
-          >
-            {isExpanded ? 'Show Less' : 'Learn More'}
-            <ArrowRight className={`w-3 h-3 transition-transform ${isExpanded ? 'rotate-90' : ''}`} />
-          </button>
+          {/* Why Choose Us */}
+          <div className="mb-6 bg-gradient-to-r from-red-50 to-purple-50 rounded-xl p-4">
+            <h3 className="text-sm font-semibold text-gray-900 mb-1">Why Choose LO Media Studio</h3>
+            <p className="text-gray-600 text-sm">{service.whyChooseUs}</p>
+          </div>
 
-          {/* Expanded Details */}
-          {isExpanded && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="mt-4 pt-4 border-t border-gray-200 space-y-4"
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-gray-200">
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl text-sm font-medium transition-all flex items-center justify-center gap-2"
             >
-              <p className="text-gray-600 text-sm leading-relaxed">{service.detailedDescription}</p>
-              
-              <div>
-                <h4 className="font-semibold text-gray-900 text-sm mb-2">What You Get:</h4>
-                <div className="grid grid-cols-2 gap-2">
-                  {service.features.slice(0, 6).map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-1.5">
-                      <CheckCircle className="w-3 h-3 text-green-500" />
-                      <span className="text-xs text-gray-600">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-gray-900 text-sm mb-2">Our Process:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {service.process.map((step, idx) => (
-                    <span key={idx} className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
-                      {step}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                <button className="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-2">
-                  <MessageSquare className="w-4 h-4" />
-                  WhatsApp Me
-                </button>
-              </a>
-            </motion.div>
-          )}
+              <MessageSquare className="w-4 h-4" />
+              Inquire on WhatsApp
+            </a>
+            <a
+              href="/contact"
+              className="flex-1 bg-gray-900 hover:bg-gray-800 text-white py-3 rounded-xl text-sm font-medium transition-all flex items-center justify-center gap-2"
+            >
+              <Mail className="w-4 h-4" />
+              Contact Sales
+            </a>
+          </div>
         </div>
       </div>
-    </motion.div>
+    </div>
+  );
+}
+
+// Service Card Component
+function ServiceCard({ service, index, onLearnMore }: { service: typeof services[0]; index: number; onLearnMore: (service: typeof services[0]) => void }) {
+  const Icon = service.icon;
+  const colorMap: Record<string, string> = {
+    blue: "from-blue-500/20 to-cyan-500/20",
+    green: "from-green-500/20 to-emerald-500/20",
+    purple: "from-purple-500/20 to-pink-500/20",
+    orange: "from-orange-500/20 to-amber-500/20",
+    red: "from-red-500/20 to-rose-500/20",
+    pink: "from-pink-500/20 to-rose-500/20",
+    indigo: "from-indigo-500/20 to-blue-500/20",
+    yellow: "from-yellow-500/20 to-orange-500/20"
+  };
+
+  const textColorMap: Record<string, string> = {
+    blue: "text-blue-500",
+    green: "text-green-500",
+    purple: "text-purple-500",
+    orange: "text-orange-500",
+    red: "text-red-500",
+    pink: "text-pink-500",
+    indigo: "text-indigo-500",
+    yellow: "text-yellow-500"
+  };
+
+  return (
+    <div
+      className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
+    >
+      <div className="relative h-48 overflow-hidden">
+        <img
+          src={service.image}
+          alt={service.title}
+          className="object-cover group-hover:scale-110 transition-transform duration-700"
+        />
+        <div className={`absolute inset-0 bg-gradient-to-br ${colorMap[service.color]} opacity-60`} />
+        <div className="absolute bottom-4 left-4">
+          <div className={`inline-flex p-2 rounded-lg bg-${service.color}-500/20 backdrop-blur-sm`}>
+            <Icon className={`w-5 h-5 ${textColorMap[service.color]}`} />
+          </div>
+        </div>
+      </div>
+      
+      <div className="p-5">
+        <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
+        <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
+          {service.shortDesc}
+        </p>
+        
+        <button
+          onClick={() => onLearnMore(service)}
+          className="text-red-500 text-sm font-medium flex items-center gap-1 hover:gap-2 transition-all"
+        >
+          Learn More
+          <ArrowRight className="w-3.5 h-3.5" />
+        </button>
+      </div>
+    </div>
   );
 }
 
 export default function ServicesPage() {
-  const sectionRef = useRef<HTMLElement>(null);
-  
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"]
-  });
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const heroScale = useTransform(scrollYProgress, [0, 0.3], [1, 0.95]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0.7]);
+  useEffect(() => {
+    if (!sectionRef.current) return;
 
-  const categories = [
-    { name: "Digital", icon: Code2, color: "blue" },
-    { name: "Production", icon: Video, color: "green" },
-    { name: "Audio", icon: Music, color: "purple" },
-    { name: "Creative", icon: Palette, color: "red" }
-  ];
+    gsap.fromTo(heroRef.current,
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: heroRef.current,
+          start: "top 85%",
+          end: "top 70%",
+          scrub: 0.5,
+        }
+      }
+    );
+
+    return () => {
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
+  }, []);
+
+  const handleLearnMore = (service: typeof services[0]) => {
+    setSelectedService(service);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedService(null);
+  };
 
   return (
-    <main ref={sectionRef} className="bg-gray-100 overflow-hidden">
+    <div ref={sectionRef} className="bg-gray-100 min-h-screen pt-20">
+      
       {/* Hero Section */}
-      <section className="relative md:py-20 min-h-[60vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-800">
-          <div className="absolute inset-0 opacity-20">
-            <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5"/>
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#grid)" />
-            </svg>
+      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071')] bg-cover bg-center opacity-30" />
+        
+        <div ref={heroRef} className="relative z-10 text-center max-w-4xl mx-auto px-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+            <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
+            <span className="text-[10px] text-white tracking-wide">OUR SERVICES</span>
           </div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <motion.div
-            style={{ scale: heroScale, opacity: heroOpacity }}
-            className="text-center text-white"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-block mb-4 "
-            >
-              <div className="bg-purple-900/20 backdrop-blur-sm rounded-full px-4 py-1 border border-purple-900/30">
-                <span className="text-red-400 text-sm font-semibold">What We Offer</span>
-              </div>
-            </motion.div>
-            
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl md:text-7xl font-bold mb-6"
-            >
-              Comprehensive Creative
-              <span className="text-purple-900 block">Solutions</span>
-            </motion.h1>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-gray-200 max-w-3xl mx-auto"
-            >
-              From concept to execution, we provide end-to-end creative services that elevate your brand and captivate your audience.
-            </motion.p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Category Pills */}
-      <section className="py-12 bg-white/50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-3">
-            {categories.map((cat, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="flex items-center gap-2 bg-white/80 backdrop-blur-lg border border-gray-200 rounded-full px-4 py-2"
-              >
-                <cat.icon className={`w-4 h-4 text-${cat.color}-500`} />
-                <span className="text-sm text-gray-700">{cat.name}</span>
-              </motion.div>
-            ))}
-          </div>
+          
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-4">
+            Comprehensive Creative
+            <br />
+            <span className="text-red-500">Solutions.</span>
+          </h1>
+          
+          <p className="text-sm md:text-base text-gray-200 leading-relaxed max-w-2xl mx-auto">
+            From concept to execution, we provide end-to-end creative services that elevate your brand 
+            and captivate your audience.
+          </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service, idx) => (
-              <ServiceCard key={service.id} service={service} index={idx} />
+      <section className="py-16 md:py-20">
+        <div className="max-w-[90%] mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10 md:mb-12">
+            <p className="text-red-500 text-xs uppercase tracking-[3px] font-medium mb-3">WHAT WE OFFER</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+              Our Creative
+              <br />
+              <span className="text-red-500">Services.</span>
+            </h2>
+            <p className="text-gray-600 text-sm max-w-2xl mx-auto mt-4">
+              Discover our comprehensive range of creative and media production services designed to help your brand stand out.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <ServiceCard
+                key={service.id}
+                service={service}
+                index={index}
+                onLearnMore={handleLearnMore}
+              />
             ))}
           </div>
         </div>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-white/50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <div className="inline-block mb-3">
-              <div className="bg-purple-900/10 rounded-full px-4 py-1 border border-purple-900/20">
-                <span className="text-purple-900 text-sm font-semibold">Why Choose Us</span>
-              </div>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What Sets Us Apart
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-[90%] mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10 md:mb-12">
+            <p className="text-red-500 text-xs uppercase tracking-[3px] font-medium mb-3">WHY CHOOSE US</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+              What Sets
+              <br />
+              <span className="text-red-500">Us Apart.</span>
             </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Award,
-                title: "Award-Winning Quality",
-                description: "Recognized for excellence in creative production and innovation."
-              },
-              {
-                icon: Users,
-                title: "Expert Team",
-                description: "Dedicated professionals with years of industry experience."
-              },
-              {
-                icon: Clock,
-                title: "On-Time Delivery",
-                description: "We respect your deadlines and deliver on time, every time."
-              },
-              {
-                icon: Heart,
-                title: "Client-First Approach",
-                description: "Your vision is our mission. We're committed to your success."
-              },
-              {
-                icon: Zap,
-                title: "Cutting-Edge Technology",
-                description: "We use the latest tools and techniques for superior results."
-              },
-              {
-                icon: Shield,
-                title: "Satisfaction Guaranteed",
-                description: "We stand behind our work with a 100% satisfaction guarantee."
-              }
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-xl p-6 text-center"
-              >
-                <div className="w-12 h-12 bg-purple-900/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-6 h-6 text-purple-900" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.description}</p>
-              </motion.div>
-            ))}
           </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <div className="inline-block mb-3">
-              <div className="bg-purple-900/10 rounded-full px-4 py-1 border border-purple-900/20">
-                <span className="text-purple-900 text-sm font-semibold">FAQ</span>
-              </div>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Frequently Asked Questions
-            </h2>
-          </motion.div>
-
-          <div className="space-y-4">
+          
+          <div className="grid md:grid-cols-3 gap-6">
             {[
-              {
-                q: "How long does a typical project take?",
-                a: "Project timelines vary depending on scope and complexity. A simple website might take 2-4 weeks, while a comprehensive branding project could take 2-3 months. We'll provide a detailed timeline during our initial consultation."
-              },
-              {
-                q: "How do I get started?",
-                a: "Simply click the 'WhatsApp Me' button on any service card to reach out. We'll discuss your project needs and provide a custom quote within 24 hours."
-              },
-              {
-                q: "Do you offer ongoing support?",
-                a: "Yes! We offer ongoing maintenance and support packages for all our services. Whether you need regular content updates, technical support, or strategic guidance, we're here to help."
-              },
-              {
-                q: "Can I see examples of your work?",
-                a: "Absolutely! Check out our Work page to see a selection of our recent projects. We're proud of the results we've delivered for clients across various industries."
-              }
-            ].map((faq, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-white/80 backdrop-blur-lg border border-gray-200/50 rounded-xl p-6"
-              >
-                <h3 className="font-semibold text-gray-900 mb-2">{faq.q}</h3>
-                <p className="text-gray-600 text-sm">{faq.a}</p>
-              </motion.div>
-            ))}
+              { icon: Award, title: "Strategy-First Approach", desc: "Every project begins with a clear strategy aligned with your goals." },
+              { icon: Users, title: "Expert Team", desc: "Dedicated professionals with years of industry experience." },
+              { icon: Clock, title: "On-Time Delivery", desc: "We respect your deadlines and deliver on time, every time." },
+              { icon: Heart, title: "Client-First Approach", desc: "Your vision is our mission. We're committed to your success." },
+              { icon: Zap, title: "Cutting-Edge Technology", desc: "We use the latest tools and techniques for superior results." },
+              { icon: Shield, title: "Results-Driven", desc: "We don't just create content—we create measurable impact." }
+            ].map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div key={idx} className="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-500 hover:-translate-y-1">
+                  <div className="inline-flex p-2 rounded-lg bg-red-50 mb-4">
+                    <Icon className="w-5 h-5 text-red-500" />
+                  </div>
+                  <h3 className="text-base font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-gray-600 text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-r from-purple-900 to-red-600 rounded-3xl p-12 text-center"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Ready to Elevate Your Brand?
-            </h2>
-            <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-              Let's discuss your project and create something extraordinary together.
-            </p>
-            <a
-              href={`https://wa.me/2348012345678?text=${encodeURIComponent("Hi! I'm interested in your services. Can we discuss my project?")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-purple-900 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto hover:shadow-lg transition-all"
+      <section className="py-16 md:py-20 bg-gray-900">
+        <div className="max-w-[90%] mx-auto px-4 sm:px-6">
+          <div className="relative bg-gradient-to-r from-red-600 to-purple-600 rounded-2xl p-8 md:p-12 text-center overflow-hidden">
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071')] bg-cover bg-center opacity-10" />
+            <div className="relative z-10">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+                Ready to Elevate
+                <br />
+                <span className="text-white/90">Your Brand?</span>
+              </h2>
+              <p className="text-gray-200 text-sm md:text-base max-w-2xl mx-auto mb-6">
+                Let's discuss your project and create something extraordinary together.
+              </p>
+              <a 
+                href="/contact" 
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-white text-gray-900 rounded-full font-medium text-sm hover:scale-105 transition-all duration-300 group"
               >
-                <MessageSquare className="w-5 h-5" />
-                Chat on WhatsApp
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-            </a>
-          </motion.div>
+                Get in Touch
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </div>
         </div>
       </section>
-    </main>
+
+      {/* Modal */}
+      <ServiceModal
+        service={selectedService}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
+    </div>
   );
 }
