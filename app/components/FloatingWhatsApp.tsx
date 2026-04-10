@@ -14,7 +14,7 @@ export default function FloatingWhatsApp() {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   // WhatsApp number - replace with your actual WhatsApp number (country code + number, no + or spaces)
-  const whatsappNumber = "2348012345678"; // Nigeria format: 2348012345678
+  const whatsappNumber = "+1 (514) 219-2987"; // Nigeria format: 2348012345678
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
   // Hide on scroll down, show on scroll up

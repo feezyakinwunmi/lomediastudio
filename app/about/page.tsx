@@ -194,7 +194,7 @@ const services = [
     title: "Content Production",
     description: "Compelling visual and digital content that reflects the true identity of your brand.",
     icon: Video,
-    image: "https://images.unsplash.com/photo-1536240474400-b3b3d5e76bf7?q=80&w=2070"
+    image: "/bg1.jpg"
   }
 ];
 
@@ -593,7 +593,7 @@ export default function AboutStudioPage() {
                   <img 
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-50 h-50 mt-10 mx-auto object-fit rounded-full group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
                 <div className="p-5">

@@ -80,7 +80,7 @@ export default function Navbar() {
                       }}
                       className="relative px-4 py-2 rounded-full transition-all duration-300 cursor-pointer"
                     >
-                      <span className="relative text-gray-700 hover:text-purple-900 transition-colors font-medium">
+                      <span className="relative text-black hover:text-purple-700 transition-colors font-medium">
                         {item.name}
                       </span>
                       {/* Animated dot indicator */}
