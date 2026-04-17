@@ -61,8 +61,8 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: "Email Us",
-      details: ["info@lopublications.com"],
-      link: "mailto:info@lopublications.com",
+      details: ["layoobidikepublications@gmail.com"],
+      link: "mailto:layoobidikepublications@gmail.com",
       color: "text-red-500",
       bgColor: "bg-red-50"
     },
@@ -331,8 +331,8 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-lg font-bold text-gray-900">Email Us</h3>
                 </div>
-                <a href="mailto:info@lopublications.com" className="text-gray-600 hover:text-red-500 transition-colors text-sm block">
-                  info@lopublications.com
+                <a href="mailto:layoobidikepublications@gmail.com" className="text-gray-600 hover:text-red-500 transition-colors text-sm block">
+                  layoobidikepublications@gmail.com
                 </a>
               </div>
 
