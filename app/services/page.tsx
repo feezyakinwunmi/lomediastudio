@@ -41,10 +41,13 @@ import {
   Mail,
   Phone,
   DollarSign,
-  Star
+  Star,
+  HelpCircle,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 
-// Service Data with all the detailed content you provided
+// Service Data with FAQs for each service
 const services = [
   {
     id: 1,
@@ -74,7 +77,41 @@ Our media content creation strategy combines creativity, storytelling, and data-
       "Stay ahead of competitors"
     ],
     whyChooseUs: "We don't just post content; we post content that converts. Strategy-driven creation, high-quality visuals, platform-specific optimization, and consistent brand storytelling.",
-    whatsappMessage: "Hi! I'm interested in your Media Content Creation services."
+    whatsappMessage: "Hi! I'm interested in your Media Content Creation services.",
+    faqs: [
+      {
+        q: "What is media content creation and why is it important for Ottawa businesses?",
+        a: "Media content creation involves producing videos, photos, graphics, and branded digital content to promote your business. In Ottawa's competitive market, high-quality content helps businesses increase visibility, build trust, and attract local customers online."
+      },
+      {
+        q: "What types of content creation services are available in Ottawa?",
+        a: "Ottawa media agencies offer a wide range of services including video production, corporate photography, social media content, branding visuals, drone videography, and promotional campaigns tailored to local businesses."
+      },
+      {
+        q: "How can video production help my Ottawa business grow?",
+        a: "Video production helps Ottawa businesses boost engagement, improve SEO rankings, and increase conversions. Platforms like Google and YouTube prioritize video content, making it a powerful tool for attracting local customers."
+      },
+      {
+        q: "Do you offer full-service media production in Ottawa?",
+        a: "Yes, most Ottawa media content creation companies provide end-to-end services including concept development, scripting, filming, editing, and post-production to ensure high-quality results."
+      },
+      {
+        q: "How much do content creation services cost in Ottawa, Canada?",
+        a: "The cost of media content creation in Ottawa varies depending on project complexity, video length, and production requirements. Many agencies offer flexible pricing packages to suit small businesses and larger organizations."
+      },
+      {
+        q: "How long does it take to produce media content?",
+        a: "Simple projects like social media videos can take a few days, while larger productions may take several weeks. Ottawa agencies typically provide clear timelines during the planning phase."
+      },
+      {
+        q: "Can content creation improve my social media presence in Ottawa?",
+        a: "Yes. High-quality media content helps Ottawa businesses increase engagement, grow followers, and maintain a strong and consistent brand presence across platforms like Instagram, Facebook, and LinkedIn."
+      },
+      {
+        q: "Why should I hire a professional media agency in Ottawa?",
+        a: "Hiring a professional Ottawa media agency ensures access to expert storytelling, advanced equipment, and high-quality production. This results in polished content that enhances your brand credibility and drives results."
+      }
+    ]
   },
   {
     id: 2,
@@ -106,7 +143,41 @@ We take a holistic and results-driven approach to digital marketing, ensuring ev
       "Data-driven decision making"
     ],
     whyChooseUs: "We prioritize consistency, creativity, and clarity. Every campaign is designed to reflect your brand identity while maintaining a strong and unified message across all digital platforms.",
-    whatsappMessage: "Hi! I'm interested in your Digital Marketing services."
+    whatsappMessage: "Hi! I'm interested in your Digital Marketing services.",
+   faqs: [
+  {
+    q: "What digital marketing services does LOMedia Studio offer in Ottawa?",
+    a: "LOMedia Studio provides a full suite of digital marketing services including Search Engine Optimization (SEO), Google Ads (PPC), social media marketing, content marketing, email campaigns, and lead generation strategies. These services are tailored to help Ottawa-based businesses increase online visibility, attract qualified traffic, and convert leads into customers."
+  },
+  {
+    q: "Why is digital marketing important for businesses in Ottawa?",
+    a: "Digital marketing helps Ottawa businesses compete locally and nationally by reaching customers where they spend most of their time, which is online. Whether you're targeting local searches, improving brand awareness, or driving sales, digital marketing ensures your business stays visible in a competitive market."
+  },
+  {
+    q: "How does SEO help my Ottawa business grow?",
+    a: "Search Engine Optimization (SEO) improves your website's ranking on Google, making it easier for potential customers in Ottawa to find your business when searching for related services. With proper keyword targeting, local SEO, and website optimization, SEO drives consistent and organic traffic to your site."
+  },
+  {
+    q: "What is local SEO and why does it matter in Ottawa?",
+    a: "Local SEO focuses on optimizing your business for location-based searches such as 'digital marketing agency in Ottawa.' It helps your business appear in Google Maps and local search results, making it easier for nearby customers to discover and contact you."
+  },
+  {
+    q: "How long does it take to see results from digital marketing?",
+    a: "Results vary depending on the strategy used. SEO typically takes 3–6 months to show significant improvement, while paid advertising like Google Ads can generate results almost immediately. A consistent, data-driven approach ensures long-term success."
+  },
+  {
+    q: "What makes LOMedia Studio different from other Ottawa agencies?",
+    a: "LOMedia Studio focuses on customized strategies, transparent reporting, and measurable results. Instead of using generic campaigns, they tailor each strategy to suit the unique goals and budget of Ottawa businesses, ensuring better ROI and sustainable growth."
+  },
+  {
+    q: "Is digital marketing suitable for small businesses in Ottawa?",
+    a: "Yes. Digital marketing is highly scalable, making it ideal for small businesses. Whether you're just starting or expanding, strategies like local SEO, social media marketing, and targeted ads help you reach the right audience without overspending."
+  },
+  {
+    q: "How do I get started with digital marketing in Ottawa?",
+    a: "Getting started is simple. Begin with a consultation to assess your business goals, target audience, and current online presence. From there, a tailored strategy is developed to help you grow your brand, generate leads, and increase revenue in the Ottawa market."
+  }
+]
   },
   {
     id: 3,
@@ -138,7 +209,41 @@ We begin by understanding your brand, your audience, and your goals. From there,
       "Stronger customer relationships"
     ],
     whyChooseUs: "We prioritize personalization and relevance, ensuring your emails feel tailored rather than generic. Every campaign is tracked and optimized for better performance.",
-    whatsappMessage: "Hi! I'm interested in your Email Marketing services."
+    whatsappMessage: "Hi! I'm interested in your Email Marketing services.",
+faqs: [
+  {
+    q: "What is email marketing and why is it important for my business?",
+    a: "Email marketing is a digital marketing strategy that uses targeted emails to promote your products or services, nurture leads, and build customer relationships. It remains one of the highest ROI channels because it allows businesses to communicate directly with their audience in a personalized and measurable way."
+  },
+  {
+    q: "How can email marketing increase conversions and sales?",
+    a: "Email marketing increases conversions by delivering the right message to the right audience at the right time. Through audience segmentation, personalized content, and automated workflows, businesses can guide potential customers through the sales funnel and turn leads into paying customers."
+  },
+  {
+    q: "What types of email campaigns do you offer?",
+    a: "We offer a range of email marketing campaigns including newsletters, promotional emails, automated drip campaigns, welcome sequences, abandoned cart emails, and re-engagement campaigns. Each campaign is tailored to align with your business goals and customer journey."
+  },
+  {
+    q: "How does email marketing automation work?",
+    a: "Email marketing automation uses data and triggers such as user behavior or sign-ups to send emails automatically. This ensures timely communication, improves efficiency, and helps maintain consistent engagement without manual effort."
+  },
+  {
+    q: "What is audience segmentation in email marketing?",
+    a: "Audience segmentation involves dividing your email list into smaller groups based on demographics, behavior, or preferences. This allows for more targeted messaging, resulting in higher open rates, better engagement, and improved conversion rates."
+  },
+  {
+    q: "How do you measure the success of email marketing campaigns?",
+    a: "We track key performance indicators such as open rates, click-through rates (CTR), conversion rates, bounce rates, and overall ROI. These insights help us continuously optimize campaigns for better performance and results."
+  },
+  {
+    q: "How often should I send marketing emails?",
+    a: "The ideal frequency depends on your business and audience. We typically recommend a balanced approach that is consistent enough to stay top of mind but not so frequent that it leads to unsubscribes. A data-driven strategy helps determine the optimal schedule for your brand."
+  },
+  {
+    q: "Can email marketing be personalized for my audience?",
+    a: "Yes, personalization is a core part of effective email marketing. We tailor content based on user behavior, preferences, and past interactions to create relevant and engaging messages that resonate with each segment of your audience."
+  }
+]
   },
   {
     id: 4,
@@ -168,7 +273,41 @@ Our commercial photography services are tailored to support your digital presenc
       "Consistent visual identity"
     ],
     whyChooseUs: "We combine creativity, technical expertise, and strategic branding to produce visuals that elevate your brand, engage your audience, and drive business growth.",
-    whatsappMessage: "Hi! I'm interested in your Photography services."
+    whatsappMessage: "Hi! I'm interested in your Photography services.",
+    faqs: [
+      {
+        q: "What exactly is Brand Photography?",
+        a: "Think of it as the face of your business. Instead of using generic stock photos that everyone else has, we take custom shots of you, your team, and your workspace. Whether you are a professional based downtown or a creator in the east end, it helps your audience see the real people behind the brand."
+      },
+      {
+        q: "Where do we shoot?",
+        a: "It is totally up to you and the look you want! If you love the historic, cobblestone feel of the ByWard Market, we can meet there. If you prefer a clean, private, indoorsy vibe, our studio is perfect. We can also head to Strathcona Park for a riverfront lifestyle look or Lansdowne Park for something modern and urban. We will help you pick the place that fits your brand's personality."
+      },
+      {
+        q: "How much does a session cost?",
+        a: "Because every brand, event, and product shoot is unique, we find that a quick chat is the best way to give you an accurate quote. Whether you need a simple headshot or full-day coverage for a conference, we want to make sure the package fits your goals. Once we hear what you have in mind, we can give you a clear idea of the investment."
+      },
+      {
+        q: "I am a bit camera shy. Will you help me out?",
+        a: "Don't worry, most people feel that way! We don't just stand there and click. We will talk you through the whole thing. We will help with posing and keep things relaxed so you achieve that natural and professional look."
+      },
+      {
+        q: "What happens if it rains on our shoot day?",
+        a: "Ottawa weather loves to keep us on our toes! If we are planning to shoot outdoors and it pours, we can either move the session into our studio for that controlled, indoor look or find a new date that works for you. We are flexible."
+      },
+      {
+        q: "How long does it take to get my photos back?",
+        a: "We know you are excited to post them! We will send you a few sneak peeks within 48 hours so you have something for social media right away. Your full, edited gallery will be ready in about 7 to 10 business days."
+      },
+      {
+        q: "Do you do product shots for e-commerce?",
+        a: "Absolutely. If you have products to sell, you can drop them off at our studio. We will make sure they look crisp, clean, and ready for your website or Instagram shop."
+      },
+      {
+        q: "What should I wear?",
+        a: "Wear something that makes you feel confident and fits your brand's vibe. Solid colors usually work best. If we are shooting outside in the fall or winter at a place like the Dominion Arboretum, remember to bring some stylish layers because those Ottawa breezes can be chilly!"
+      }
+    ]
   },
   {
     id: 5,
@@ -199,7 +338,49 @@ From brand positioning to campaign messaging and documentary-style storytelling,
       "Stronger brand identity"
     ],
     whyChooseUs: "We don't just tell stories; we create experiences that build trust, strengthen brand loyalty, and position your brand for long-term growth.",
-    whatsappMessage: "Hi! I'm interested in your Storytelling services."
+    whatsappMessage: "Hi! I'm interested in your Storytelling services.",
+    faqs: [
+      {
+        q: "What services does LO Media Studio provide?",
+        a: "LO Media Studio offers professional creative services including media content creation, digital marketing, email marketing, video production, photography, storytelling, visual brand development, and creative direction. Our solutions are designed to help brands grow, engage audiences, and increase conversions."
+      },
+      {
+        q: "What is a full-service creative agency?",
+        a: "A full-service creative agency like LO Media Studio handles everything from strategy and content creation to marketing and execution. This means you get a consistent brand message, streamlined communication, and better results across all platforms."
+      },
+      {
+        q: "How can storytelling improve my brand?",
+        a: "Brand storytelling helps you connect emotionally with your audience, making your message more memorable and impactful. It improves engagement, builds trust, and increases customer loyalty, which ultimately drives business growth."
+      },
+      {
+        q: "Do you offer digital marketing services for small businesses?",
+        a: "Yes, we provide digital marketing services tailored for startups, small businesses, and growing brands. Our strategies are data-driven and designed to increase visibility, attract the right audience, and deliver measurable results."
+      },
+      {
+        q: "What types of video production services do you offer?",
+        a: "We offer professional video production services including brand videos, promotional videos, social media content, documentaries, and campaign videos that captivate audiences and drive engagement."
+      },
+      {
+        q: "How does LO Media Studio create effective content?",
+        a: "We start with a clear strategy, understand your target audience, and create high-quality, engaging content aligned with your brand goals. Every piece of content is designed to perform and deliver measurable impact."
+      },
+      {
+        q: "Can you help develop my brand identity?",
+        a: "Yes, our visual brand development services help you create a strong and consistent brand identity, including design direction, messaging, and positioning to stand out in a competitive market."
+      },
+      {
+        q: "What industries do you work with?",
+        a: "We work with a wide range of clients including businesses, personal brands, organizations, and ministries across different industries looking to elevate their brand presence."
+      },
+      {
+        q: "How long does it take to complete a project?",
+        a: "Project timelines vary depending on scope and complexity. However, we prioritize on-time delivery and maintain clear communication throughout the process to ensure deadlines are met."
+      },
+      {
+        q: "How do I get started with LO Media Studio?",
+        a: "Getting started is easy. Simply contact us through our website, WhatsApp, or email to discuss your project. Our team will guide you through the next steps and create a strategy tailored to your goals."
+      }
+    ]
   },
   {
     id: 6,
@@ -237,8 +418,42 @@ We understand that video is one of the most powerful tools in digital marketing 
       "Shareable, viral-ready content"
     ],
     whyChooseUs: "We don't just create content—we create impact. Strategy-first approach, high-quality execution, and results-driven production.",
-    whatsappMessage: "Hi! I'm interested in your Video Production services."
+    whatsappMessage: "Hi! I'm interested in your Video Production services.",
+faqs: [
+  {
+    q: "What video production services does LO Media Studio offer?",
+    a: "LO Media Studio provides full-service video production, covering everything from concept development and scripting to filming, editing, and post-production. We create brand videos, commercials, social media content, documentaries, and corporate storytelling videos designed to communicate your message clearly and creatively."
   },
+  {
+    q: "How much does video production cost?",
+    a: "Video production costs vary depending on the scope, duration, location, and complexity of the project. At LO Media Studio, we offer flexible packages tailored to your goals and budget. Contact us for a custom quote."
+  },
+  {
+    q: "How long does it take to produce a video?",
+    a: "The timeline for video production typically ranges from a few days to several weeks. Simple social media videos may take 3–7 days, while larger projects like commercials or brand documentaries can take several weeks. We always provide a clear production timeline before starting."
+  },
+  {
+    q: "Do you help with video concepts and storytelling?",
+    a: "Yes. At LO Media Studio, storytelling is at the core of what we do. We work closely with you to develop creative concepts, scripts, and visual direction that align with your brand identity and connect emotionally with your audience."
+  },
+  {
+    q: "What types of businesses do you work with?",
+    a: "We work with startups, small businesses, corporate brands, churches, creatives, and organizations across different industries. Whether you need promotional content, event coverage, or branded storytelling, our team adapts to your specific needs."
+  },
+  {
+    q: "Can you create videos for social media platforms?",
+    a: "Absolutely. We specialize in creating optimized video content for platforms like Instagram, YouTube, TikTok, and Facebook. Our videos are designed to boost engagement, improve visibility, and align with current digital trends."
+  },
+  {
+    q: "Where is LO Media Studio located, and do you work internationally?",
+    a: "Our studio is located at 1551 Lycee Place, Ottawa, ON K1G4B5, Canada, but we work with clients globally. We offer both on-site production and remote collaboration depending on your project requirements."
+  },
+  {
+    q: "Why choose LO Media Studio for video production?",
+    a: "LO Media Studio stands out because we combine video production with design, photography, and digital storytelling. This integrated approach ensures your content is visually consistent, strategically aligned, and impactful across all platforms."
+  }
+]  
+},
   {
     id: 7,
     title: "Visual Brand Development",
@@ -267,7 +482,41 @@ Our branding and marketing approach goes beyond design; we build visual identiti
       "Competitive advantage"
     ],
     whyChooseUs: "We focus on delivering high-impact visual branding solutions that strengthen your brand presence, increase audience engagement, and drive business growth.",
-    whatsappMessage: "Hi! I'm interested in your Visual Brand Development services."
+    whatsappMessage: "Hi! I'm interested in your Visual Brand Development services.",
+    faqs: [
+      {
+        q: "What is Visual Brand Development and why is it important?",
+        a: "Visual Brand Development involves creating a consistent and compelling visual identity for your brand, including your logo, colors, typography, and overall design style. At LO Media Studio, we ensure your visuals communicate your brand's personality and values clearly, helping you stand out in a competitive market and build strong recognition across platforms."
+      },
+      {
+        q: "What does your Visual Brand Development service include?",
+        a: "Our service covers everything you need to establish a strong visual presence, including logo design, brand color palettes, typography selection, brand guidelines, and visual direction for digital and print content. As a full-service content creation studio, we ensure your brand identity aligns seamlessly with your social media video content and overall marketing strategy."
+      },
+      {
+        q: "How does visual branding impact my business growth?",
+        a: "A strong visual brand builds trust, attracts the right audience, and improves brand recall. It also enhances the effectiveness of your marketing efforts, especially in video marketing and promotional video services, where visual consistency plays a key role in audience engagement and conversions."
+      },
+      {
+        q: "Can you redesign or improve my existing brand visuals?",
+        a: "Yes, we offer brand refresh and rebranding services. Whether your brand needs a modern update or a complete transformation, our team ensures your new visual identity aligns with current trends and your business goals. As a professional video production company, we also ensure your updated visuals integrate smoothly into your corporate video production and digital content."
+      },
+      {
+        q: "Will my visual brand be consistent across all platforms?",
+        a: "Absolutely. Consistency is key to effective branding. We develop detailed brand guidelines that ensure your visuals remain uniform across your website, social media, marketing materials, and video production services in Nigeria."
+      },
+      {
+        q: "How do you ensure my brand stands out from competitors?",
+        a: "We take a strategic approach—researching your industry, target audience, and competitors to create a unique visual identity that reflects your brand's personality. As a video marketing agency, we also ensure your visuals are optimized for digital storytelling and social media video content, giving you a competitive edge."
+      },
+      {
+        q: "Do you align visual branding with video and content production?",
+        a: "Yes, that's one of our strengths. At LO Media Studio, we integrate visual branding into all aspects of content creation—from design to promotional video services—ensuring a cohesive and professional brand experience."
+      },
+      {
+        q: "How long does the Visual Brand Development process take?",
+        a: "The timeline depends on the scope of your project, but typically ranges from a few days to a few weeks. We prioritize quality, creativity, and strategy to ensure your brand visuals are impactful and aligned with your goals. As a trusted provider of video production services in Nigeria, we also ensure your visual identity is ready to support future corporate video production and marketing campaigns."
+      }
+    ]
   },
   {
     id: 8,
@@ -300,9 +549,85 @@ By combining brand storytelling, creative direction, and market insights, we ens
       "Consistent brand messaging"
     ],
     whyChooseUs: "We provide strategic creative direction that ensures your brand stands out and resonates with your target audience across all touchpoints.",
-    whatsappMessage: "Hi! I'm interested in your Creative Direction services."
+    whatsappMessage: "Hi! I'm interested in your Creative Direction services.",
+faqs: [
+  {
+    q: "Why is creative direction more important for my brand than design?",
+    a: "Things look good because of their design. They function because of creative direction. It ensures that your brand not only draws attention in Ottawa but also fosters trust and motivates action by coordinating your images, messaging, and content with a defined plan."
+  },
+  {
+    q: "How do you make sure your innovative concepts genuinely produce outcomes?",
+    a: "We don't make anything alone. Every idea is supported by strategy, which includes market positioning, audience analysis, and specific corporate objectives. This indicates that your efforts are purposefully designed to succeed in a cutthroat market like Ottawa in addition to being aesthetically pleasing."
+  },
+  {
+    q: "How do you collaborate with brands located in Ottawa?",
+    a: "To understand your brand, audience, and local context, we start with a discovery session. After that, we create a creative direction, present ideas, work together to enhance them, and monitor execution to make sure everything stays on track from beginning to end."
+  },
+  {
+    q: "If I already have a brand but it seems inconsistent, can you take over?",
+    a: "Yes, and you might be surprised to learn how frequent this is. We conduct an assessment of your existing brand, find any holes, and realign your language and images to make everything feel strong, unified, and purposeful across all touchpoints."
+  },
+  {
+    q: "Do you modify creative direction for the local audience in Ottawa?",
+    a: "Of course. We execute with local relevance while thinking internationally. To make sure your brand feels genuine and relevant while still standing out, we take into account Ottawa's varied audience, business environment, and cultural tone."
+  },
+  {
+    q: "What results may I anticipate from your service for creative direction?",
+    a: "Brand standards, campaign concepts, content direction, mood boards, message frameworks, and production oversight are all necessary to provide clarity and consistency, depending on your demands."
+  },
+  {
+    q: "Will I participate in the process of creation?",
+    a: "Indeed. We consider our customers to be partners. While we take care of the hard lifting of strategy and execution, you will be involved at crucial phases, particularly during concept creation and approvals."
+  },
+  {
+    q: "How can I determine whether LO Media House is a good fit for my brand?",
+    a: "We're a great fit if you're searching for more than just content—if you want a clear direction, a better identity, and innovative work that genuinely advances your company. Our strategy is designed for companies that are prepared to expand purposefully, particularly in cities such as Ottawa."
+  }
+]
   }
 ];
+
+// FAQ Accordion Component for Modal
+function FAQAccordion({ faqs }: { faqs: Array<{ q: string; a: string }> }) {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  if (!faqs || faqs.length === 0) return null;
+
+  const toggleQuestion = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <div className="mt-6">
+      <div className="flex items-center gap-2 mb-4">
+        <HelpCircle className="w-5 h-5 text-red-500" />
+        <h3 className="text-lg font-semibold text-gray-900">Frequently Asked Questions</h3>
+      </div>
+      <div className="space-y-3">
+        {faqs.map((faq, idx) => (
+          <div key={idx} className="border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              onClick={() => toggleQuestion(idx)}
+              className="w-full px-4 py-3 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+            >
+              <span className="text-sm font-medium text-gray-900 pr-4">{faq.q}</span>
+              {openIndex === idx ? (
+                <ChevronUp className="w-4 h-4 text-gray-400 flex-shrink-0" />
+              ) : (
+                <ChevronDown className="w-4 h-4 text-gray-400 flex-shrink-0" />
+              )}
+            </button>
+            {openIndex === idx && (
+              <div className="px-4 pb-3">
+                <p className="text-sm text-gray-600 leading-relaxed">{faq.a}</p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 // Modal Component
 function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0] | null; isOpen: boolean; onClose: () => void }) {
@@ -322,6 +647,20 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
   const whatsappNumber = "2348012345678";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(service.whatsappMessage)}`;
 
+  // Color mapping for dynamic styling
+  const colorMap: Record<string, string> = {
+    blue: "blue",
+    green: "green",
+    purple: "purple",
+    orange: "orange",
+    red: "red",
+    pink: "pink",
+    indigo: "indigo",
+    yellow: "yellow"
+  };
+  
+  const color = colorMap[service.color] || "red";
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
@@ -333,13 +672,13 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
       {/* Modal Content */}
       <div className="relative bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
         {/* Header with Image */}
-        <div className="relative h-48 md:h-64 overflow-hidden rounded-t-2xl">
+        <div className="relative h-48 md:h-56 overflow-hidden rounded-t-2xl">
           <img
             src={service.image}
             alt={service.title}
-            className="object-cover"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
           <button
             onClick={onClose}
             className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/30 transition-colors"
@@ -347,8 +686,8 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
             <X className="w-4 h-4 text-white" />
           </button>
           <div className="absolute bottom-4 left-6">
-            <div className={`inline-flex p-2 rounded-lg bg-${service.color}-500/20 backdrop-blur-sm mb-2`}>
-              <service.icon className={`w-5 h-5 text-${service.color}-400`} />
+            <div className={`inline-flex p-2 rounded-lg bg-${color}-500/20 backdrop-blur-sm mb-2`}>
+              <service.icon className={`w-5 h-5 text-${color}-400`} />
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-white">{service.title}</h2>
           </div>
@@ -426,8 +765,13 @@ function ServiceModal({ service, isOpen, onClose }: { service: typeof services[0
             <p className="text-gray-600 text-sm">{service.whyChooseUs}</p>
           </div>
 
+          {/* FAQs Section - Only show if service has FAQs */}
+          {service.faqs && service.faqs.length > 0 && (
+            <FAQAccordion faqs={service.faqs} />
+          )}
+
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-gray-200">
+          <div className="flex flex-col sm:flex-row gap-3 pt-6 mt-4 border-t border-gray-200">
             <a
               href={whatsappLink}
               target="_blank"
@@ -484,7 +828,7 @@ function ServiceCard({ service, index, onLearnMore }: { service: typeof services
         <img
           src={service.image}
           alt={service.title}
-          className="object-cover group-hover:scale-110 transition-transform duration-700"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
         />
         <div className={`absolute inset-0 bg-gradient-to-br ${colorMap[service.color]} opacity-60`} />
         <div className="absolute bottom-4 left-4">
