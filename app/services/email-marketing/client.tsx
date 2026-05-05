@@ -401,7 +401,7 @@ export default function EmailMarketingClient() {
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
             <HelpCircle className="w-12 h-12 text-pink-500 mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-gray-900">Common Questions</h2>
+            <h2 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
           </div>
 
           <div className="space-y-4">

@@ -368,7 +368,7 @@ export default function PhotographyClient() {
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
             <HelpCircle className="w-12 h-12 text-amber-400 mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-white">Common Questions</h2>
+            <h2 className="text-3xl font-bold text-white">Frequently Asked Questions</h2>
             <p className="text-gray-400 mt-2">Everything you need to know about our photography services</p>
           </div>
 
