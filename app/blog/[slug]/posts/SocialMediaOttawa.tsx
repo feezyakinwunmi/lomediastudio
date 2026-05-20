@@ -13,8 +13,8 @@ export default function SocialMediaOttawa() {
 
       {/* What Works Section */}
       <div>
-        <div className="flex items-start gap-5 mb-10">
-          <div className="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center flex-shrink-0 mt-1">
+        <div className="md:flex items-start gap-5 mb-10">
+          <div className="w-12 h-12 bg-emerald-100 rounded-2xl md:flex items-center justify-center md:flex-shrink-0 mt-1">
             <TrendingUp className="w-6 h-6 text-emerald-600" />
           </div>
           <h2 className="text-3xl font-bold text-gray-900">What Works in Social Media Marketing Today</h2>
@@ -23,7 +23,7 @@ export default function SocialMediaOttawa() {
         <div className="grid md:grid-cols-2 gap-6">
           {/* Card 1 */}
           <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-            <div className="flex items-center gap-1 mb-6">
+            <div className="md:flex items-center gap-1 mb-6">
               <MapPin className="w-7 h-7 text-emerald-600" />
               <h3 className="text-xl font-semibold">Localized Social SEO</h3>
             </div>
@@ -32,7 +32,7 @@ export default function SocialMediaOttawa() {
 
           {/* Card 2 */}
           <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-            <div className="flex items-center gap-1 mb-6">
+            <div className="md:flex items-center gap-1 mb-6">
               <TrendingUp className="w-7 h-7 text-emerald-600" />
               <h3 className="text-xl font-semibold">Authentic Video Content</h3>
             </div>
@@ -41,7 +41,7 @@ export default function SocialMediaOttawa() {
 
           {/* Card 3 */}
           <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-            <div className="flex items-center gap-1 mb-6">
+            <div className="md:flex items-center gap-1 mb-6">
               <Users className="w-7 h-7 text-emerald-600" />
               <h3 className="text-xl font-semibold">Founder & Team Visibility</h3>
             </div>
@@ -50,7 +50,7 @@ export default function SocialMediaOttawa() {
 
           {/* Card 4 */}
           <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-            <div className="flex items-center gap-1 mb-6">
+            <div className="md:flex items-center gap-1 mb-6">
               <Heart className="w-7 h-7 text-emerald-600" />
               <h3 className="text-xl font-semibold">Ottawa-Focused Content</h3>
             </div>
@@ -70,8 +70,8 @@ export default function SocialMediaOttawa() {
             "Strengthen brand authority",
             "Drive long-term business growth"
           ].map((item, i) => (
-            <div key={i} className="flex items-start gap-1 bg-gray-50 p-6 rounded-2xl">
-              <CheckCircle className="w-6 h-6 text-emerald-600 mt-0.5 flex-shrink-0" />
+            <div key={i} className="md:flex items-start gap-1 bg-gray-50 p-6 rounded-2xl">
+              <CheckCircle className="w-6 h-6 text-emerald-600 mt-0.5 md:flex-shrink-0" />
               <span className="text-gray-700 font-medium">{item}</span>
             </div>
           ))}

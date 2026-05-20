@@ -57,7 +57,7 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <div className="bg-gray-50 min-h-screen pt-20">
       <div className="max-w-[90%] mx-auto px-6 py-8">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-gray-500 hover:text-red-600 mb-8">
+        <Link href="/blog" className="inline-md:flex items-center gap-2 text-gray-500 hover:text-red-600 mb-8">
           <ArrowLeft className="w-5 h-5" /> Back to All Articles
         </Link>
 
@@ -78,21 +78,21 @@ export default async function BlogPostPage({ params }: Props) {
                 <div className="inline-block px-5 py-2 bg-red-600 rounded-2xl text-sm font-medium mb-4">
                   {post.category}
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">
+                <h1 className="text-2xl md:text-5xl font-bold leading-tight tracking-tight">
                   {post.title}
                 </h1>
               </div>
             </div>
 
             {/* Meta Info */}
-            <div className="flex items-center gap-8 text-sm text-gray-500 mb-12 border-b pb-10">
-              <div className="flex items-center gap-2">
+            <div className="md:flex items-center gap-8 text-sm text-gray-500 mb-12 border-b pb-10">
+              <div className="md:flex items-center gap-2">
                 <User className="w-4 h-4" /> {post.author}
               </div>
-              <div className="flex items-center gap-2">
+              <div className="md:flex items-center gap-2">
                 <Calendar className="w-4 h-4" /> {post.date}
               </div>
-              <div className="flex items-center gap-2">
+              <div className="md:flex items-center gap-2">
                 <Clock className="w-4 h-4" /> {post.readTime}
               </div>
             </div>
@@ -108,8 +108,8 @@ export default async function BlogPostPage({ params }: Props) {
               {/* Author */}
               <div className="bg-white rounded-2xl p-6 shadow-md">
                 <h3 className="font-bold mb-4">Written By</h3>
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center">
+                <div className="md:flex items-center gap-4">
+                  <div className="w-14 h-14 bg-red-100 rounded-full md:flex items-center justify-center">
                     <User className="w-7 h-7 text-red-600" />
                   </div>
                   <div>
@@ -121,7 +121,7 @@ export default async function BlogPostPage({ params }: Props) {
 
               {/* Recommended Posts - Now with fallback */}
               <div className="bg-white rounded-2xl p-6 shadow-md">
-                <div className="flex items-center gap-2 mb-6">
+                <div className="md:flex items-center gap-2 mb-6">
                   <TrendingUp className="text-red-500" />
                   <h3 className="font-bold">Recommended Reads</h3>
                 </div>
@@ -131,7 +131,7 @@ export default async function BlogPostPage({ params }: Props) {
                     <Link 
                       key={item.id} 
                       href={`/blog/${item.slug}`} 
-                      className="group flex gap-4 mb-6 last:mb-0"
+                      className="group md:flex gap-4 mb-6 last:mb-0"
                     >
                       <img 
                         src={item.image} 
