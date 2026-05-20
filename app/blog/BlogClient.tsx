@@ -46,7 +46,7 @@ export default function BlogClient({ blogPosts }: { blogPosts: BlogPost[] }) {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/80" />
 
         <div className="relative z-10 max-w-[90%] mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-xs font-medium tracking-widest mb-4">
+          <div className="inline-flex text-white items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-xs font-medium tracking-widest mb-4">
             OUR BLOG
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
