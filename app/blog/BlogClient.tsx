@@ -70,7 +70,7 @@ export default function BlogClient({ blogPosts }: { blogPosts: BlogPost[] }) {
 
             {/* Featured Post - Hover Effect Only */}
             <div className="mb-12">
-              <Link href={`/blog/${featured.slug}`} target="blank" className="group block">
+              <Link href={`/blog/${featured.slug}`} target='_blank' className="group block">
                 <div className="relative h-[380px] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500">
                   
                   <img
