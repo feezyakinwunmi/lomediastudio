@@ -1,7 +1,6 @@
 // app/blog/[slug]/posts/HighConvertingEmails.tsx
 
 import { CheckCircle, Lightbulb } from 'lucide-react';
-import { Span } from 'next/dist/trace';
 
 const strategies = [
   {
@@ -63,7 +62,10 @@ export default function HighConvertingEmails() {
 
           <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
             <p>
-              <span className="font-bold">Understanding Email Sequences</span> An email sequence is an automated series of communications dispatched over a predetermined timeline. These messages are initiated by specific user behaviors, such as subscribing to a newsletter, downloading a digital asset, or completing a purchase. The primary objective is to guide prospects through a structured customer journey rather than relying on sporadic, manual broadcasts.
+              Writing high-converting email sequences requires balancing
+              persuasive marketing with audience retention. Most subscribers do
+              not object to receiving emails; rather, they object to receiving
+              low-quality correspondence.
             </p>
 
             <p>
@@ -86,7 +88,7 @@ export default function HighConvertingEmails() {
 
       {/* Understanding Email Sequences */}
       <section className="space-y-8">
-        <div className="flex items-start gap-5">
+        <div className="md:flex items-start gap-5">
           <div
             aria-hidden="true"
             className="w-14 h-14 bg-blue-100 rounded-2xl md:flex items-center justify-center flex-shrink-0"
@@ -100,11 +102,7 @@ export default function HighConvertingEmails() {
             </h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              An email sequence is an automated series of communications
-              dispatched over a predetermined timeline. These messages are
-              initiated by specific user behaviors, such as subscribing to a
-              newsletter, downloading a digital asset, or completing a
-              purchase.
+            An email sequence is an automated series of communications dispatched over a predetermined timeline. These messages are initiated by specific user behaviors, such as subscribing to a newsletter, downloading a digital asset, or completing a purchase. The primary objective is to guide prospects through a structured customer journey rather than relying on sporadic, manual broadcasts.
             </p>
           </div>
         </div>
