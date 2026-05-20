@@ -93,7 +93,7 @@ export default function BlogClient({ blogPosts }: { blogPosts: BlogPost[] }) {
                       {featured.title}
                     </h2>
                     
-                    <div className="flex items-center gap-4 text-sm text-gray-300">
+                    <div className="md:flex items-center gap-4 text-sm text-gray-300">
                       <div className="flex items-center gap-2">
                         <User className="w-4 h-4" /> {featured.author}
                       </div>
