@@ -14,7 +14,7 @@ export default function SocialMediaOttawa() {
       {/* What Works Section */}
       <div>
         <div className="md:flex items-start gap-5 mb-10">
-          <div className="w-12 h-12 bg-emerald-100 rounded-2xl md:flex items-center justify-center md:flex-shrink-0 mt-1">
+          <div className="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center flex-shrink-0 mt-1">
             <TrendingUp className="w-6 h-6 text-emerald-600" />
           </div>
           <h2 className="text-3xl font-bold text-gray-900">What Works in Social Media Marketing Today</h2>
@@ -70,8 +70,8 @@ export default function SocialMediaOttawa() {
             "Strengthen brand authority",
             "Drive long-term business growth"
           ].map((item, i) => (
-            <div key={i} className="md:flex items-start gap-1 bg-gray-50 p-6 rounded-2xl">
-              <CheckCircle className="w-6 h-6 text-emerald-600 mt-0.5 md:flex-shrink-0" />
+            <div key={i} className="flex items-start gap-1 bg-gray-50 p-6 rounded-2xl">
+              <CheckCircle className="w-6 h-6 text-emerald-600 mt-0.5 flex-shrink-0" />
               <span className="text-gray-700 font-medium">{item}</span>
             </div>
           ))}

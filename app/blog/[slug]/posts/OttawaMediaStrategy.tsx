@@ -8,7 +8,7 @@ export default function OttawaMediaStrategy() {
       {/* Section 1 */}
       <div>
         <div className="md:flex items-start gap-5 mb-8">
-          <div className="w-12 h-12 bg-red-100 rounded-2xl md:flex items-center justify-center md:flex-shrink-0 mt-1">
+          <div className="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center flex-shrink-0 mt-1">
             <AlertTriangle className="w-6 h-6 text-red-600" />
           </div>
           <div>
@@ -32,8 +32,8 @@ export default function OttawaMediaStrategy() {
             "Poor-quality videos or graphics",
             "No clear brand voice"
           ].map((item, i) => (
-            <li key={i} className="md:flex items-start gap-3 bg-gray-50 p-1 rounded-2xl">
-              <CheckCircle className="w-5 h-5 text-red-500 mt-0.5 md:flex-shrink-0" />
+            <li key={i} className="flex items-start gap-3 bg-gray-50 p-1 rounded-2xl">
+              <CheckCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
               <span>{item}</span>
             </li>
           ))}
@@ -48,8 +48,8 @@ export default function OttawaMediaStrategy() {
             "Better audience engagement",
             "Stronger brand recognition"
           ].map((item, i) => (
-            <li key={i} className="md:flex items-start gap-3 bg-emerald-50 p-1 rounded-2xl">
-              <TrendingUp className="w-5 h-5 text-emerald-600 mt-0.5 md:flex-shrink-0" />
+            <li key={i} className="flex items-start gap-3 bg-emerald-50 p-1 rounded-2xl">
+              <TrendingUp className="w-5 h-5 text-emerald-600 mt-0.5 flex-shrink-0" />
               <span>{item}</span>
             </li>
           ))}
@@ -59,7 +59,7 @@ export default function OttawaMediaStrategy() {
       {/* Section 2 */}
       <div>
         <div className="md:flex items-start gap-5 mb-8">
-          <div className="w-12 h-12 bg-amber-100 rounded-2xl md:flex items-center justify-center md:flex-shrink-0 mt-1">
+          <div className="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center flex-shrink-0 mt-1">
             <TrendingUp className="w-6 h-6 text-amber-600" />
           </div>
           <h2 className="text-3xl font-bold text-gray-900 leading-tight">
@@ -80,8 +80,8 @@ export default function OttawaMediaStrategy() {
             "Low customer retention",
             "No measurable ROI"
           ].map((item, i) => (
-            <li key={i} className="md:flex items-start gap-3 bg-gray-50 p-1 rounded-2xl">
-              <CheckCircle className="w-5 h-5 text-red-500 mt-0.5 md:flex-shrink-0" />
+            <li key={i} className="flex items-start gap-3 bg-gray-50 p-1 rounded-2xl">
+              <CheckCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
               <span>{item}</span>
             </li>
           ))}
@@ -91,7 +91,7 @@ export default function OttawaMediaStrategy() {
       {/* Section 3 */}
       <div>
         <div className="md:flex items-start gap-5 mb-8">
-          <div className="w-12 h-12 bg-purple-100 rounded-2xl md:flex items-center justify-center md:flex-shrink-0 mt-1">
+          <div className="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center flex-shrink-0 mt-1">
             <Users className="w-6 h-6 text-purple-600" />
           </div>
           <h2 className="text-3xl font-bold text-gray-900 leading-tight">
@@ -114,8 +114,8 @@ export default function OttawaMediaStrategy() {
             "Stronger visual identity",
             "Community engagement"
           ].map((item, i) => (
-            <li key={i} className="md:flex items-start gap-3 bg-gray-50 p-1 rounded-2xl">
-              <CheckCircle className="w-5 h-5 text-red-500 mt-0.5 md:flex-shrink-0" />
+            <li key={i} className="flex items-start gap-3 bg-gray-50 p-1 rounded-2xl">
+              <CheckCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
               <span>{item}</span>
             </li>
           ))}
@@ -125,7 +125,7 @@ export default function OttawaMediaStrategy() {
       {/* Section 4 */}
       <div>
         <div className="md:flex items-start gap-5 mb-8">
-          <div className="w-12 h-12 bg-indigo-100 rounded-2xl md:flex items-center justify-center md:flex-shrink-0 mt-1">
+          <div className="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center flex-shrink-0 mt-1">
             <Award className="w-6 h-6 text-indigo-600" />
           </div>
           <h2 className="text-3xl font-bold text-gray-900 leading-tight">
@@ -147,8 +147,8 @@ export default function OttawaMediaStrategy() {
             "Professional photography and video",
             "Audience-focused communication"
           ].map((item, i) => (
-            <li key={i} className="md:flex items-start gap-3 bg-gray-50 p-1 rounded-2xl">
-              <CheckCircle className="w-5 h-5 text-red-500 mt-0.5 md:flex-shrink-0" />
+            <li key={i} className="flex items-start gap-3 bg-gray-50 p-1 rounded-2xl">
+              <CheckCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
               <span>{item}</span>
             </li>
           ))}
@@ -158,7 +158,7 @@ export default function OttawaMediaStrategy() {
       {/* Section 5 */}
       <div>
         <div className="md:flex items-start gap-5 mb-8">
-          <div className="w-12 h-12 bg-teal-100 rounded-2xl md:flex items-center justify-center md:flex-shrink-0 mt-1">
+          <div className="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center flex-shrink-0 mt-1">
             <TrendingUp className="w-6 h-6 text-teal-600" />
           </div>
           <h2 className="text-3xl font-bold text-gray-900 leading-tight">
@@ -178,8 +178,8 @@ export default function OttawaMediaStrategy() {
             "Your content looks outdated",
             "Your clientele has grown beyond what you can currently promote"
           ].map((item, i) => (
-            <li key={i} className="md:flex items-start gap-3 bg-gray-50 p-1 rounded-2xl">
-              <CheckCircle className="w-5 h-5 text-red-500 mt-0.5 md:flex-shrink-0" />
+            <li key={i} className="flex items-start gap-3 bg-gray-50 p-1 rounded-2xl">
+              <CheckCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
               <span>{item}</span>
             </li>
           ))}
@@ -197,8 +197,8 @@ export default function OttawaMediaStrategy() {
             "Creative direction",
             "SEO-focused content"
           ].map((item, i) => (
-            <li key={i} className="md:flex items-start gap-3 bg-gray-50 p-1 rounded-2xl">
-              <CheckCircle className="w-5 h-5 text-red-500 mt-0.5 md:flex-shrink-0" />
+            <li key={i} className="flex items-start gap-3 bg-gray-50 p-1 rounded-2xl">
+              <CheckCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
               <span>{item}</span>
             </li>
           ))}

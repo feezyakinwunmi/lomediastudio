@@ -1,6 +1,7 @@
 // app/blog/[slug]/posts/HighConvertingEmails.tsx
 
 import { CheckCircle, Lightbulb } from 'lucide-react';
+import { Span } from 'next/dist/trace';
 
 const strategies = [
   {
@@ -50,7 +51,7 @@ export default function HighConvertingEmails() {
     <article className="max-w-4xl mx-auto space-y-20">
       {/* Hero Section */}
       <header className="space-y-8">
-        <div className="inline-md:flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-red-600 text-sm font-medium border border-red-100">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-red-600 text-sm font-medium border border-red-100">
           Email Marketing
         </div>
 
@@ -62,10 +63,7 @@ export default function HighConvertingEmails() {
 
           <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
             <p>
-              Writing high-converting email sequences requires balancing
-              persuasive marketing with audience retention. Most subscribers do
-              not object to receiving emails; rather, they object to receiving
-              low-quality correspondence.
+              <span className="font-bold">Understanding Email Sequences</span> An email sequence is an automated series of communications dispatched over a predetermined timeline. These messages are initiated by specific user behaviors, such as subscribing to a newsletter, downloading a digital asset, or completing a purchase. The primary objective is to guide prospects through a structured customer journey rather than relying on sporadic, manual broadcasts.
             </p>
 
             <p>
@@ -88,10 +86,10 @@ export default function HighConvertingEmails() {
 
       {/* Understanding Email Sequences */}
       <section className="space-y-8">
-        <div className="md:flex items-start gap-5">
+        <div className="flex items-start gap-5">
           <div
             aria-hidden="true"
-            className="w-14 h-14 bg-blue-100 rounded-2xl md:flex items-center justify-center md:flex-shrink-0"
+            className="w-14 h-14 bg-blue-100 rounded-2xl md:flex items-center justify-center flex-shrink-0"
           >
             <Lightbulb className="w-7 h-7 text-blue-600" />
           </div>
@@ -154,7 +152,7 @@ export default function HighConvertingEmails() {
               key={i}
               className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-2xl bg-red-100 md:flex items-center justify-center mb-5">
+              <div className="w-12 h-12 rounded-2xl bg-red-100 flex items-center justify-center mb-5">
                 <CheckCircle className="w-6 h-6 text-red-600" />
               </div>
 
@@ -199,7 +197,7 @@ export default function HighConvertingEmails() {
             >
               <div
                 aria-hidden="true"
-                className="w-10 h-10 bg-red-100 rounded-2xl md:flex items-center justify-center md:flex-shrink-0 mt-1"
+                className="w-10 h-10 bg-red-100 rounded-2xl flex items-center justify-center flex-shrink-0 mt-1"
               >
                 <CheckCircle className="w-5 h-5 text-red-600" />
               </div>
@@ -223,7 +221,7 @@ export default function HighConvertingEmails() {
                       {strategy.examples.map((example, idx) => (
                         <li
                           key={idx}
-                          className="md:flex items-start gap-3 text-gray-600"
+                          className="flex items-start gap-3 text-gray-600"
                         >
                           <span className="w-2 h-2 rounded-full bg-red-500 mt-2"></span>
                           {example}
@@ -273,7 +271,7 @@ export default function HighConvertingEmails() {
             overwhelming or frustrating your audience.
           </p>
 
-          <button className="inline-md:flex items-center justify-center px-8 py-4 rounded-2xl bg-white text-gray-900 font-semibold hover:bg-gray-100 transition-all duration-300">
+          <button className="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-white text-gray-900 font-semibold hover:bg-gray-100 transition-all duration-300">
             Get Started
           </button>
         </div>
