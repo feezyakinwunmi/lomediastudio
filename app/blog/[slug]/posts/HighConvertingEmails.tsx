@@ -91,7 +91,7 @@ export default function HighConvertingEmails() {
         <div className="md:flex items-start gap-5">
           <div
             aria-hidden="true"
-            className="w-14 h-14 bg-blue-100 rounded-2xl md:flex items-center justify-center flex-shrink-0"
+            className="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center flex-shrink-0"
           >
             <Lightbulb className="w-7 h-7 text-blue-600" />
           </div>
