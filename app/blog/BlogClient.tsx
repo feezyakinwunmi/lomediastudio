@@ -80,7 +80,7 @@ export default function BlogClient({ blogPosts }: { blogPosts: BlogPost[] }) {
                   />
 
                   {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent md:opacity-0 group-hover:opacity-100 transition-all duration-500" />
 
                   {/* Category Tag */}
                   <div className="absolute top-6 left-6 px-4 py-2 bg-white/95 text-sm font-medium rounded-2xl z-10">
