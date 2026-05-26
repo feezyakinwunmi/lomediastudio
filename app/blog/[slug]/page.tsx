@@ -23,7 +23,7 @@ const PostComponents: Record<string, React.ComponentType> = {
   "how-ottawa-ceos-can-build-authority-using-strategic-video-content": OttawaCEOVideo,
   "5-ways-video-marketing-helps-ottawa-businesses-grow-faster": VideoMarketingOttawa,
   "instagram-reels-for-ottawa-brands": InstagramReelsOttawa,
-"
+
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
