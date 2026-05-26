@@ -56,11 +56,8 @@ export const allBlogPosts: BlogPost[] = [
     readTime: "9 min read",
     date: "May 10, 2026",
     author: "LOPublications"
-<<<<<<< HEAD
   },
-=======
-  }
->>>>>>> 979239634db85aa27029370aaae39e31efbf5752
+
   {
     id: 5,
     title: "5 Ways Video Marketing Helps Ottawa Businesses Grow Faster",
@@ -71,11 +68,8 @@ export const allBlogPosts: BlogPost[] = [
     readTime: "9 min read",
     date: "May 26, 2026",
     author: "LOPublications"
-<<<<<<< HEAD
   },
-=======
-  }
->>>>>>> 979239634db85aa27029370aaae39e31efbf5752
+
   {
     id: 6,
     title: "Instagram Reels for Ottawa Brands: Strategy That Converts",
