@@ -8,7 +8,8 @@ import OttawaMediaStrategy from './posts/OttawaMediaStrategy';
 import HighConvertingEmails from './posts/HighConvertingEmails';
 import SocialMediaOttawa from './posts/SocialMediaOttawa';
 import OttawaCEOVideo from './posts/OttawaCEOVideo';
-
+import VideoMarketingOttawa from './posts/VideoMarketingOttawa';
+import InstagramReelsOttawa from './posts/InstagramReelsOttawa'
 type Props = {
   params: Promise<{ slug: string }>;
 };
@@ -20,6 +21,9 @@ const PostComponents: Record<string, React.ComponentType> = {
   "how-to-write-high-converting-email-sequences-without-annoying-your-audience": HighConvertingEmails,
   "social-media-content-creation-for-ottawa-businesses": SocialMediaOttawa,
   "how-ottawa-ceos-can-build-authority-using-strategic-video-content": OttawaCEOVideo,
+  "5-ways-video-marketing-helps-ottawa-businesses-grow-faster": VideoMarketingOttawa,
+  "instagram-reels-for-ottawa-brands": InstagramReelsOttawa,
+"
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
