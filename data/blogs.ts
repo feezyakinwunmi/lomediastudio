@@ -74,7 +74,7 @@ export const allBlogPosts: BlogPost[] = [
     title: "Instagram Reels for Ottawa Brands: Strategy That Converts",
     slug: "instagram-reels-for-ottawa-brands",
     excerpt: "If your brand is still posting static graphics while competitors dominate feeds with compelling Reels, you are already behind.",
-    image: "https://images.unsplash.com/photo-1611162618071-6f8a0f9e5b0b?q=80&w=2074",
+    image: "https://www.shutterstock.com/video/search/searching-videos",
     category: "Social Media",
     readTime: "9 min read",
     date: "May 26, 2026",
