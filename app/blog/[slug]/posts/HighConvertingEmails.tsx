@@ -1,6 +1,7 @@
 // app/blog/[slug]/posts/HighConvertingEmails.tsx
 
 import { CheckCircle, Lightbulb } from 'lucide-react';
+import Link from 'next/link';
 
 const strategies = [
   {
@@ -82,6 +83,14 @@ export default function HighConvertingEmails() {
               personal brands, e-commerce enterprises, and cooperative
               organizations.
             </p>
+
+            <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-xl my-6">
+              <p className="text-gray-700 text-sm">
+                <Link href="/blog/social-media-content-creation-for-ottawa-businesses" className="text-red-600 hover:underline font-semibold">
+                  Social media content creation
+                </Link> and email marketing work together to build a cohesive brand presence across all channels.
+              </p>
+            </div>
           </div>
         </div>
       </header>
@@ -103,6 +112,12 @@ export default function HighConvertingEmails() {
 
             <p className="text-lg text-gray-600 leading-relaxed">
             An email sequence is an automated series of communications dispatched over a predetermined timeline. These messages are initiated by specific user behaviors, such as subscribing to a newsletter, downloading a digital asset, or completing a purchase. The primary objective is to guide prospects through a structured customer journey rather than relying on sporadic, manual broadcasts.
+            </p>
+
+            <p className="text-gray-600 text-sm mt-3">
+              <Link href="/blog/5-ways-video-marketing-helps-ottawa-businesses-grow-faster" className="text-red-600 hover:underline">
+                Video marketing strategies
+              </Link> can be integrated into email sequences to increase engagement and conversion rates.
             </p>
           </div>
         </div>
@@ -170,6 +185,11 @@ export default function HighConvertingEmails() {
             When correspondence feels repetitive, irrelevant, or transactional,
             audience engagement decreases rapidly.
           </p>
+          <p className="text-gray-600 text-sm mt-3">
+            <Link href="/blog/5-signs-your-ottawa-business-needs-professional-media-strategy" className="text-red-600 hover:underline">
+              A professional media strategy
+            </Link> can help you avoid these common pitfalls across all your marketing channels.
+          </p>
         </div>
       </section>
 
@@ -232,6 +252,14 @@ export default function HighConvertingEmails() {
             </div>
           ))}
         </div>
+
+        <div className="bg-amber-50 border border-amber-100 rounded-3xl p-8">
+          <p className="text-gray-700">
+            <Link href="/blog/instagram-reels-for-ottawa-brands" className="text-red-600 hover:underline font-semibold">
+              Instagram Reels for Ottawa brands
+            </Link> and email marketing both benefit from authentic, value-driven content that resonates with your audience.
+          </p>
+        </div>
       </section>
 
       {/* Conclusion */}
@@ -253,6 +281,12 @@ export default function HighConvertingEmails() {
               insights, audience trust increases, making subsequent conversions
               a natural outcome.
             </p>
+
+            <p className="text-gray-600 text-sm">
+              Learn more about <Link href="/blog/how-ottawa-ceos-can-build-authority-using-strategic-video-content" className="text-red-600 hover:underline">
+                how Ottawa CEOs build authority
+              </Link> through strategic content that complements email marketing efforts.
+            </p>
           </div>
         </div>
       </section>
@@ -269,9 +303,48 @@ export default function HighConvertingEmails() {
             overwhelming or frustrating your audience.
           </p>
 
-          <button className="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-white text-gray-900 font-semibold hover:bg-gray-100 transition-all duration-300">
+          <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-white text-gray-900 font-semibold hover:bg-gray-100 transition-all duration-300">
             Get Started
-          </button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Related Articles */}
+      <section className="border-t border-gray-200 pt-12">
+        <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
+          You Might Also Like
+        </h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          <Link href="/blog/5-signs-your-ottawa-business-needs-professional-media-strategy" className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+            <div className="h-48 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&h=400&fit=crop" 
+                alt="Media strategy for Ottawa businesses" 
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+              />
+            </div>
+            <div className="p-6">
+              <h4 className="font-bold text-gray-900 group-hover:text-red-600 transition">
+                5 Signs Your Ottawa Business Needs a Professional Media Strategy
+              </h4>
+              <p className="text-gray-500 text-sm mt-2">Is your Ottawa business struggling with visibility? Here are 5 clear signs it's time to invest in a professional media strategy.</p>
+            </div>
+          </Link>
+          <Link href="/blog/social-media-content-creation-for-ottawa-businesses" className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+            <div className="h-48 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" 
+                alt="Social media content creation" 
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+              />
+            </div>
+            <div className="p-6">
+              <h4 className="font-bold text-gray-900 group-hover:text-red-600 transition">
+                Social Media Content Creation for Ottawa Businesses
+              </h4>
+              <p className="text-gray-500 text-sm mt-2">How Ottawa businesses can create engaging, locally relevant social media content that drives real growth.</p>
+            </div>
+          </Link>
         </div>
       </section>
     </article>

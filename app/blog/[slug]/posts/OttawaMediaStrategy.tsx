@@ -1,5 +1,6 @@
 // app/blog/[slug]/posts/OttawaMediaStrategy.tsx
 import { CheckCircle, TrendingUp, Users, AlertTriangle, Award } from 'lucide-react';
+import Link from 'next/link';
 
 export default function OttawaMediaStrategy() {
   return (
@@ -21,10 +22,17 @@ export default function OttawaMediaStrategy() {
         <div className="prose prose-lg text-gray-600 leading-relaxed space-y-6">
           <p>Your social media presence is among the first things prospective buyers look at. Customers may believe your company lacks professionalism if your pages contain out-of-date graphics, sporadic posting, subpar images, or inconsistent messaging.</p>
           <p>Digital impression has a big impact on customers in places like Ottawa. Before a client even messages you or comes to your store, a professional online presence fosters trust.</p>
+          <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-xl my-6">
+            <p className="text-gray-700 text-sm">
+              <Link href="/blog/social-media-content-creation-for-ottawa-businesses" className="text-red-600 hover:underline font-semibold">
+                Social media content creation
+              </Link> is essential for maintaining a consistent and professional online presence.
+            </p>
+          </div>
         </div>
 
         <h3 className="text-2xl font-semibold text-gray-800 mt-10 mb-5">Common Warning Signs:</h3>
-        <ul className="  grid grid-2 gap-2">
+        <ul className="grid grid-2 gap-2">
           {[
             "Posting only once every few weeks",
             "Low engagement despite having followers",
@@ -54,6 +62,11 @@ export default function OttawaMediaStrategy() {
             </li>
           ))}
         </ul>
+        <p className="text-gray-600 text-sm mt-4">
+          <Link href="/blog/instagram-reels-for-ottawa-brands" className="text-red-600 hover:underline">
+            Instagram Reels for Ottawa brands
+          </Link> can help you create consistent, high-quality video content that builds brand recognition.
+        </p>
       </div>
 
       {/* Section 2 */}
@@ -63,15 +76,20 @@ export default function OttawaMediaStrategy() {
             <TrendingUp className="w-6 h-6 text-amber-600" />
           </div>
           <h2 className="text-3xl font-bold text-gray-900 leading-tight">
-            2. You’re Spending Money on Ads But Seeing Little Return
+            2. You're Spending Money on Ads But Seeing Little Return
           </h2>
         </div>
 
         <div className="prose prose-lg text-gray-600 leading-relaxed">
           <p>In Canada, many companies run advertisements or promote posts without a clear plan. They spend money on initiatives that don't generate qualified leads due to lack of audience insight, targeting, or creative direction.</p>
+          <p className="text-gray-600 text-sm mt-3">
+            <Link href="/blog/how-to-write-high-converting-email-sequences-without-annoying-your-audience" className="text-red-600 hover:underline">
+              High-converting email sequences
+            </Link> and targeted ad campaigns work best when they're part of a comprehensive media strategy.
+          </p>
         </div>
 
-        <h3 className="text-2xl font-semibold text-gray-800 mt-10 mb-5">Signs Your Advertising Strategy Isn’t Working:</h3>
+        <h3 className="text-2xl font-semibold text-gray-800 mt-10 mb-5">Signs Your Advertising Strategy Isn't Working:</h3>
         <ul className="grid gap-1">
           {[
             "High ad spending with low conversions",
@@ -101,6 +119,13 @@ export default function OttawaMediaStrategy() {
 
         <div className="prose prose-lg text-gray-600 leading-relaxed mb-8">
           <p>If your competitors continually dominate social media conversations, appear in search results, and receive more engagement, they are likely investing in professional branding and digital marketing.</p>
+          <div className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl my-6">
+            <p className="text-gray-700 text-sm">
+              <Link href="/blog/how-ottawa-ceos-can-build-authority-using-strategic-video-content" className="text-red-600 hover:underline font-semibold">
+                Ottawa CEOs are building authority
+              </Link> through strategic video content that helps them stand out from competitors.
+            </p>
+          </div>
         </div>
 
         <h3 className="text-2xl font-semibold text-gray-800 mb-5">What Competitors May Be Doing Better:</h3>
@@ -120,6 +145,11 @@ export default function OttawaMediaStrategy() {
             </li>
           ))}
         </ul>
+        <p className="text-gray-600 text-sm mt-4">
+          <Link href="/blog/5-ways-video-marketing-helps-ottawa-businesses-grow-faster" className="text-red-600 hover:underline">
+            Video marketing
+          </Link> is one of the key strategies competitors are using to gain an edge in Ottawa's market.
+        </p>
       </div>
 
       {/* Section 4 */}
@@ -135,6 +165,11 @@ export default function OttawaMediaStrategy() {
 
         <div className="prose prose-lg text-gray-600 leading-relaxed">
           <p>Many businesses struggle because customers cannot clearly understand what they offer, what makes them different, or why they should trust them. Without a clear identity, businesses become forgettable.</p>
+          <p className="text-gray-600 text-sm mt-3">
+            <Link href="/blog/social-media-content-creation-for-ottawa-businesses" className="text-red-600 hover:underline">
+              Social media content creation
+            </Link> plays a crucial role in establishing and communicating a clear brand identity.
+          </p>
         </div>
 
         <h3 className="text-2xl font-semibold text-gray-800 mt-10 mb-5">Strong Branding Includes:</h3>
@@ -162,12 +197,17 @@ export default function OttawaMediaStrategy() {
             <TrendingUp className="w-6 h-6 text-teal-600" />
           </div>
           <h2 className="text-3xl font-bold text-gray-900 leading-tight">
-            5. You’re Growing, But Your Online Presence Isn’t Keeping Up
+            5. You're Growing, But Your Online Presence Isn't Keeping Up
           </h2>
         </div>
 
         <div className="prose prose-lg text-gray-600 leading-relaxed mb-8">
           <p>Growth creates new expectations. As businesses expand, customers expect better visuals, faster communication, more polished marketing, and stronger digital experiences.</p>
+          <p className="text-gray-600 text-sm mt-3">
+            <Link href="/blog/5-ways-video-marketing-helps-ottawa-businesses-grow-faster" className="text-red-600 hover:underline">
+              Video marketing
+            </Link> and professional media strategies help growing businesses maintain a polished online presence.
+          </p>
         </div>
 
         <h3 className="text-2xl font-semibold text-gray-800 mb-5">This Often Happens When:</h3>
@@ -203,6 +243,11 @@ export default function OttawaMediaStrategy() {
             </li>
           ))}
         </ul>
+        <p className="text-gray-600 text-sm mt-4">
+          <Link href="/blog/5-signs-your-ottawa-business-needs-professional-media-strategy" className="text-red-600 hover:underline">
+            A professional media strategy
+          </Link> ensures your online presence evolves alongside your business growth.
+        </p>
       </div>
 
       {/* Final CTA */}
@@ -211,10 +256,49 @@ export default function OttawaMediaStrategy() {
         <p className="text-red-100 mb-8 max-w-2xl mx-auto">
           Stop guessing with your marketing. Let us build a professional media strategy that delivers real results.
         </p>
-        <a href="/contact" className="inline-block bg-white text-red-700 px-10 py-4 rounded-2xl font-semibold hover:bg-gray-100 transition">
+        <Link href="/contact" className="inline-block bg-white text-red-700 px-10 py-4 rounded-2xl font-semibold hover:bg-gray-100 transition">
           Get Your Free Strategy Session
-        </a>
+        </Link>
       </div>
+
+      {/* Related Articles */}
+      <section className="border-t border-gray-200 pt-12">
+        <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
+          You Might Also Like
+        </h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          <Link href="/blog/social-media-content-creation-for-ottawa-businesses" className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+            <div className="h-48 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" 
+                alt="Social media content creation" 
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+              />
+            </div>
+            <div className="p-6">
+              <h4 className="font-bold text-gray-900 group-hover:text-red-600 transition">
+                Social Media Content Creation for Ottawa Businesses
+              </h4>
+              <p className="text-gray-500 text-sm mt-2">How Ottawa businesses can create engaging, locally relevant social media content that drives real growth.</p>
+            </div>
+          </Link>
+          <Link href="/blog/how-ottawa-ceos-can-build-authority-using-strategic-video-content" className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+            <div className="h-48 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop" 
+                alt="Ottawa CEOs building authority with video" 
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+              />
+            </div>
+            <div className="p-6">
+              <h4 className="font-bold text-gray-900 group-hover:text-red-600 transition">
+                How Ottawa CEOs Can Build Authority Using Strategic Video Content
+              </h4>
+              <p className="text-gray-500 text-sm mt-2">Why top Ottawa CEOs are using strategic video content to establish authority and grow their influence.</p>
+            </div>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

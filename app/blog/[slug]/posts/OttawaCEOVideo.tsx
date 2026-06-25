@@ -1,5 +1,6 @@
 // app/blog/[slug]/posts/OttawaCEOVideo.tsx
 import { PlayCircle, Target, TrendingUp, Award, Users, CheckCircle } from 'lucide-react';
+import Link from 'next/link';
 
 export default function OttawaCEOVideo() {
   return (
@@ -7,7 +8,15 @@ export default function OttawaCEOVideo() {
       
       {/* Intro */}
       <div className="prose prose-lg text-gray-600 leading-relaxed">
-        <p>In today’s competitive business landscape, visibility and credibility are essential for leadership success. For CEOs in Ottawa, strategic video content has become one of the most powerful tools for building authority and trust.</p>
+        <p>In today's competitive business landscape, visibility and credibility are essential for leadership success. For CEOs in Ottawa, strategic video content has become one of the most powerful tools for building authority and trust.</p>
+        
+        <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-xl my-6">
+          <p className="text-gray-700 text-sm">
+            <Link href="/blog/5-ways-video-marketing-helps-ottawa-businesses-grow-faster" className="text-red-600 hover:underline font-semibold">
+              Video marketing
+            </Link> is one of the most effective ways for Ottawa CEOs to build authority and grow their influence.
+          </p>
+        </div>
       </div>
 
       {/* Why Video Matters */}
@@ -35,6 +44,11 @@ export default function OttawaCEOVideo() {
             </div>
           ))}
         </div>
+        <p className="text-gray-600 text-sm mt-4">
+          <Link href="/blog/5-signs-your-ottawa-business-needs-professional-media-strategy" className="text-red-600 hover:underline">
+            A professional media strategy
+          </Link> helps CEOs maximize the impact of their video content across all platforms.
+        </p>
       </div>
 
       {/* Thought Leadership */}
@@ -62,6 +76,11 @@ export default function OttawaCEOVideo() {
             </div>
           ))}
         </div>
+        <p className="text-gray-600 text-sm mt-4">
+          <Link href="/blog/social-media-content-creation-for-ottawa-businesses" className="text-red-600 hover:underline">
+            Social media content creation
+          </Link> for thought leadership requires a strategic approach to building authority.
+        </p>
       </div>
 
       {/* SEO Benefits */}
@@ -89,6 +108,11 @@ export default function OttawaCEOVideo() {
             </li>
           ))}
         </ul>
+        <p className="text-gray-600 text-sm mt-3">
+          <Link href="/blog/instagram-reels-for-ottawa-brands" className="text-red-600 hover:underline">
+            Instagram Reels for Ottawa brands
+          </Link> also benefit from strong SEO and engagement strategies.
+        </p>
       </div>
 
       {/* Platforms & Tips */}
@@ -103,6 +127,11 @@ export default function OttawaCEOVideo() {
               </li>
             ))}
           </ul>
+          <p className="text-gray-600 text-sm mt-4">
+            <Link href="/blog/5-ways-video-marketing-helps-ottawa-businesses-grow-faster" className="text-red-600 hover:underline">
+              Video marketing
+            </Link> strategies should be tailored to each platform for maximum impact.
+          </p>
         </div>
 
         <div>
@@ -121,6 +150,11 @@ export default function OttawaCEOVideo() {
               </li>
             ))}
           </ul>
+          <p className="text-gray-600 text-sm mt-4">
+            <Link href="/blog/how-to-write-high-converting-email-sequences-without-annoying-your-audience" className="text-red-600 hover:underline">
+              High-converting email sequences
+            </Link> and video content both benefit from consistency and a clear value proposition.
+          </p>
         </div>
       </div>
 
@@ -129,12 +163,51 @@ export default function OttawaCEOVideo() {
         <Award className="w-16 h-16 mx-auto mb-6 opacity-90" />
         <h3 className="text-3xl font-bold mb-4">Ready to Build Your Executive Authority?</h3>
         <p className="text-purple-100 max-w-md mx-auto mb-8">
-          Let’s create strategic video content that positions you as a thought leader in Ottawa’s business community.
+          Let's create strategic video content that positions you as a thought leader in Ottawa's business community.
         </p>
-        <a href="/contact" className="inline-block bg-white text-purple-700 px-10 py-4 rounded-2xl font-semibold hover:bg-gray-100 transition">
+        <Link href="/contact" className="inline-block bg-white text-purple-700 px-10 py-4 rounded-2xl font-semibold hover:bg-gray-100 transition">
           Start Your Video Strategy
-        </a>
+        </Link>
       </div>
+
+      {/* Related Articles */}
+      <section className="border-t border-gray-200 pt-12">
+        <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
+          You Might Also Like
+        </h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          <Link href="/blog/5-ways-video-marketing-helps-ottawa-businesses-grow-faster" className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+            <div className="h-48 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&h=400&fit=crop" 
+                alt="Video marketing for Ottawa businesses" 
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+              />
+            </div>
+            <div className="p-6">
+              <h4 className="font-bold text-gray-900 group-hover:text-red-600 transition">
+                5 Ways Video Marketing Helps Ottawa Businesses Grow Faster
+              </h4>
+              <p className="text-gray-500 text-sm mt-2">Video marketing has become such a valuable tool for businesses looking to grow.</p>
+            </div>
+          </Link>
+          <Link href="/blog/instagram-reels-for-ottawa-brands" className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+            <div className="h-48 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop" 
+                alt="Instagram Reels for Ottawa brands" 
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+              />
+            </div>
+            <div className="p-6">
+              <h4 className="font-bold text-gray-900 group-hover:text-red-600 transition">
+                Instagram Reels for Ottawa Brands: Strategy That Converts
+              </h4>
+              <p className="text-gray-500 text-sm mt-2">If your brand is still posting static graphics while competitors dominate feeds with compelling Reels, you are already behind.</p>
+            </div>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

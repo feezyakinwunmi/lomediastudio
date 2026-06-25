@@ -1,5 +1,6 @@
 // app/blog/[slug]/posts/InstagramReelsOttawa.tsx
 import { PlayCircle, Target, Award, Heart } from 'lucide-react';
+import Link from 'next/link';
 
 export default function InstagramReelsOttawa() {
   return (
@@ -12,9 +13,17 @@ export default function InstagramReelsOttawa() {
 
       {/* Introduction */}
       <div className="prose prose-lg text-gray-600 leading-relaxed">
-        <p>In today’s digital landscape, attention is currency — and for businesses in Ottawa, Instagram Reels have become one of the fastest ways to earn it. From local restaurants and real estate agencies to beauty brands, fitness studios, law firms, and startups, Ottawa businesses are discovering that short-form video content is no longer optional. It is the engine driving visibility, engagement, and real conversions.</p>
+        <p>In today's digital landscape, attention is currency — and for businesses in Ottawa, Instagram Reels have become one of the fastest ways to earn it. From local restaurants and real estate agencies to beauty brands, fitness studios, law firms, and startups, Ottawa businesses are discovering that short-form video content is no longer optional. It is the engine driving visibility, engagement, and real conversions.</p>
         <p>If your brand is still posting static graphics while competitors dominate feeds with compelling Reels, you are already behind.</p>
         <p>At LO Media House, we help Ottawa brands create Instagram Reels that do more than gain views. We build strategies that attract local audiences, increase trust, and turn engagement into paying customers.</p>
+
+        <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-xl my-6">
+          <p className="text-gray-700 text-sm">
+            <Link href="/blog/social-media-content-creation-for-ottawa-businesses" className="text-red-600 hover:underline font-semibold">
+              Social media content creation
+            </Link> is essential for building a strong Instagram presence that drives real results.
+          </p>
+        </div>
       </div>
 
       {/* Why Reels Matter */}
@@ -26,7 +35,7 @@ export default function InstagramReelsOttawa() {
           <h2 className="text-3xl font-bold text-gray-900">Why Instagram Reels Matter for Ottawa Businesses</h2>
         </div>
         <div className="prose prose-lg text-gray-600 leading-relaxed">
-          <p>Instagram’s algorithm heavily prioritizes Reels because video keeps users on the platform longer. That means brands using Reels consistently have a significantly higher chance of appearing on Explore pages, local searches, and follower feeds.</p>
+          <p>Instagram's algorithm heavily prioritizes Reels because video keeps users on the platform longer. That means brands using Reels consistently have a significantly higher chance of appearing on Explore pages, local searches, and follower feeds.</p>
           <p>For Ottawa businesses, this creates a powerful opportunity to reach the following:</p>
         </div>
         <ul className="list-disc pl-6 space-y-3 text-gray-600 mt-6">
@@ -36,6 +45,11 @@ export default function InstagramReelsOttawa() {
           <li>Community-based audiences who value authenticity</li>
         </ul>
         <p className="mt-8 text-gray-600">Whether you own a café in downtown Ottawa, a construction company in Kanata, or a beauty business in Nepean, Reels allow your audience to see your brand instead of simply reading about it, and that changes everything.</p>
+        <p className="text-gray-600 text-sm mt-3">
+          <Link href="/blog/5-ways-video-marketing-helps-ottawa-businesses-grow-faster" className="text-red-600 hover:underline">
+            Video marketing
+          </Link> through Reels is one of the fastest ways to grow your Ottawa business.
+        </p>
       </div>
 
       {/* Biggest Mistake */}
@@ -61,6 +75,11 @@ export default function InstagramReelsOttawa() {
         </ul>
         <p className="mt-8 text-gray-600">The result? Views with no leads. Engagement with no sales.</p>
         <p className="mt-6 text-gray-600">At LO Media House, we focus on conversion-driven reel strategies tailored specifically for Ottawa brands that want measurable growth.</p>
+        <p className="text-gray-600 text-sm mt-3">
+          <Link href="/blog/5-signs-your-ottawa-business-needs-professional-media-strategy" className="text-red-600 hover:underline">
+            A professional media strategy
+          </Link> ensures your Reels are driving real business results, not just vanity metrics.
+        </p>
       </div>
 
       {/* What Makes a Reel Convert */}
@@ -73,15 +92,20 @@ export default function InstagramReelsOttawa() {
             <p>Attention spans are short. Your opening must immediately stop the scroll.</p>
             <p className="italic mt-4">Examples:</p>
             <ul className="list-disc pl-6 mt-2">
-              <li>“Ottawa business owners, stop making this mistake…”</li>
-              <li>“This one Reel brought us 12 new clients in Ottawa.”</li>
-              <li>“Why your business content is getting ignored.”</li>
+              <li>"Ottawa business owners, stop making this mistake…"</li>
+              <li>"This one Reel brought us 12 new clients in Ottawa."</li>
+              <li>"Why your business content is getting ignored."</li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">2. Localized Content</h3>
             <p>Generic content gets ignored. Ottawa audiences respond to familiarity and relevance. Mention Ottawa neighbourhoods, local events, seasonal experiences, and Canadian business realities. This creates instant connection and trust.</p>
+            <p className="text-gray-600 text-sm mt-2">
+              <Link href="/blog/how-ottawa-ceos-can-build-authority-using-strategic-video-content" className="text-red-600 hover:underline">
+                Ottawa CEOs are building authority
+              </Link> through localized video content that resonates with local audiences.
+            </p>
           </div>
 
           <div>
@@ -91,8 +115,15 @@ export default function InstagramReelsOttawa() {
 
           <div>
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">4. Clear Call-to-Action</h3>
-            <p>Never assume viewers know what to do next. Strong CTAs include: “Send us a DM”, “Book your consultation”, “Visit our website”, “Follow for Ottawa marketing tips”. Without direction, attention disappears.</p>
+            <p>Never assume viewers know what to do next. Strong CTAs include: "Send us a DM", "Book your consultation", "Visit our website", "Follow for Ottawa marketing tips". Without direction, attention disappears.</p>
           </div>
+        </div>
+        <div className="bg-amber-50 border border-amber-100 rounded-3xl p-8 mt-8">
+          <p className="text-gray-700">
+            <Link href="/blog/how-to-write-high-converting-email-sequences-without-annoying-your-audience" className="text-red-600 hover:underline font-semibold">
+              High-converting email sequences
+            </Link> and Instagram Reels both benefit from strong CTAs and a clear value proposition.
+          </p>
         </div>
       </div>
 
@@ -121,6 +152,11 @@ export default function InstagramReelsOttawa() {
             <p className="text-gray-600">Trends work best when adapted to your audience and business goals, not copied blindly.</p>
           </div>
         </div>
+        <p className="text-gray-600 text-sm mt-6">
+          <Link href="/blog/social-media-content-creation-for-ottawa-businesses" className="text-red-600 hover:underline">
+            Social media content creation
+          </Link> strategies should include a mix of these Reel types for maximum engagement.
+        </p>
       </div>
 
       {/* Why Professional Strategy */}
@@ -129,6 +165,11 @@ export default function InstagramReelsOttawa() {
         <p className="text-gray-600">Creating Reels is easy. Creating Reels that consistently grow a brand is different.</p>
         <p className="text-gray-600 mt-6">Professional strategy includes audience research, trend forecasting, hook optimization, video editing, scriptwriting, brand positioning, conversion-focused captions, local SEO optimization, and performance analytics.</p>
         <p className="text-gray-600 mt-6">That is where LO Media House comes in. We help Ottawa brands create content that looks professional, feels authentic, and performs strategically.</p>
+        <p className="text-gray-600 text-sm mt-3">
+          <Link href="/blog/5-ways-video-marketing-helps-ottawa-businesses-grow-faster" className="text-red-600 hover:underline">
+            Video marketing
+          </Link> through professional Reel strategy can transform how your Ottawa business connects with customers.
+        </p>
       </div>
 
       {/* Final CTA */}
@@ -138,10 +179,49 @@ export default function InstagramReelsOttawa() {
         <p className="text-pink-100 max-w-2xl mx-auto mb-10">
           At LO Media House, we create high-converting Instagram Reel strategies designed specifically for Ottawa businesses that want real growth, not vanity metrics.
         </p>
-        <a href="/contact" className="inline-block bg-white text-pink-700 px-12 py-5 rounded-2xl font-semibold hover:bg-gray-100 transition">
+        <Link href="/contact" className="inline-block bg-white text-pink-700 px-12 py-5 rounded-2xl font-semibold hover:bg-gray-100 transition">
           Start Your Reel Strategy Today
-        </a>
+        </Link>
       </div>
+
+      {/* Related Articles */}
+      <section className="border-t border-gray-200 pt-12">
+        <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
+          You Might Also Like
+        </h3>
+        <div className="grid md:grid-cols-2 gap-6">
+          <Link href="/blog/social-media-content-creation-for-ottawa-businesses" className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+            <div className="h-48 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" 
+                alt="Social media content creation" 
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+              />
+            </div>
+            <div className="p-6">
+              <h4 className="font-bold text-gray-900 group-hover:text-red-600 transition">
+                Social Media Content Creation for Ottawa Businesses
+              </h4>
+              <p className="text-gray-500 text-sm mt-2">How Ottawa businesses can create engaging, locally relevant social media content that drives real growth.</p>
+            </div>
+          </Link>
+          <Link href="/blog/5-ways-video-marketing-helps-ottawa-businesses-grow-faster" className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition">
+            <div className="h-48 overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&h=400&fit=crop" 
+                alt="Video marketing for Ottawa businesses" 
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+              />
+            </div>
+            <div className="p-6">
+              <h4 className="font-bold text-gray-900 group-hover:text-red-600 transition">
+                5 Ways Video Marketing Helps Ottawa Businesses Grow Faster
+              </h4>
+              <p className="text-gray-500 text-sm mt-2">Video marketing has become such a valuable tool for businesses looking to grow.</p>
+            </div>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
