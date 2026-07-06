@@ -593,7 +593,7 @@ export default function AboutStudioPage() {
                   <img 
                     src={member.image}
                     alt={member.name}
-                    className="w-30 h-30 mt-10 mx-auto object-fit rounded-full group-hover:scale-105 transition-transform duration-700"
+                    className=" mx-auto object-fit rounded-md group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
                 <div className="p-5">
