@@ -1,13 +1,162 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Search, X, Calendar, User, ArrowRight, Book, Video, PenTool, Mail, Camera } from "lucide-react";
+
+// Import blog posts from your blog page
+// You'll need to export this from your blog page or define it here
+const blogPosts = [
+  {
+    id: 1,
+    title: "How to Write High Converting Email Sequences Without Annoying Your Audience",
+    slug: "how-to-write-high-converting-email-sequences-without-annoying-your-audience",
+    excerpt: "Master the art of writing email sequences that convert while keeping your audience happy and engaged.",
+    image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?q=80&w=2070",
+    category: "Email Marketing",
+    readTime: "10 min read",
+    date: "May 18, 2026",
+    author: "LOPublications"
+  },
+  {
+    id: 2,
+    title: "5 Signs Your Ottawa Business Needs a Professional Media Strategy",
+    slug: "5-signs-your-ottawa-business-needs-professional-media-strategy",
+    excerpt: "Is your Ottawa business struggling with visibility? Here are 5 clear signs it's time to invest in a professional media strategy.",
+    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071",
+    category: "Strategy",
+    readTime: "8 min read",
+    date: "May 15, 2026",
+    author: "LOPublications"
+  },
+  {
+    id: 3,
+    title: "How Ottawa CEOs Can Build Authority Using Strategic Video Content",
+    slug: "how-ottawa-ceos-can-build-authority-using-strategic-video-content",
+    excerpt: "Why top Ottawa CEOs are using strategic video content to establish authority and grow their influence.",
+    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2074",
+    category: "Video Production",
+    readTime: "9 min read",
+    date: "May 12, 2026",
+    author: "LOPublications"
+  },
+  {
+    id: 4,
+    title: "Social Media Content Creation for Ottawa Businesses",
+    slug: "social-media-content-creation-for-ottawa-businesses",
+    excerpt: "How Ottawa businesses can create engaging, locally relevant social media content that drives real growth.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015",
+    category: "Social Media",
+    readTime: "7 min read",
+    date: "May 10, 2026",
+    author: "LOPublications"
+  },
+  {
+    id: 5,
+    title: "5 Ways Video Marketing Helps Ottawa Businesses Grow Faster",
+    slug: "5-ways-video-marketing-helps-ottawa-businesses-grow-faster",
+    excerpt: "Video marketing has become such a valuable tool for businesses looking to grow.",
+    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=2070",
+    category: "Video Production",
+    readTime: "9 min read",
+    date: "May 26, 2026",
+    author: "LOPublications"
+  },
+  {
+    id: 6,
+    title: "Instagram Reels for Ottawa Brands: Strategy That Converts",
+    slug: "instagram-reels-for-ottawa-brands",
+    excerpt: "If your brand is still posting static graphics while competitors dominate feeds with compelling Reels, you are already behind.",
+    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2074",
+    category: "Social Media",
+    readTime: "9 min read",
+    date: "May 26, 2026",
+    author: "LOPublications"
+  }
+];
+
+// Services data from your services page
+const services = [
+  {
+    title: "Media Content Creation",
+    slug: "media-content-creation",
+    icon: PenTool,
+    category: "Media Content Creation",
+    shortDesc: "Drive engagement, build authority & convert your audience with strategic media content that performs."
+  },
+  {
+    title: "Digital Marketing",
+    slug: "digital-marketing",
+    icon: ArrowRight,
+    category: "Digital Marketing",
+    shortDesc: "Data-driven digital marketing solutions designed to deliver measurable results and grow your brand."
+  },
+  {
+    title: "Email Marketing",
+    slug: "email-marketing",
+    icon: Mail,
+    category: "Email Marketing",
+    shortDesc: "Build meaningful relationships with your audience through strategic, data-driven email campaigns."
+  },
+  {
+    title: "Photography",
+    slug: "photography",
+    icon: Camera,
+    category: "Photography",
+    shortDesc: "Professional photography that captures your brand's essence and elevates your visual identity."
+  },
+  {
+    title: "Storytelling",
+    slug: "storytelling",
+    icon: Book,
+    category: "Storytelling",
+    shortDesc: "Transform your message into meaningful stories that connect, inspire, and drive action."
+  },
+  {
+    title: "Video Production",
+    slug: "video-production",
+    icon: Video,
+    category: "Video Production",
+    shortDesc: "Professional video content that captivates audiences and converts viewers into customers."
+  },
+  {
+    title: "Visual Brand Development",
+    slug: "visual-brand-development",
+    icon: PenTool,
+    category: "Visual Brand Development",
+    shortDesc: "Create a powerful, strategic visual identity that positions your brand for visibility and growth."
+  },
+  {
+    title: "Creative Direction",
+    slug: "creative-direction",
+    icon: ArrowRight,
+    category: "Creative Direction",
+    shortDesc: "Expert creative guidance to elevate your brand and ensure consistent, impactful messaging."
+  }
+];
+
+interface SearchItem {
+  title: string;
+  href: string;
+  type: string;
+  excerpt?: string;
+  category?: string;
+  date?: string;
+  author?: string;
+  image?: string;
+  icon?: any;
+}
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [hovepurpleItem, setHovepurpleItem] = useState<string | null>(null);
+  const [hoverItem, setHoverItem] = useState<string | null>(null);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState<SearchItem[]>([]);
+  const [allContent, setAllContent] = useState<SearchItem[]>([]);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -15,8 +164,141 @@ export default function Navbar() {
     { name: "Work", href: "/work" },
     { name: "Services", href: "/services" },
     { name: "Contact", href: "/contact" },
-    {name: "Blog", href: "/blog"}
+    { name: "Blog", href: "/blog" }
   ];
+
+  // Load all content on mount
+  useEffect(() => {
+    const items: SearchItem[] = [];
+
+    // Add blog posts
+    blogPosts.forEach(post => {
+      items.push({
+        title: post.title,
+        href: `/blog/${post.slug}`,
+        type: "Blog Post",
+        excerpt: post.excerpt,
+        category: post.category,
+        date: post.date,
+        author: post.author,
+        image: post.image
+      });
+    });
+
+    // Add services
+    services.forEach(service => {
+      items.push({
+        title: service.title,
+        href: `/services/${service.slug}`,
+        type: "Service",
+        excerpt: service.shortDesc,
+        category: service.category,
+        icon: service.icon
+      });
+    });
+
+    // Add static pages
+    const staticPages = [
+      { title: "Home", href: "/", type: "Page" },
+      { title: "About", href: "/about", type: "Page" },
+      { title: "Work", href: "/work", type: "Page" },
+      { title: "Services", href: "/services", type: "Page" },
+      { title: "Contact", href: "/contact", type: "Page" },
+      { title: "Blog", href: "/blog", type: "Page" }
+    ];
+
+    staticPages.forEach(page => {
+      if (!items.some(item => item.href === page.href)) {
+        items.push(page);
+      }
+    });
+
+    setAllContent(items);
+  }, []);
+
+  // Handle search
+  useEffect(() => {
+    if (searchQuery.trim() === "") {
+      setSearchResults([]);
+      return;
+    }
+
+    const query = searchQuery.toLowerCase();
+    const results = allContent.filter(
+      (item) =>
+        item.title.toLowerCase().includes(query) ||
+        (item.excerpt && item.excerpt.toLowerCase().includes(query)) ||
+        (item.category && item.category.toLowerCase().includes(query)) ||
+        (item.author && item.author.toLowerCase().includes(query)) ||
+        item.type.toLowerCase().includes(query)
+    );
+    setSearchResults(results.slice(0, 15));
+  }, [searchQuery, allContent]);
+
+  // Focus search input when modal opens
+  useEffect(() => {
+    if (searchOpen) {
+      setTimeout(() => searchInputRef.current?.focus(), 100);
+    }
+    // Prevent body scroll when search is open
+    if (searchOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [searchOpen]);
+
+  // Close search on Escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSearchOpen(false);
+        setSearchQuery("");
+        setSearchResults([]);
+      }
+    };
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, []);
+
+  const handleSearchOpen = () => {
+    setSearchOpen(true);
+    setSearchQuery("");
+    setSearchResults([]);
+  };
+
+  const handleSearchClose = () => {
+    setSearchOpen(false);
+    setSearchQuery("");
+    setSearchResults([]);
+  };
+
+  const handleResultClick = (href: string) => {
+    handleSearchClose();
+    window.location.href = href;
+  };
+
+  // Get color for result type badge
+  const getTypeColor = (type: string) => {
+    switch(type) {
+      case "Blog Post": return "bg-purple-100 text-purple-800";
+      case "Service": return "bg-blue-100 text-blue-800";
+      case "Page": return "bg-gray-100 text-gray-800";
+      default: return "bg-gray-100 text-gray-800";
+    }
+  };
+
+  const getTypeIcon = (type: string) => {
+    switch(type) {
+      case "Blog Post": return "📝";
+      case "Service": return "💼";
+      case "Page": return "📄";
+      default: return "🔗";
+    }
+  };
 
   return (
     <>
@@ -42,7 +324,7 @@ export default function Navbar() {
               repeat: Infinity,
               ease: "linear",
             }}
-            className="absolute inset-0 rounded-full "
+            className="absolute inset-0 rounded-full"
           />
           
           {/* Main navbar container */}
@@ -53,7 +335,7 @@ export default function Navbar() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="text-xl md:text-2xl font-bold text-white bg-clip-text  cursor-pointer"
+                  className="text-xl md:text-2xl font-bold text-white bg-clip-text cursor-pointer"
                 >
                   <Image
                     src="/logo.png"
@@ -68,14 +350,24 @@ export default function Navbar() {
 
               {/* Desktop Navigation Links - Separate Bubbles */}
               <div className="hidden md:flex items-center gap-2">
+                {/* Search Button */}
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handleSearchOpen}
+                  className="relative px-3 py-2 rounded-full transition-all duration-300 hover:bg-white/20"
+                >
+                  <Search className="w-5 h-5 text-gray-700 hover:text-purple-700 transition-colors" />
+                </motion.button>
+
                 {navItems.map((item) => (
                   <Link key={item.name} href={item.href}>
                     <motion.div
-                      onHoverStart={() => setHovepurpleItem(item.name)}
-                      onHoverEnd={() => setHovepurpleItem(null)}
+                      onHoverStart={() => setHoverItem(item.name)}
+                      onHoverEnd={() => setHoverItem(null)}
                       whileHover={{ scale: 1.05 }}
                       animate={{
-                        backgroundColor: hovepurpleItem === item.name 
+                        backgroundColor: hoverItem === item.name 
                           ? "rgba(239, 68, 68, 0.15)" 
                           : "rgba(255, 255, 255, 0)",
                       }}
@@ -88,8 +380,8 @@ export default function Navbar() {
                       <motion.div
                         initial={{ scale: 0, opacity: 0 }}
                         animate={{ 
-                          scale: hovepurpleItem === item.name ? 1 : 0,
-                          opacity: hovepurpleItem === item.name ? 1 : 0
+                          scale: hoverItem === item.name ? 1 : 0,
+                          opacity: hoverItem === item.name ? 1 : 0
                         }}
                         className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-purple-900 rounded-full"
                       />
@@ -123,6 +415,18 @@ export default function Navbar() {
         >
           <div className="backdrop-blur-2xl bg-white/90 rounded-2xl shadow-2xl border border-white/20 p-4">
             <div className="flex flex-col space-y-2">
+              {/* Search in mobile */}
+              <button
+                onClick={() => {
+                  handleSearchOpen();
+                  setIsOpen(false);
+                }}
+                className="w-full flex items-center gap-3 px-4 py-3 text-gray-700 hover:text-purple-900 transition-colors rounded-lg hover:bg-purple-50"
+              >
+                <Search className="w-5 h-5" />
+                Search blogs & services...
+              </button>
+
               {navItems.map((item) => (
                 <Link key={item.name} href={item.href}>
                   <motion.div
@@ -137,6 +441,138 @@ export default function Navbar() {
             </div>
           </div>
         </motion.div>
+      )}
+
+      {/* Search Modal */}
+      {searchOpen && (
+        <>
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={handleSearchClose}
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[100]"
+          />
+
+          {/* Modal */}
+          <motion.div
+            initial={{ opacity: 0, y: -50, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -50, scale: 0.95 }}
+            className="fixed top-20 left-1/2 -translate-x-1/2 w-full max-w-2xl z-[101] px-4"
+          >
+            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+              {/* Search Input */}
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input
+                  ref={searchInputRef}
+                  type="text"
+                  placeholder="Search blogs, services, pages..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full px-12 py-5 text-black text-lg outline-none border-b border-gray-200"
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery("")}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                  >
+                    <X size={20} />
+                  </button>
+                )}
+              </div>
+
+              {/* Search Results */}
+              <div className="max-h-96 overflow-y-auto">
+                {searchQuery.trim() === "" ? (
+                  <div className="p-8 text-center text-gray-500">
+                    <Search className="w-12 h-12 mx-auto mb-3 text-gray-300" />
+                    <p className="text-lg">Search blogs, services, and more</p>
+                    <p className="text-sm mt-1">Try searching for "marketing" or "video"</p>
+                    <div className="mt-4 flex flex-wrap gap-2 justify-center">
+                      <span className="text-xs bg-gray-100 px-3 py-1 rounded-full">Email Marketing</span>
+                      <span className="text-xs bg-gray-100 px-3 py-1 rounded-full">Video Production</span>
+                      <span className="text-xs bg-gray-100 px-3 py-1 rounded-full">Branding</span>
+                    </div>
+                  </div>
+                ) : searchResults.length === 0 ? (
+                  <div className="p-8 text-center text-gray-500">
+                    <p className="text-lg">No results found for "{searchQuery}"</p>
+                    <p className="text-sm mt-1">Try different keywords</p>
+                  </div>
+                ) : (
+                  <div className="divide-y divide-gray-100">
+                    {searchResults.map((result, index) => (
+                      <button
+                        key={index}
+                        onClick={() => handleResultClick(result.href)}
+                        className="w-full text-left px-6 py-4 hover:bg-gray-50 transition group"
+                      >
+                        <div className="flex items-start gap-4">
+                          {/* Image if available */}
+                          {result.image && (
+                            <img 
+                              src={result.image} 
+                              alt={result.title}
+                              className="w-20 h-20 object-cover rounded-lg flex-shrink-0"
+                            />
+                          )}
+                          
+                          {/* Icon if available and no image */}
+                          {!result.image && result.icon && (
+                            <div className="w-12 h-12 flex-shrink-0 rounded-lg bg-purple-50 flex items-center justify-center">
+                              {result.icon && <result.icon className="w-6 h-6 text-purple-600" />}
+                            </div>
+                          )}
+                          
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2 mb-1">
+                              <h4 className="text-black font-medium group-hover:text-purple-700 transition line-clamp-1">
+                                {result.title}
+                              </h4>
+                            </div>
+                            
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <span className={`text-xs px-2 py-0.5 rounded-full ${getTypeColor(result.type)}`}>
+                                {getTypeIcon(result.type)} {result.type}
+                              </span>
+                              {result.category && (
+                                <span className="text-xs text-gray-400">• {result.category}</span>
+                              )}
+                              {result.date && (
+                                <span className="text-xs text-gray-400">• {result.date}</span>
+                              )}
+                              {result.author && (
+                                <span className="text-xs text-gray-400">• {result.author}</span>
+                              )}
+                            </div>
+                            
+                            {result.excerpt && (
+                              <p className="text-sm text-gray-500 mt-1 line-clamp-1">
+                                {result.excerpt}
+                              </p>
+                            )}
+                          </div>
+                          <span className="text-purple-700 opacity-0 group-hover:opacity-100 transition flex-shrink-0">
+                            →
+                          </span>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Footer */}
+              <div className="px-6 py-3 bg-gray-50 text-xs text-gray-500 flex justify-between items-center">
+                <span>Press ESC to close</span>
+                <span>{searchResults.length} results found</span>
+              </div>
+            </div>
+          </motion.div>
+        </>
       )}
     </>
   );
