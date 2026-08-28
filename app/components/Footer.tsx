@@ -108,16 +108,16 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-400 text-sm">
                 <Mail className="w-4 h-4 text-purple-900" />
-                <span>layoobidikepublications@gmail.com</span>
+                <span>layo@lomediahouse.com</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400 text-sm">
                 <Phone className="w-4 h-4 text-purple-900" />
-                <span>+1 (555) 123-4567</span>
+                <span>+1 (905) 922-4471</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400 text-sm">
                 <MapPin className="w-4 h-4 text-purple-900" />
                 <span>1551 Lycee Place
-Ottawa, ON K1G4B5
+Ottawa, K1G4B5
 Canada</span>
               </div>
             </div>
