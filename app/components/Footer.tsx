@@ -26,10 +26,12 @@ export default function Footer() {
       { name: 'Our Services', href: '/services' },
     ],
     Services: [
-      { name: 'Web Creation', href: '/services' },
-      { name: 'Event Videography', href: '/services' },
-      { name: 'Recording Studio', href: '/services' },
-      { name: 'Branding ....', href: '/services' },
+      { name: 'Web Creation', href: '/services/media-content-creation' },
+      { name: 'Event Videography', href: '/services/video-production' },
+      { name: 'Recording Studio', href: '/services/video-production' },
+      { name: 'Branding', href: '/services/visual-brand-development' },
+      { name: 'Photography', href: '/services/photography' },
+      { name: 'Digital Marketing', href: '/services/digital-marketing' },
     ],
     Support: [
       { name: 'Contact Us', href: '/contact' },
@@ -51,7 +53,7 @@ export default function Footer() {
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(3)].map((_, i) => (
-          <motion.div
+          <motion.div suppressHydrationWarning
             key={`footer-orb-${i}`}
             className="absolute rounded-full bg-purple-900/5 blur-3xl"
             style={{
@@ -78,7 +80,7 @@ export default function Footer() {
         {/* Top Section */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand Column */}
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -86,7 +88,7 @@ export default function Footer() {
             className="lg:col-span-1"
           >
             <Link href="/">
-              <motion.h2 
+              <motion.h2 suppressHydrationWarning
                 whileHover={{ scale: 1.05 }}
                 className="text-2xl font-bold bg-gradient-to-r from-purple-900 to-red-600 bg-clip-text text-transparent mb-4"
               >
@@ -125,7 +127,7 @@ Canada</span>
 
           {/* Links Columns */}
           {Object.entries(footerLinks).map(([category, links], idx) => (
-            <motion.div
+            <motion.div suppressHydrationWarning
               key={category}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -136,7 +138,7 @@ Canada</span>
               <h3 className="text-white font-semibold mb-4">{category}</h3>
               <ul className="space-y-3">
                 {links.map((link, linkIdx) => (
-                  <motion.li
+                  <motion.li suppressHydrationWarning
                     key={linkIdx}
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
@@ -155,7 +157,7 @@ Canada</span>
         </div>
 
         {/* Newsletter Section */}
-        <motion.div
+        <motion.div suppressHydrationWarning
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -173,7 +175,7 @@ Canada</span>
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white text-sm focus:outline-none focus:border-purple-900 transition-colors"
               />
-              <motion.button
+              <motion.button suppressHydrationWarning
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-4 py-2 bg-purple-900 hover:bg-red-600 text-white rounded-lg text-sm font-medium flex items-center gap-2 transition-colors"
@@ -188,13 +190,13 @@ Canada</span>
         {/* Bottom Section */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-sm">
-            © {currentYear} LomeMediaStudio. All rights reserved.
+            © {currentYear} LoMediaStudio. All rights reserved.
           </p>
           
           {/* Social Links */}
           {/* <div className="flex gap-3">
             {socialIcons.map((social, idx) => (
-              <motion.a
+              <motion.a suppressHydrationWarning
                 key={idx}
                 href={social.href}
                 whileHover={{ scale: 1.1, y: -2 }}

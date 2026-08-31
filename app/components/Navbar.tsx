@@ -6,76 +6,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Search, X, Calendar, User, ArrowRight, Book, Video, PenTool, Mail, Camera } from "lucide-react";
 
-// Import blog posts from your blog page
-// You'll need to export this from your blog page or define it here
-const blogPosts = [
-  {
-    id: 1,
-    title: "How to Write High Converting Email Sequences Without Annoying Your Audience",
-    slug: "how-to-write-high-converting-email-sequences-without-annoying-your-audience",
-    excerpt: "Master the art of writing email sequences that convert while keeping your audience happy and engaged.",
-    image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?q=80&w=2070",
-    category: "Email Marketing",
-    readTime: "10 min read",
-    date: "May 18, 2026",
-    author: "LOPublications"
-  },
-  {
-    id: 2,
-    title: "5 Signs Your Ottawa Business Needs a Professional Media Strategy",
-    slug: "5-signs-your-ottawa-business-needs-professional-media-strategy",
-    excerpt: "Is your Ottawa business struggling with visibility? Here are 5 clear signs it's time to invest in a professional media strategy.",
-    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071",
-    category: "Strategy",
-    readTime: "8 min read",
-    date: "May 15, 2026",
-    author: "LOPublications"
-  },
-  {
-    id: 3,
-    title: "How Ottawa CEOs Can Build Authority Using Strategic Video Content",
-    slug: "how-ottawa-ceos-can-build-authority-using-strategic-video-content",
-    excerpt: "Why top Ottawa CEOs are using strategic video content to establish authority and grow their influence.",
-    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2074",
-    category: "Video Production",
-    readTime: "9 min read",
-    date: "May 12, 2026",
-    author: "LOPublications"
-  },
-  {
-    id: 4,
-    title: "Social Media Content Creation for Ottawa Businesses",
-    slug: "social-media-content-creation-for-ottawa-businesses",
-    excerpt: "How Ottawa businesses can create engaging, locally relevant social media content that drives real growth.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015",
-    category: "Social Media",
-    readTime: "7 min read",
-    date: "May 10, 2026",
-    author: "LOPublications"
-  },
-  {
-    id: 5,
-    title: "5 Ways Video Marketing Helps Ottawa Businesses Grow Faster",
-    slug: "5-ways-video-marketing-helps-ottawa-businesses-grow-faster",
-    excerpt: "Video marketing has become such a valuable tool for businesses looking to grow.",
-    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=2070",
-    category: "Video Production",
-    readTime: "9 min read",
-    date: "May 26, 2026",
-    author: "LOPublications"
-  },
-  {
-    id: 6,
-    title: "Instagram Reels for Ottawa Brands: Strategy That Converts",
-    slug: "instagram-reels-for-ottawa-brands",
-    excerpt: "If your brand is still posting static graphics while competitors dominate feeds with compelling Reels, you are already behind.",
-    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2074",
-    category: "Social Media",
-    readTime: "9 min read",
-    date: "May 26, 2026",
-    author: "LOPublications"
-  }
-];
+import { allBlogPosts } from '@/data/blogs';
+const blogPosts = allBlogPosts;
 
 // Services data from your services page
 const services = [
@@ -302,7 +234,7 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.nav
+      <motion.nav suppressHydrationWarning
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
@@ -311,7 +243,7 @@ export default function Navbar() {
         {/* Glassy bubble container */}
         <div className="relative">
           {/* Animated gradient background */}
-          <motion.div
+          <motion.div suppressHydrationWarning
             animate={{
               background: [
                 "radial-gradient(circle at 20% 50%, rgba(black, 0.1) 0%, rgba(purple-900, 0.1) 100%)",
@@ -332,7 +264,7 @@ export default function Navbar() {
             <div className="flex items-center gap-4 md:gap-6">
               {/* Logo */}
               <Link href="/">
-                <motion.div
+                <motion.div suppressHydrationWarning
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="text-xl md:text-2xl font-bold text-white bg-clip-text cursor-pointer"
@@ -351,7 +283,7 @@ export default function Navbar() {
               {/* Desktop Navigation Links - Separate Bubbles */}
               <div className="hidden md:flex items-center gap-2">
                 {/* Search Button */}
-                <motion.button
+                <motion.button suppressHydrationWarning
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={handleSearchOpen}
@@ -362,7 +294,7 @@ export default function Navbar() {
 
                 {navItems.map((item) => (
                   <Link key={item.name} href={item.href}>
-                    <motion.div
+                    <motion.div suppressHydrationWarning
                       onHoverStart={() => setHoverItem(item.name)}
                       onHoverEnd={() => setHoverItem(null)}
                       whileHover={{ scale: 1.05 }}
@@ -377,7 +309,7 @@ export default function Navbar() {
                         {item.name}
                       </span>
                       {/* Animated dot indicator */}
-                      <motion.div
+                      <motion.div suppressHydrationWarning
                         initial={{ scale: 0, opacity: 0 }}
                         animate={{ 
                           scale: hoverItem === item.name ? 1 : 0,
@@ -406,7 +338,7 @@ export default function Navbar() {
 
       {/* Mobile menu - separate from navbar */}
       {isOpen && (
-        <motion.div
+        <motion.div suppressHydrationWarning
           initial={{ opacity: 0, y: -20, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: -20, scale: 0.95 }}
@@ -429,7 +361,7 @@ export default function Navbar() {
 
               {navItems.map((item) => (
                 <Link key={item.name} href={item.href}>
-                  <motion.div
+                  <motion.div suppressHydrationWarning
                     whileHover={{ x: 10, backgroundColor: "#fef2f2" }}
                     className="px-4 py-3 text-gray-700 hover:text-purple-900 transition-colors rounded-lg"
                     onClick={() => setIsOpen(false)}
@@ -447,7 +379,7 @@ export default function Navbar() {
       {searchOpen && (
         <>
           {/* Backdrop */}
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -456,7 +388,7 @@ export default function Navbar() {
           />
 
           {/* Modal */}
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, y: -50, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -50, scale: 0.95 }}

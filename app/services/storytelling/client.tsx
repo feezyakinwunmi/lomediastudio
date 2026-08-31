@@ -82,13 +82,13 @@ export default function StorytellingClient() {
 <div className="absolute inset-0 pointer-events-none opacity-20 bg-[url('data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\'/%3E%3C/svg%3E')] bg-repeat" />
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-20 py-20">
           <div className="max-w-3xl">
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8 }}
             >
               {/* Clapperboard style badge */}
-              <motion.div
+              <motion.div suppressHydrationWarning
                 initial={{ x: -50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.2, type: "spring" }}
@@ -98,7 +98,7 @@ export default function StorytellingClient() {
                 <span className="text-amber-400 text-sm font-semibold tracking-wide">FEATURE PRESENTATION</span>
               </motion.div>
               
-              <motion.h1
+              <motion.h1 suppressHydrationWarning
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -110,7 +110,7 @@ export default function StorytellingClient() {
                 </span>
               </motion.h1>
               
-              <motion.p
+              <motion.p suppressHydrationWarning
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
@@ -120,7 +120,7 @@ export default function StorytellingClient() {
                 and drive action. Every brand has a story. Let's tell yours.
               </motion.p>
               
-              <motion.div
+              <motion.div suppressHydrationWarning
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
@@ -142,7 +142,7 @@ export default function StorytellingClient() {
               </motion.div>
 
               {/* Quote animation */}
-              <motion.div
+              <motion.div suppressHydrationWarning
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1 }}
@@ -166,7 +166,7 @@ export default function StorytellingClient() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(139,92,246,0.1),transparent)]" />
         
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -185,7 +185,7 @@ export default function StorytellingClient() {
             {stories.map((story, idx) => {
               const Icon = story.icon;
               return (
-                <motion.div
+                <motion.div suppressHydrationWarning
                   key={idx}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -212,7 +212,7 @@ export default function StorytellingClient() {
       <section className="py-24 bg-black/50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -236,7 +236,7 @@ export default function StorytellingClient() {
                 ].map((item, idx) => {
                   const Icon = item.icon;
                   return (
-                    <motion.div
+                    <motion.div suppressHydrationWarning
                       key={idx}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -259,7 +259,7 @@ export default function StorytellingClient() {
               </div>
             </motion.div>
 
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -274,7 +274,7 @@ export default function StorytellingClient() {
                   <span className="text-xs text-amber-600 ml-2">LucideBook_v04_FINAL.pdf</span>
                 </div>
                 <div className="space-y-3">
-                  <motion.p 
+                  <motion.p suppressHydrationWarning
                     className="text-amber-800 text-sm font-mono"
                     animate={{ opacity: [0.5, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
@@ -288,7 +288,7 @@ export default function StorytellingClient() {
                     <span className="text-amber-500">CEO</span><br />
                     "Today, we're not just launching a product. We're sharing a story..."
                   </p>
-                  <motion.p 
+                  <motion.p suppressHydrationWarning
                     className="text-amber-800 text-sm font-mono mt-3"
                     animate={{ opacity: [0.5, 1] }}
                     transition={{ duration: 2, repeat: Infinity, delay: 1 }}
@@ -299,7 +299,7 @@ export default function StorytellingClient() {
               </div>
               
               {/* Floating elements */}
-              <motion.div
+              <motion.div suppressHydrationWarning
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
                 className="absolute -top-6 -right-6 bg-gradient-to-r from-amber-500 to-rose-500 rounded-full p-3 shadow-xl"
@@ -321,7 +321,7 @@ export default function StorytellingClient() {
               { value: "22x", label: "More Memorable", icon: Zap },
               { value: "70%", label: "Purchase Intent", icon: Target }
             ].map((stat, idx) => (
-              <motion.div
+              <motion.div suppressHydrationWarning
                 key={idx}
                 initial={{ opacity: 0, scale: 0.5 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -357,7 +357,7 @@ export default function StorytellingClient() {
             ].map((item, idx) => {
               const Icon = item.icon;
               return (
-                <motion.div
+                <motion.div suppressHydrationWarning
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -379,7 +379,7 @@ export default function StorytellingClient() {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-amber-900/20 to-purple-900/20" />
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
@@ -408,7 +408,7 @@ export default function StorytellingClient() {
 
           <div className="space-y-4">
             {faqs.slice(0, 8).map((faq, idx) => (
-              <motion.div
+              <motion.div suppressHydrationWarning
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -427,7 +427,7 @@ export default function StorytellingClient() {
                   )}
                 </button>
                 {openFaq === idx && (
-                  <motion.div
+                  <motion.div suppressHydrationWarning
                     initial={{ height: 0 }}
                     animate={{ height: "auto" }}
                     className="px-6 pb-4"
@@ -446,7 +446,7 @@ export default function StorytellingClient() {
         <div className="absolute inset-0 bg-gradient-to-r from-amber-600/20 via-rose-600/20 to-purple-600/20" />
 <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2260%22%20height=%2260%22%20viewBox=%220%200%2060%2060%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg%20fill=%22none%22%20fill-rule=%22evenodd%22%3E%3Cg%20fill=%22%239C92AC%22%20fill-opacity=%220.05%22%3E%3Cpath%20d=%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30" />        
         <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}

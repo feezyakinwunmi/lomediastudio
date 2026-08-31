@@ -65,7 +65,7 @@ export default function MissionVision() {
   ];
 
   return (
-    <motion.section 
+    <motion.section suppressHydrationWarning
       ref={sectionRef}
       className="relative bg-black py-20 overflow-hidden"
       style={{
@@ -74,7 +74,7 @@ export default function MissionVision() {
       }}
     >
       {/* Small Moving Dot with Border */}
-      <motion.div
+      <motion.div suppressHydrationWarning
         className="fixed w-12 h-12 pointer-events-none z-50 hidden lg:block"
         style={{
           left: mousePosition.x - 24,
@@ -90,7 +90,7 @@ export default function MissionVision() {
         }}
       >
         <div className="relative w-full h-full">
-          <motion.div
+          <motion.div suppressHydrationWarning
             className="absolute inset-0 border border-red-500/40 rounded-full"
             animate={{
               scale: [1, 1.08, 1],
@@ -102,7 +102,7 @@ export default function MissionVision() {
             }}
           />
           
-          <motion.div
+          <motion.div suppressHydrationWarning
             className="absolute inset-1 border border-purple-400/60 rounded-full"
             animate={{
               rotate: 360,
@@ -114,7 +114,7 @@ export default function MissionVision() {
             }}
           />
           
-          <motion.div
+          <motion.div suppressHydrationWarning
             className="absolute inset-0 m-auto w-1.5 h-1.5 bg-red-500 rounded-full"
             animate={{
               scale: [1, 2, 1],
@@ -132,7 +132,7 @@ export default function MissionVision() {
           />
           
           {[...Array(6)].map((_, i) => (
-            <motion.div
+            <motion.div suppressHydrationWarning
               key={i}
               className="absolute w-0.5 h-0.5 bg-purple-400 rounded-full"
               style={{
@@ -158,7 +158,7 @@ export default function MissionVision() {
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(3)].map((_, i) => (
-          <motion.div
+          <motion.div suppressHydrationWarning
             key={`orb-${i}`}
             className="absolute rounded-full bg-red-500/5 blur-2xl"
             style={{
@@ -182,7 +182,7 @@ export default function MissionVision() {
 
       <div className="max-w-[90%] mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header - with scatter animation */}
-        <motion.div
+        <motion.div suppressHydrationWarning
           style={{
             y: headerY,
             opacity: headerOpacity,
@@ -206,7 +206,7 @@ export default function MissionVision() {
 
         <div className="grid lg:grid-cols-2 gap-6">
           {/* Mission Card - with scatter animation */}
-          <motion.div
+          <motion.div suppressHydrationWarning
             ref={missionRef}
             style={{
               x: missionX,
@@ -222,7 +222,7 @@ export default function MissionVision() {
             className="group h-full"
           >
             <div className="relative bg-black/80 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-gray-800 transition-all duration-300 group-hover:shadow-xl group-hover:bg-black/90 group-hover:border-red-500/30 h-full flex flex-col">
-              <motion.div
+              <motion.div suppressHydrationWarning
                 animate={{
                   rotate: hoveredCard === 'mission' ? [0, 5, -5, 0] : 0,
                   scale: hoveredCard === 'mission' ? 1.1 : 1,
@@ -260,7 +260,7 @@ export default function MissionVision() {
           </motion.div>
 
           {/* Vision Card - with scatter animation */}
-          <motion.div
+          <motion.div suppressHydrationWarning
             ref={visionRef}
             style={{
               x: visionX,
@@ -276,7 +276,7 @@ export default function MissionVision() {
             className="group h-full"
           >
             <div className="relative bg-black/80 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-gray-800 transition-all duration-300 group-hover:shadow-xl group-hover:bg-black/90 group-hover:border-purple-500/30 h-full flex flex-col">
-              <motion.div
+              <motion.div suppressHydrationWarning
                 animate={{
                   rotate: hoveredCard === 'vision' ? [0, 5, -5, 0] : 0,
                   scale: hoveredCard === 'vision' ? 1.1 : 1,
@@ -303,7 +303,7 @@ export default function MissionVision() {
                 <h4 className="text-xs font-semibold text-purple-400 mb-2">What We Envision:</h4>
                 <div className="space-y-2">
                   {visionAspirations.map((item, idx) => (
-                    <motion.div 
+                    <motion.div suppressHydrationWarning
                       key={idx} 
                       className="flex items-center gap-2"
                       whileHover={{ x: 5 }}
@@ -320,7 +320,7 @@ export default function MissionVision() {
         </div>
 
         {/* Bottom Statement */}
-        <motion.div
+        <motion.div suppressHydrationWarning
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}

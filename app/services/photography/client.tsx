@@ -63,7 +63,7 @@ export default function PhotographyClient() {
       {/* Hero Section - Fullscreen with Parallax */}
       <section className="relative min-h-screen flex items-center">
         {/* Background Image with Parallax */}
-        <motion.div 
+        <motion.div suppressHydrationWarning
           className="absolute inset-0"
           style={{ scale: scale }}
         >
@@ -77,7 +77,7 @@ export default function PhotographyClient() {
 
         {/* Animated light leak effect */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <motion.div 
+          <motion.div suppressHydrationWarning
             className="absolute top-1/2 left-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl"
             animate={{ x: [0, 100, 0], y: [0, 50, 0] }}
             transition={{ duration: 8, repeat: Infinity }}
@@ -86,12 +86,12 @@ export default function PhotographyClient() {
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-20 py-20">
           <div className="max-w-3xl">
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <motion.div
+              <motion.div suppressHydrationWarning
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2, type: "spring" }}
@@ -134,7 +134,7 @@ export default function PhotographyClient() {
                   { value: "98%", label: "Client Satisfaction" },
                   { value: "48hr", label: "Sneak Peek Delivery" }
                 ].map((stat, idx) => (
-                  <motion.div
+                  <motion.div suppressHydrationWarning
                     key={idx}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -150,7 +150,7 @@ export default function PhotographyClient() {
         </div>
 
         {/* Scroll indicator */}
-        <motion.div
+        <motion.div suppressHydrationWarning
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
@@ -158,7 +158,7 @@ export default function PhotographyClient() {
         >
           <div className="flex flex-col items-center gap-2">
             <span className="text-white/50 text-xs">Scroll to explore</span>
-            <motion.div
+            <motion.div suppressHydrationWarning
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             >
@@ -171,7 +171,7 @@ export default function PhotographyClient() {
       {/* Portfolio Gallery Section */}
       <section id="portfolio" className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -206,7 +206,7 @@ export default function PhotographyClient() {
           {/* Masonry Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredPortfolio.map((item, idx) => (
-              <motion.div
+              <motion.div suppressHydrationWarning
                 key={item.id}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -239,7 +239,7 @@ export default function PhotographyClient() {
       <section className="py-20 bg-gradient-to-br from-gray-900 to-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -259,7 +259,7 @@ export default function PhotographyClient() {
                   "Social Media Content Photography",
                   "Promotional & Campaign Shoots"
                 ].map((service, idx) => (
-                  <motion.div
+                  <motion.div suppressHydrationWarning
                     key={idx}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -275,7 +275,7 @@ export default function PhotographyClient() {
               </div>
             </motion.div>
 
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -292,7 +292,7 @@ export default function PhotographyClient() {
                     </div>
                   </div>
                 </div>
-                <motion.div 
+                <motion.div suppressHydrationWarning
                   className="absolute -inset-2 rounded-full border-2 border-amber-500/30"
                   animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0, 0.5] }}
                   transition={{ duration: 2, repeat: Infinity }}
@@ -336,7 +336,7 @@ export default function PhotographyClient() {
             ].map((item, idx) => {
               const Icon = item.icon;
               return (
-                <motion.div
+                <motion.div suppressHydrationWarning
                   key={idx}
                   initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -374,7 +374,7 @@ export default function PhotographyClient() {
 
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <motion.div
+              <motion.div suppressHydrationWarning
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -393,7 +393,7 @@ export default function PhotographyClient() {
                   )}
                 </button>
                 {openFaq === idx && (
-                  <motion.div
+                  <motion.div suppressHydrationWarning
                     initial={{ height: 0 }}
                     animate={{ height: "auto" }}
                     className="px-6 pb-4"
@@ -419,7 +419,7 @@ export default function PhotographyClient() {
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}

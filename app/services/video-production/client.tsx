@@ -55,7 +55,7 @@ export default function VideoProductionClient() {
       <section className="relative min-h-screen flex items-center">
         {/* Animated gradient background */}
         <div className="absolute inset-0 overflow-hidden">
-          <motion.div 
+          <motion.div suppressHydrationWarning
             className="absolute inset-0 bg-gradient-to-r from-red-600/20 via-purple-600/20 to-blue-600/20"
             animate={{ 
               backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
@@ -73,12 +73,12 @@ export default function VideoProductionClient() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <motion.div
+              <motion.div suppressHydrationWarning
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2, type: "spring" }}
@@ -126,7 +126,7 @@ export default function VideoProductionClient() {
             </motion.div>
 
             {/* Right Content - Animated Video Player Mock */}
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, scale: 0.8, rotateY: 20 }}
               animate={{ opacity: 1, scale: 1, rotateY: 0 }}
               transition={{ duration: 0.8, type: "spring" }}
@@ -142,11 +142,11 @@ export default function VideoProductionClient() {
                 />
                 
                 {/* Play Button Overlay */}
-                <motion.div 
+                <motion.div suppressHydrationWarning
                   className="absolute inset-0 bg-black/40 flex items-center justify-center"
                   whileHover={{ backgroundColor: "rgba(0,0,0,0.2)" }}
                 >
-                  <motion.div
+                  <motion.div suppressHydrationWarning
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     className="w-20 h-20 bg-red-500 rounded-full flex items-center justify-center cursor-pointer shadow-2xl"
@@ -160,7 +160,7 @@ export default function VideoProductionClient() {
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 rounded-full bg-red-500" />
                     <div className="flex-1 h-1 bg-white/30 rounded-full overflow-hidden">
-                      <motion.div 
+                      <motion.div suppressHydrationWarning
                         className="h-full bg-red-500 rounded-full"
                         animate={{ width: ["0%", "100%"] }}
                         transition={{ duration: 10, repeat: Infinity }}
@@ -173,7 +173,7 @@ export default function VideoProductionClient() {
               </div>
 
               {/* Floating stats */}
-              <motion.div
+              <motion.div suppressHydrationWarning
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
                 className="absolute -bottom-6 -left-6 bg-slate-800 rounded-xl p-3 shadow-xl border border-slate-700"
@@ -189,7 +189,7 @@ export default function VideoProductionClient() {
         </div>
 
         {/* Scroll indicator */}
-        <motion.div
+        <motion.div suppressHydrationWarning
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
@@ -207,7 +207,7 @@ export default function VideoProductionClient() {
       {/* Video Types Grid */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -226,7 +226,7 @@ export default function VideoProductionClient() {
             {videoTypes.map((type, idx) => {
               const Icon = type.icon;
               return (
-                <motion.div
+                <motion.div suppressHydrationWarning
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -267,7 +267,7 @@ export default function VideoProductionClient() {
               {processSteps.map((step, idx) => {
                 const Icon = step.icon;
                 return (
-                  <motion.div
+                  <motion.div suppressHydrationWarning
                     key={idx}
                     initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -302,7 +302,7 @@ export default function VideoProductionClient() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -336,7 +336,7 @@ export default function VideoProductionClient() {
               </div>
             </motion.div>
 
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -345,7 +345,7 @@ export default function VideoProductionClient() {
               <div className="bg-gradient-to-r from-red-500/10 to-purple-500/10 rounded-2xl p-8 border border-white/10">
                 <div className="grid grid-cols-3 gap-4">
                   {["Camera", "Lens", "Mic", "Tripod", "Light", "Monitor"].map((item, idx) => (
-                    <motion.div
+                    <motion.div suppressHydrationWarning
                       key={idx}
                       whileHover={{ scale: 1.05 }}
                       className="text-center p-3 bg-white/5 rounded-lg"
@@ -380,7 +380,7 @@ export default function VideoProductionClient() {
             ].map((stat, idx) => {
               const Icon = stat.icon;
               return (
-                <motion.div
+                <motion.div suppressHydrationWarning
                   key={idx}
                   initial={{ opacity: 0, scale: 0.5 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -407,7 +407,7 @@ export default function VideoProductionClient() {
 
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <motion.div
+              <motion.div suppressHydrationWarning
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -426,7 +426,7 @@ export default function VideoProductionClient() {
                   )}
                 </button>
                 {openFaq === idx && (
-                  <motion.div
+                  <motion.div suppressHydrationWarning
                     initial={{ height: 0 }}
                     animate={{ height: "auto" }}
                     className="px-6 pb-4"
@@ -448,7 +448,7 @@ export default function VideoProductionClient() {
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}

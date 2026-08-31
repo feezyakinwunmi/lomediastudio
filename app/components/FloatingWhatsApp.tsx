@@ -13,8 +13,8 @@ export default function FloatingWhatsApp() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  // WhatsApp number - replace with your actual WhatsApp number (country code + number, no + or spaces)
-  const whatsappNumber = "+1 (514) 219-2987"; // Nigeria format: 2348012345678
+  // WhatsApp number (digits only: country code + number, no +, spaces or symbols)
+  const whatsappNumber = "15142192987";
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
   // Hide on scroll down, show on scroll up
@@ -67,7 +67,7 @@ export default function FloatingWhatsApp() {
   return (
     <>
       {/* Floating Button */}
-      <motion.div
+      <motion.div suppressHydrationWarning
         initial={{ scale: 0, opacity: 0 }}
         animate={{ 
           scale: isVisible ? 1 : 0,
@@ -80,7 +80,7 @@ export default function FloatingWhatsApp() {
         {/* Tooltip */}
         <AnimatePresence>
           {showTooltip && !isOpen && (
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: 20, scale: 0.8 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               exit={{ opacity: 0, x: 20, scale: 0.8 }}
@@ -95,7 +95,7 @@ export default function FloatingWhatsApp() {
         </AnimatePresence>
 
         {/* Main Button */}
-        <motion.button
+        <motion.button suppressHydrationWarning
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsOpen(!isOpen)}
@@ -113,7 +113,7 @@ export default function FloatingWhatsApp() {
           
           {/* Pulse Animation */}
           {!isOpen && (
-            <motion.span
+            <motion.span suppressHydrationWarning
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [0.5, 0, 0.5],
@@ -131,7 +131,7 @@ export default function FloatingWhatsApp() {
         {/* Chat Window */}
         <AnimatePresence>
           {isOpen && (
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, y: 20, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.9 }}
@@ -178,7 +178,7 @@ export default function FloatingWhatsApp() {
                   <div className="mb-4">
                     <div className="bg-gray-100 rounded-2xl rounded-tl-none p-3 max-w-[85%]">
                       <p className="text-sm text-gray-700">
-                        👋 Hi there! Welcome to LomeMediaStudio. How can we help you today?
+                        👋 Hi there! Welcome to LoMediaStudio. How can we help you today?
                       </p>
                     </div>
                   </div>
