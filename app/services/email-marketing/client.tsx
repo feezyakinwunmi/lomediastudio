@@ -26,7 +26,7 @@ const faqs = [
 function EnvelopeIcon() {
   return (
     <div className="relative w-20 h-20 mx-auto">
-      <motion.div
+      <motion.div suppressHydrationWarning
         className="absolute inset-0 bg-pink-500 rounded-lg"
         initial={{ rotateX: 0 }}
         animate={{ rotateX: 180 }}
@@ -73,7 +73,7 @@ export default function EmailMarketingClient() {
         
         {/* Floating hearts */}
         {[...Array(6)].map((_, i) => (
-          <motion.div
+          <motion.div suppressHydrationWarning
             key={i}
             className="absolute text-pink-300/30"
             initial={{ y: 0, opacity: 0 }}
@@ -88,12 +88,12 @@ export default function EmailMarketingClient() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <motion.div
+              <motion.div suppressHydrationWarning
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2, type: "spring" }}
@@ -143,7 +143,7 @@ export default function EmailMarketingClient() {
             </motion.div>
 
             {/* Right Content - Email Preview Card */}
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, scale: 0.9, rotateY: 15 }}
               animate={{ opacity: 1, scale: 1, rotateY: 0 }}
               transition={{ duration: 0.8, type: "spring" }}
@@ -166,7 +166,7 @@ export default function EmailMarketingClient() {
                 
                 {/* Email Body */}
                 <div className="p-6">
-                  <motion.h3 
+                  <motion.h3 suppressHydrationWarning
                     className="text-xl font-bold text-gray-900 mb-3"
                     animate={{ opacity: [0.5, 1] }}
                     transition={{ duration: 1, repeat: Infinity }}
@@ -176,7 +176,7 @@ export default function EmailMarketingClient() {
                   <p className="text-gray-600 text-sm mb-4">
                     Hi there! We have an exclusive deal for our Ottawa subscribers...
                   </p>
-                  <motion.button
+                  <motion.button suppressHydrationWarning
                     whileHover={{ scale: 1.05 }}
                     className="bg-pink-500 text-white px-6 py-2 rounded-lg text-sm font-semibold"
                   >
@@ -194,7 +194,7 @@ export default function EmailMarketingClient() {
               </div>
 
               {/* Floating stats */}
-              <motion.div
+              <motion.div suppressHydrationWarning
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
                 className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4"
@@ -217,7 +217,7 @@ export default function EmailMarketingClient() {
       {/* Campaign Performance Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -231,7 +231,7 @@ export default function EmailMarketingClient() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {campaigns.map((campaign, idx) => (
-              <motion.div
+              <motion.div suppressHydrationWarning
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -270,7 +270,7 @@ export default function EmailMarketingClient() {
       <section className="py-20 bg-gradient-to-br from-pink-50 to-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -287,7 +287,7 @@ export default function EmailMarketingClient() {
                 {benefits.map((benefit, idx) => {
                   const Icon = benefit.icon;
                   return (
-                    <motion.div
+                    <motion.div suppressHydrationWarning
                       key={idx}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -307,7 +307,7 @@ export default function EmailMarketingClient() {
               </div>
             </motion.div>
 
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -331,7 +331,7 @@ export default function EmailMarketingClient() {
                         <span className="font-semibold">${item.roi} per $1</span>
                       </div>
                       <div className="h-8 bg-gray-100 rounded-lg overflow-hidden">
-                        <motion.div
+                        <motion.div suppressHydrationWarning
                           initial={{ width: 0 }}
                           whileInView={{ width: `${item.roi / 42}%` }}
                           transition={{ duration: 1, delay: idx * 0.2 }}
@@ -373,7 +373,7 @@ export default function EmailMarketingClient() {
               ].map((item, idx) => {
                 const Icon = item.icon;
                 return (
-                  <motion.div
+                  <motion.div suppressHydrationWarning
                     key={idx}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -406,7 +406,7 @@ export default function EmailMarketingClient() {
 
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <motion.div
+              <motion.div suppressHydrationWarning
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -425,7 +425,7 @@ export default function EmailMarketingClient() {
                   )}
                 </button>
                 {openFaq === idx && (
-                  <motion.div
+                  <motion.div suppressHydrationWarning
                     initial={{ height: 0 }}
                     animate={{ height: "auto" }}
                     className="px-6 pb-4"
@@ -442,7 +442,7 @@ export default function EmailMarketingClient() {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-pink-500 to-rose-600">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}

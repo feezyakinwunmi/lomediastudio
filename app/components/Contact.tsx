@@ -17,7 +17,7 @@ export default function Contact() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <motion.button
+          <motion.button suppressHydrationWarning
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-12 py-4 bg-purple-900 text-white rounded-full font-semibold text-lg shadow-lg hover:bg-red-600 transition-colors"

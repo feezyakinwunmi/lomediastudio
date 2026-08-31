@@ -63,17 +63,17 @@ export default function CreativeDirectionClient() {
 
         {/* Animated compass rings */}
         <div className="absolute inset-0 overflow-hidden">
-          <motion.div
+          <motion.div suppressHydrationWarning
             animate={{ rotate: 360 }}
             transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-indigo-500/10 rounded-full"
           />
-          <motion.div
+          <motion.div suppressHydrationWarning
             animate={{ rotate: -360 }}
             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-indigo-500/20 rounded-full"
           />
-          <motion.div
+          <motion.div suppressHydrationWarning
             animate={{ rotate: 180 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-indigo-500/30 rounded-full"
@@ -83,12 +83,12 @@ export default function CreativeDirectionClient() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <motion.div
+              <motion.div suppressHydrationWarning
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2, type: "spring" }}
@@ -138,7 +138,7 @@ export default function CreativeDirectionClient() {
             </motion.div>
 
             {/* Right Content - Vision Board */}
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, type: "spring" }}
@@ -182,7 +182,7 @@ export default function CreativeDirectionClient() {
               </div>
 
               {/* Floating elements */}
-              <motion.div
+              <motion.div suppressHydrationWarning
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
                 className="absolute -top-6 -right-6 bg-gradient-to-r from-amber-500 to-orange-500 rounded-xl p-3 shadow-xl"
@@ -194,7 +194,7 @@ export default function CreativeDirectionClient() {
         </div>
 
         {/* Scroll indicator */}
-        <motion.div
+        <motion.div suppressHydrationWarning
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
@@ -212,7 +212,7 @@ export default function CreativeDirectionClient() {
       {/* Four Pillars Section */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -228,7 +228,7 @@ export default function CreativeDirectionClient() {
             {pillars.map((pillar, idx) => {
               const Icon = pillar.icon;
               return (
-                <motion.div
+                <motion.div suppressHydrationWarning
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -255,7 +255,7 @@ export default function CreativeDirectionClient() {
       <section className="py-24 bg-black/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -270,7 +270,7 @@ export default function CreativeDirectionClient() {
               
               <div className="space-y-4">
                 {deliverables.map((item, idx) => (
-                  <motion.div
+                  <motion.div suppressHydrationWarning
                     key={idx}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -290,7 +290,7 @@ export default function CreativeDirectionClient() {
               </div>
             </motion.div>
 
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -302,7 +302,7 @@ export default function CreativeDirectionClient() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative">
                     <Compass className="w-40 h-40 text-indigo-400/30" />
-                    <motion.div
+                    <motion.div suppressHydrationWarning
                       animate={{ rotate: 360 }}
                       transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                       className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -355,7 +355,7 @@ export default function CreativeDirectionClient() {
             ].map((item, idx) => {
               const Icon = item.icon;
               return (
-                <motion.div
+                <motion.div suppressHydrationWarning
                   key={idx}
                   initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -397,7 +397,7 @@ export default function CreativeDirectionClient() {
             ].map((stat, idx) => {
               const Icon = stat.icon;
               return (
-                <motion.div
+                <motion.div suppressHydrationWarning
                   key={idx}
                   initial={{ opacity: 0, scale: 0.5 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -424,7 +424,7 @@ export default function CreativeDirectionClient() {
 
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <motion.div
+              <motion.div suppressHydrationWarning
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -443,7 +443,7 @@ export default function CreativeDirectionClient() {
                   )}
                 </button>
                 {openFaq === idx && (
-                  <motion.div
+                  <motion.div suppressHydrationWarning
                     initial={{ height: 0 }}
                     animate={{ height: "auto" }}
                     className="px-6 pb-4"
@@ -465,7 +465,7 @@ export default function CreativeDirectionClient() {
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}

@@ -37,7 +37,7 @@ export default function Work() {
         <div className="grid md:grid-cols-3 gap-8">
           {projects.map((project, idx) => (
             <AnimatedSection key={idx} delay={idx * 0.2}>
-              <motion.div
+              <motion.div suppressHydrationWarning
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="group cursor-pointer"
               >

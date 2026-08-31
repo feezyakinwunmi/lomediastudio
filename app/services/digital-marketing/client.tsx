@@ -88,12 +88,12 @@ export default function DigitalMarketingClient() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <motion.div
+              <motion.div suppressHydrationWarning
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2, type: "spring" }}
@@ -133,7 +133,7 @@ export default function DigitalMarketingClient() {
               {/* Metrics Row */}
               <div className="grid grid-cols-4 gap-4 mt-12">
                 {metrics.map((metric, idx) => (
-                  <motion.div
+                  <motion.div suppressHydrationWarning
                     key={idx}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -148,7 +148,7 @@ export default function DigitalMarketingClient() {
             </motion.div>
 
             {/* Right Content - Animated Dashboard Card */}
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -167,7 +167,7 @@ export default function DigitalMarketingClient() {
                 
                 {/* Animated Line Chart */}
                 <svg className="w-full h-48 mb-6" viewBox="0 0 500 150">
-                  <motion.path
+                  <motion.path suppressHydrationWarning
                     d="M0,100 Q50,80 100,90 T200,60 T300,70 T400,40 T500,30"
                     fill="none"
                     stroke="#22c55e"
@@ -176,7 +176,7 @@ export default function DigitalMarketingClient() {
                     animate={{ pathLength: 1 }}
                     transition={{ duration: 2, delay: 0.5 }}
                   />
-                  <motion.path
+                  <motion.path suppressHydrationWarning
                     d="M0,120 Q50,110 100,115 T200,95 T300,100 T400,85 T500,75"
                     fill="none"
                     stroke="#3b82f6"
@@ -205,7 +205,7 @@ export default function DigitalMarketingClient() {
               </div>
 
               {/* Floating elements */}
-              <motion.div
+              <motion.div suppressHydrationWarning
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
                 className="absolute -top-6 -right-6 bg-green-500 rounded-full p-3 shadow-lg"
@@ -220,7 +220,7 @@ export default function DigitalMarketingClient() {
       {/* Services Grid Section - Card Style */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -240,7 +240,7 @@ export default function DigitalMarketingClient() {
             {services.map((service, idx) => {
               const Icon = service.icon;
               return (
-                <motion.div
+                <motion.div suppressHydrationWarning
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -283,7 +283,7 @@ export default function DigitalMarketingClient() {
             ].map((item, idx) => {
               const Icon = item.icon;
               return (
-                <motion.div
+                <motion.div suppressHydrationWarning
                   key={idx}
                   initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -321,7 +321,7 @@ export default function DigitalMarketingClient() {
 
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <motion.div
+              <motion.div suppressHydrationWarning
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -340,7 +340,7 @@ export default function DigitalMarketingClient() {
                   )}
                 </button>
                 {openFaq === idx && (
-                  <motion.div
+                  <motion.div suppressHydrationWarning
                     initial={{ height: 0 }}
                     animate={{ height: "auto" }}
                     exit={{ height: 0 }}
@@ -358,7 +358,7 @@ export default function DigitalMarketingClient() {
       {/* CTA Section - Bold */}
       <section className="py-20 bg-gradient-to-r from-green-600 to-emerald-700">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}

@@ -59,21 +59,21 @@ export default function VisualBrandDevelopmentClient() {
           <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-yellow-200 rounded-full blur-3xl opacity-20" />
           
           {/* Animated floating shapes */}
-          <motion.div
+          <motion.div suppressHydrationWarning
             animate={{ y: [0, 20, 0], x: [0, 10, 0] }}
             transition={{ duration: 6, repeat: Infinity }}
             className="absolute top-1/4 left-1/4"
           >
             <div className="w-8 h-8 border-2 border-purple-300 rounded-lg rotate-45" />
           </motion.div>
-          <motion.div
+          <motion.div suppressHydrationWarning
             animate={{ y: [0, -15, 0], x: [0, 15, 0] }}
             transition={{ duration: 5, repeat: Infinity, delay: 1 }}
             className="absolute bottom-1/3 right-1/4"
           >
             <div className="w-6 h-6 border-2 border-pink-300 rounded-full" />
           </motion.div>
-          <motion.div
+          <motion.div suppressHydrationWarning
             animate={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 4, repeat: Infinity }}
             className="absolute top-2/3 left-1/3"
@@ -85,12 +85,12 @@ export default function VisualBrandDevelopmentClient() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <motion.div
+              <motion.div suppressHydrationWarning
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2, type: "spring" }}
@@ -140,7 +140,7 @@ export default function VisualBrandDevelopmentClient() {
             </motion.div>
 
             {/* Right Content - Brand Board Mockup */}
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, scale: 0.9, rotateY: 10 }}
               animate={{ opacity: 1, scale: 1, rotateY: 0 }}
               transition={{ duration: 0.8, type: "spring" }}
@@ -179,7 +179,7 @@ export default function VisualBrandDevelopmentClient() {
                     <h4 className="text-xs font-semibold text-gray-400 mb-2">COLOR PALETTE</h4>
                     <div className="flex gap-2">
                       {["#8B5CF6", "#EC4899", "#F59E0B", "#10B981"].map((color, idx) => (
-                        <motion.div
+                        <motion.div suppressHydrationWarning
                           key={idx}
                           whileHover={{ scale: 1.1, y: -5 }}
                           className="w-12 h-12 rounded-lg cursor-pointer"
@@ -211,14 +211,14 @@ export default function VisualBrandDevelopmentClient() {
               </div>
 
               {/* Floating elements */}
-              <motion.div
+              <motion.div suppressHydrationWarning
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
                 className="absolute -top-6 -right-6 bg-white rounded-xl shadow-lg p-3"
               >
                 <Droplet className="w-5 h-5 text-purple-500" />
               </motion.div>
-              <motion.div
+              <motion.div suppressHydrationWarning
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 2.5, repeat: Infinity, delay: 1 }}
                 className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-3"
@@ -230,7 +230,7 @@ export default function VisualBrandDevelopmentClient() {
         </div>
 
         {/* Scroll indicator */}
-        <motion.div
+        <motion.div suppressHydrationWarning
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
@@ -248,7 +248,7 @@ export default function VisualBrandDevelopmentClient() {
       {/* Brand Elements Grid */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -267,7 +267,7 @@ export default function VisualBrandDevelopmentClient() {
             {brandElements.map((element, idx) => {
               const Icon = element.icon;
               return (
-                <motion.div
+                <motion.div suppressHydrationWarning
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -294,7 +294,7 @@ export default function VisualBrandDevelopmentClient() {
       <section className="py-24 bg-gradient-to-br from-gray-50 to-purple-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -325,7 +325,7 @@ export default function VisualBrandDevelopmentClient() {
               </div>
             </motion.div>
 
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -334,7 +334,7 @@ export default function VisualBrandDevelopmentClient() {
                 <h3 className="font-bold text-gray-900 mb-4">Sample Color Palettes</h3>
                 <div className="space-y-6">
                   {colorPalettes.map((palette, idx) => (
-                    <motion.div
+                    <motion.div suppressHydrationWarning
                       key={idx}
                       whileHover={{ scale: 1.02 }}
                       className="p-4 bg-gray-50 rounded-xl cursor-pointer"
@@ -381,7 +381,7 @@ export default function VisualBrandDevelopmentClient() {
             ].map((item, idx) => {
               const Icon = item.icon;
               return (
-                <motion.div
+                <motion.div suppressHydrationWarning
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -419,7 +419,7 @@ export default function VisualBrandDevelopmentClient() {
             ].map((item, idx) => {
               const Icon = item.icon;
               return (
-                <motion.div
+                <motion.div suppressHydrationWarning
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -446,7 +446,7 @@ export default function VisualBrandDevelopmentClient() {
 
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <motion.div
+              <motion.div suppressHydrationWarning
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -465,7 +465,7 @@ export default function VisualBrandDevelopmentClient() {
                   )}
                 </button>
                 {openFaq === idx && (
-                  <motion.div
+                  <motion.div suppressHydrationWarning
                     initial={{ height: 0 }}
                     animate={{ height: "auto" }}
                     className="px-6 pb-4"
@@ -483,7 +483,7 @@ export default function VisualBrandDevelopmentClient() {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-pink-600/10" />
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}

@@ -126,7 +126,7 @@ export default function Hero() {
       {/* Moving Background Lines */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(5)].map((_, i) => (
-          <motion.div
+          <motion.div suppressHydrationWarning
             key={i}
             className="absolute h-px bg-gradient-to-r from-transparent via-purple-900/30 to-transparent"
             style={{
@@ -148,7 +148,7 @@ export default function Hero() {
         ))}
         
         {[...Array(3)].map((_, i) => (
-          <motion.div
+          <motion.div suppressHydrationWarning
             key={`v-${i}`}
             className="absolute w-px bg-gradient-to-b from-transparent via-purple-900/30 to-transparent"
             style={{
@@ -201,7 +201,7 @@ export default function Hero() {
             </svg>
 
             {/* Slider Container */}
-            <motion.div 
+            <motion.div suppressHydrationWarning
               className="relative overflow-hidden rounded-3xl shadow-2xl"
               style={{ 
                 clipPath: 'url(#heroShape)',
@@ -211,7 +211,7 @@ export default function Hero() {
               }}
             >
               <AnimatePresence initial={false} custom={direction} mode="wait">
-                <motion.div
+                <motion.div suppressHydrationWarning
                   key={currentSlide}
                   custom={direction}
                   variants={slideVariants}
@@ -231,7 +231,7 @@ export default function Hero() {
 
                   
                   {/* Slide Overlay Text */}
-                  <motion.div 
+                  <motion.div suppressHydrationWarning
                     className="absolute bottom-8 left-8 bg-white/50 backdrop-blur-md rounded-xl p-4 max-w-[300px]"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -244,7 +244,7 @@ export default function Hero() {
               </AnimatePresence>
 
               {/* Inner glow effect */}
-              <motion.div 
+              <motion.div suppressHydrationWarning
                 className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 via-transparent to-purple-900/20 pointer-events-none"
                 animate={{
                   opacity: [0.3, 0.6, 0.3],
@@ -296,7 +296,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Animated H1 Text */}
-            <motion.div 
+            <motion.div suppressHydrationWarning
               className="absolute top-10 md:left-8 max-w-[170px] sm:max-w-[300px] md:max-w-[620px]"
               style={{
                 opacity: contentOpacity,
@@ -305,7 +305,7 @@ export default function Hero() {
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <motion.h1 
+              <motion.h1 suppressHydrationWarning
                 className="text-white text-2xl md:text-5xl font-bold leading-tight tracking-tight"
                 animate={{
                   textShadow: [
@@ -327,7 +327,7 @@ export default function Hero() {
                 {/* add linear gradient box */}
 <div className="absolute h-10 rounded-xl mr-2 mt-15 inset-0 bg-gradient-to-br from-black via-black to-purple-900/70 sm:hidden" />
 
-                <motion.span 
+                <motion.span suppressHydrationWarning
                   className="bg-gradient-to-r from-purple-900 to-red-600 bg-clip-text text-transparent mt-[20px] ml-2 sm:mt-[-100px]  inline-block"
                   animate={{
                     scale: [1, 1.02, 1],
@@ -344,7 +344,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Rotating Red Circle */}
-            <motion.div 
+            <motion.div suppressHydrationWarning
               className="absolute top-8 right-8 w-20 h-20 rounded-full flex items-center justify-center pointer-events-none"
               animate={{
                 rotate: 360,
@@ -360,7 +360,7 @@ export default function Hero() {
             >
               <div className="relative w-full h-full">
                 <div className="absolute inset-0 border-[5px] border-purple-900 rounded-full" />
-                <motion.svg 
+                <motion.svg suppressHydrationWarning
                   width="78" 
                   height="78" 
                   className="text-purple-900 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -387,7 +387,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Animated Glass Card */}
-            <motion.div 
+            <motion.div suppressHydrationWarning
               className="absolute bottom-8 right-8 backdrop-blur-xl bg-white/10 rounded-3xl shadow-xl p-7 max-w-[275px] border border-white/20"
               initial={{ opacity: 0, x: 50, y: 50 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
@@ -397,12 +397,12 @@ export default function Hero() {
                 opacity: contentOpacity,
               }}
             >
-              <motion.div
+              <motion.div suppressHydrationWarning
                 whileHover={{ x: 5 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
                 <div className="flex gap-4">
-                  <motion.div 
+                  <motion.div suppressHydrationWarning
                     className="w-12 h-12 bg-gradient-to-r from-purple-900 to-red-600  rounded-2xl flex items-center justify-center flex-shrink-0"
                     animate={{
                       rotate: [0, 10, -10, 0],
@@ -415,7 +415,7 @@ export default function Hero() {
                     <ArrowRight className="w-6 h-6 text-white" />
                   </motion.div>
                   <div>
-                    <motion.p 
+                    <motion.p suppressHydrationWarning
                       className="font-semibold text-[18px] leading-none tracking-tight mb-3 text-white"
                       animate={{
                         letterSpacing: ["normal", "1px", "normal"],
@@ -430,7 +430,7 @@ export default function Hero() {
                     </motion.p>
                   </div>
                 </div>
-                <motion.p 
+                <motion.p suppressHydrationWarning
                   className="text-white text-[13px] mt-4 leading-snug"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -442,7 +442,7 @@ export default function Hero() {
               </motion.div>
 
               {/* Animated Leaf */}
-              <motion.div 
+              <motion.div suppressHydrationWarning
                 className="absolute -bottom-3 -right-3 bg-white/20 backdrop-blur-md p-3 rounded-2xl shadow text-3xl border border-white/30"
                 animate={{
                   rotate: [0, 15, -15, 0],

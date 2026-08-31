@@ -70,12 +70,13 @@ export default function BlogClient({ blogPosts }: { blogPosts: BlogPost[] }) {
 
             {/* Featured Post - Hover Effect Only */}
             <div className="mb-12">
-              <Link href={`/blog/${featured.slug}`} target='_blank' className="group block">
+              <Link href={`/blog/${featured.slug}`} className="group block">
                 <div className="relative h-[380px] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500">
                   
                   <img
                     src={featured.image}
                     alt={featured.title}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
@@ -183,6 +184,7 @@ function BlogCard({ post }: { post: BlogPost }) {
           <img
             src={post.image}
             alt={post.title}
+            loading="lazy"
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
           <div className="absolute top-4 left-4 px-3 py-1 text-xs font-medium bg-white/95 rounded-lg">
@@ -213,7 +215,7 @@ function TrendingItem({ post }: { post: BlogPost }) {
   return (
     <Link href={`/blog/${post.slug}`} className="group flex gap-4 mb-6 last:mb-0">
       <div className="w-20 h-16 rounded-xl overflow-hidden flex-shrink-0">
-        <img src={post.image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition" />
+        <img src={post.image} alt={post.title} loading="lazy" width={80} height={64} className="w-full h-full object-cover group-hover:scale-105 transition" />
       </div>
       <div>
         <h4 className="line-clamp-2 text-sm font-medium group-hover:text-red-600 transition">

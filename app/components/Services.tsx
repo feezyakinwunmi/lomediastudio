@@ -112,7 +112,7 @@ export default function Services() {
   const headerY = useTransform(smoothProgress, [0.6, 0.9, 1], [0, -30, -50]);
 
   return (
-     <motion.section 
+     <motion.section suppressHydrationWarning
       ref={sectionRef}
       className="relative rounded-t-3xl bg-gray-100 px-4 py-20 overflow-hidden"
       style={{
@@ -123,7 +123,7 @@ export default function Services() {
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(6)].map((_, i) => (
-          <motion.div
+          <motion.div suppressHydrationWarning
             key={`bg-${i}`}
             className="absolute rounded-full bg-gradient-to-r from-red-500/5 to-purple-500/5 blur-3xl"
             style={{
@@ -148,14 +148,14 @@ export default function Services() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
-        <motion.div
+        <motion.div suppressHydrationWarning
           style={{
             y: headerY,
             opacity: cardsOpacity,
           }}
           className="text-center mb-16"
         >
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -167,7 +167,7 @@ export default function Services() {
             </div>
           </motion.div>
           
-          <motion.h2
+          <motion.h2 suppressHydrationWarning
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -177,7 +177,7 @@ export default function Services() {
             Our <span className="bg-gradient-to-r from-red-600 to-purple-600 bg-clip-text text-transparent">Services</span>
           </motion.h2>
           
-          <motion.p
+          <motion.p suppressHydrationWarning
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -189,7 +189,7 @@ export default function Services() {
         </motion.div>
 
         {/* Services Grid */}
-        <motion.div 
+        <motion.div suppressHydrationWarning
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
           style={{
             scale: cardsScale,
@@ -197,7 +197,7 @@ export default function Services() {
           }}
         >
           {services.map((service, idx) => (
-            <motion.div
+            <motion.div suppressHydrationWarning
               key={idx}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -211,7 +211,7 @@ export default function Services() {
             >
               <div className="relative bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-gray-200/50 transition-all duration-300 group-hover:shadow-2xl group-hover:bg-white/90 h-full">
                 {/* Animated gradient background on hover */}
-                <motion.div
+                <motion.div suppressHydrationWarning
                   className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   animate={{
                     background: [
@@ -228,7 +228,7 @@ export default function Services() {
                 
                 <div className="relative z-10">
                   {/* Icon Container with Swing Animation */}
-                  <motion.div
+                  <motion.div suppressHydrationWarning
                     whileHover="swing"
                     initial="initial"
                     variants={swingAnimation}
@@ -239,7 +239,7 @@ export default function Services() {
                   </motion.div>
                   
                   {/* Title */}
-                  <motion.h3 
+                  <motion.h3 suppressHydrationWarning
                     className="text-xl font-bold text-black mb-3 group-hover:text-red-600 transition-colors duration-300"
                   >
                     {service.title}
@@ -251,7 +251,7 @@ export default function Services() {
                   </p>
                   
                   {/* Decorative line */}
-                  <motion.div 
+                  <motion.div suppressHydrationWarning
                     className="h-0.5 bg-red-500/30 rounded-full mt-4"
                     initial={{ width: 0 }}
                     whileInView={{ width: "100%" }}
@@ -265,7 +265,7 @@ export default function Services() {
         </motion.div>
         
         {/* CTA Button */}
-        <motion.div
+        <motion.div suppressHydrationWarning
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
@@ -273,7 +273,7 @@ export default function Services() {
           className="text-center mt-12"
         >
           <a href="/services">
-            <motion.button
+            <motion.button suppressHydrationWarning
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold shadow-lg transition-all duration-300"

@@ -76,7 +76,7 @@ export default function Get() {
   ];
 
   return (
-    <motion.section 
+    <motion.section suppressHydrationWarning
       ref={sectionRef}
       className="relative bg-black py-20 overflow-hidden"
       style={{
@@ -87,7 +87,7 @@ export default function Get() {
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(3)].map((_, i) => (
-          <motion.div
+          <motion.div suppressHydrationWarning
             key={`orb-${i}`}
             className="absolute rounded-full bg-purple-900/5 blur-3xl"
             style={{
@@ -111,7 +111,7 @@ export default function Get() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <motion.div
+        <motion.div suppressHydrationWarning
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -134,7 +134,7 @@ export default function Get() {
         {/* Top Row - 3 Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {cards.map((card, idx) => (
-            <motion.div
+            <motion.div suppressHydrationWarning
               key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -153,7 +153,7 @@ export default function Get() {
                   <div className="h-32 flex items-end justify-center mb-4">
                     <div className="flex items-end gap-1.5">
                       {card.graphData.map((height, i) => (
-                        <motion.div
+                        <motion.div suppressHydrationWarning
                           key={i}
                           className="bg-purple-900 rounded-t w-3"
                           initial={{ height: 0 }}
@@ -185,7 +185,7 @@ export default function Get() {
         {/* Bottom Section - Workflow + Collaboration */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           {/* Workflow Integration */}
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -200,7 +200,7 @@ export default function Get() {
 
               <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
                 {apps.map((app, i) => (
-                  <motion.div
+                  <motion.div suppressHydrationWarning
                     key={i}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -216,7 +216,7 @@ export default function Get() {
           </motion.div>
 
           {/* Collaborate Real-time */}
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -232,7 +232,7 @@ export default function Get() {
               <div className="flex items-center gap-4">
                 <div className="flex -space-x-3">
                   {[1, 2, 3, 4].map((_, i) => (
-                    <motion.div
+                    <motion.div suppressHydrationWarning
                       key={i}
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -244,7 +244,7 @@ export default function Get() {
                   ))}
                 </div>
 
-                <motion.div 
+                <motion.div suppressHydrationWarning
                   className="bg-purple-900 text-black text-sm font-medium px-4 py-2 rounded-full flex items-center gap-2"
                   animate={{
                     scale: [1, 1.05, 1],
@@ -277,7 +277,7 @@ export default function Get() {
         </div>
 
         {/* Feature Tags */}
-        <motion.div
+        <motion.div suppressHydrationWarning
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -285,7 +285,7 @@ export default function Get() {
           className="flex flex-wrap gap-3 justify-center"
         >
           {features.map((feature, i) => (
-            <motion.div
+            <motion.div suppressHydrationWarning
               key={i}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}

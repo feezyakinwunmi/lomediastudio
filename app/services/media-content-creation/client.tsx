@@ -66,7 +66,7 @@ function FAQAccordion({ faqs }: { faqs: Array<{ q: string; a: string }> }) {
               )}
             </button>
             {openIndex === idx && (
-              <motion.div
+              <motion.div suppressHydrationWarning
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
@@ -196,13 +196,13 @@ export default function MediaContentCreationPage() {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 py-20">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center text-white"
           >
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
@@ -213,7 +213,7 @@ export default function MediaContentCreationPage() {
               </div>
             </motion.div>
             
-            <motion.h1
+            <motion.h1 suppressHydrationWarning
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -223,7 +223,7 @@ export default function MediaContentCreationPage() {
               <span className="text-blue-500 block">That Performs</span>
             </motion.h1>
             
-            <motion.p
+            <motion.p suppressHydrationWarning
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -232,7 +232,7 @@ export default function MediaContentCreationPage() {
               {serviceData.tagline}
             </motion.p>
 
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -245,7 +245,7 @@ export default function MediaContentCreationPage() {
                 Get Started <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="https://wa.me/2348012345678"
+                href="https://wa.me/15142192987"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-3 rounded-full font-semibold flex items-center gap-2 transition-all hover:scale-105 border border-white/20"
@@ -258,14 +258,14 @@ export default function MediaContentCreationPage() {
         </div>
 
         {/* Scroll indicator */}
-        <motion.div
+        <motion.div suppressHydrationWarning
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <motion.div
+            <motion.div suppressHydrationWarning
               animate={{ y: [0, 15, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
               className="w-1 h-2 bg-white/50 rounded-full mt-2"
@@ -278,7 +278,7 @@ export default function MediaContentCreationPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -301,7 +301,7 @@ export default function MediaContentCreationPage() {
               </div>
             </motion.div>
 
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -317,7 +317,7 @@ export default function MediaContentCreationPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               </div>
               {/* Floating stats card */}
-              <motion.div
+              <motion.div suppressHydrationWarning
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
                 className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4 flex items-center gap-3"
@@ -338,7 +338,7 @@ export default function MediaContentCreationPage() {
       {/* Services Offered Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -360,7 +360,7 @@ export default function MediaContentCreationPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {serviceData.servicesOffered.map((service, idx) => (
-              <motion.div
+              <motion.div suppressHydrationWarning
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -382,7 +382,7 @@ export default function MediaContentCreationPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -403,7 +403,7 @@ export default function MediaContentCreationPage() {
                 {serviceData.benefits.map((benefit, idx) => {
                   const Icon = benefit.icon;
                   return (
-                    <motion.div
+                    <motion.div suppressHydrationWarning
                       key={idx}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -423,7 +423,7 @@ export default function MediaContentCreationPage() {
               </div>
             </motion.div>
 
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -458,7 +458,7 @@ export default function MediaContentCreationPage() {
       {/* Process Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -480,7 +480,7 @@ export default function MediaContentCreationPage() {
 
           <div className="grid md:grid-cols-4 gap-6">
             {serviceData.process.map((step, idx) => (
-              <motion.div
+              <motion.div suppressHydrationWarning
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -512,7 +512,7 @@ export default function MediaContentCreationPage() {
       <section id="contact" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -555,7 +555,7 @@ export default function MediaContentCreationPage() {
               </div>
             </motion.div>
 
-            <motion.div
+            <motion.div suppressHydrationWarning
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -629,7 +629,7 @@ export default function MediaContentCreationPage() {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <motion.div
+          <motion.div suppressHydrationWarning
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -643,7 +643,7 @@ export default function MediaContentCreationPage() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href="/contact">
-                <motion.button
+                <motion.button suppressHydrationWarning
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold flex items-center gap-2"
@@ -652,7 +652,7 @@ export default function MediaContentCreationPage() {
                 </motion.button>
               </Link>
               <Link href="/services">
-                <motion.button
+                <motion.button suppressHydrationWarning
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-white/20 backdrop-blur-sm text-white px-8 py-3 rounded-full font-semibold border border-white/30"

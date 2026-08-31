@@ -85,7 +85,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <motion.section 
+    <motion.section suppressHydrationWarning
          ref={sectionRef}
          className="relative bg-gray-100 rounded-t-2xl py-20 overflow-hidden"
          style={{
@@ -96,7 +96,7 @@ export default function Testimonials() {
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(3)].map((_, i) => (
-          <motion.div
+          <motion.div suppressHydrationWarning
             key={`orb-${i}`}
             className="absolute rounded-full bg-purple-900/5 blur-3xl"
             style={{
@@ -120,7 +120,7 @@ export default function Testimonials() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <motion.div
+        <motion.div suppressHydrationWarning
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -145,7 +145,7 @@ export default function Testimonials() {
           {/* First Row - Aligned Tops (items-start), Varying Bottoms */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
             {firstRowCards.map((testimonial, idx) => (
-              <motion.div
+              <motion.div suppressHydrationWarning
                 key={`first-${idx}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -161,7 +161,7 @@ export default function Testimonials() {
                 >
                   {/* User Info */}
                   <div className="flex items-center gap-4 mb-4">
-                    <motion.img 
+                    <motion.img suppressHydrationWarning
                       src={testimonial.image} 
                       alt={testimonial.name}
                       whileHover={{ scale: 1.05 }}
@@ -204,7 +204,7 @@ export default function Testimonials() {
           {/* Second Row - Varying Tops (different top margins), Aligned Bottoms (items-end) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-[-75] items-end">
             {secondRowCards.map((testimonial, idx) => (
-              <motion.div
+              <motion.div suppressHydrationWarning
                 key={`second-${idx}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -224,7 +224,7 @@ export default function Testimonials() {
                 >
                   {/* User Info */}
                   <div className="flex items-center gap-4 mb-4">
-                    <motion.img 
+                    <motion.img suppressHydrationWarning
                       src={testimonial.image} 
                       alt={testimonial.name}
                       whileHover={{ scale: 1.05 }}
@@ -266,14 +266,14 @@ export default function Testimonials() {
         </div>
 
         {/* Navigation Buttons */}
-        <motion.div
+        <motion.div suppressHydrationWarning
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
           className="flex justify-center gap-4 mt-12"
         >
-          <motion.button
+          <motion.button suppressHydrationWarning
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-white/80 backdrop-blur-lg border border-gray-200/50 text-gray-700 p-3 rounded-full hover:bg-white hover:shadow-lg transition-all"
@@ -281,7 +281,7 @@ export default function Testimonials() {
             <ChevronLeft className="w-5 h-5" />
           </motion.button>
           
-          <motion.button
+          <motion.button suppressHydrationWarning
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-white/80 backdrop-blur-lg border border-gray-200/50 text-gray-700 p-3 rounded-full hover:bg-white hover:shadow-lg transition-all"
@@ -291,7 +291,7 @@ export default function Testimonials() {
         </motion.div>
 
         {/* Stats Section */}
-        <motion.div
+        <motion.div suppressHydrationWarning
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
@@ -304,7 +304,7 @@ export default function Testimonials() {
             { value: "1,200+", label: "Projects Completed" },
             { value: "50+", label: "Team Members" },
           ].map((stat, idx) => (
-            <motion.div
+            <motion.div suppressHydrationWarning
               key={idx}
               whileHover={{ scale: 1.05 }}
               className="text-center"
