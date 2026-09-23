@@ -69,8 +69,8 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+514 219 2987"],
-      link: "tel:+5142192987",
+      details: ["+1 (905) 922-4471"],
+      link: "tel:+19059224471",
       color: "text-red-500",
       bgColor: "bg-red-50"
     },
@@ -78,7 +78,7 @@ export default function ContactPage() {
       icon: MessageSquare,
       title: "WhatsApp",
       details: ["+1 514 219 2987", "Available 24/7"],
-      link: "https://wa.me/15142192987",
+      link: "https://wa.me/+19059224471",
       color: "text-red-500",
       bgColor: "bg-red-50"
     },
@@ -509,7 +509,7 @@ export default function ContactPage() {
               Let's create something extraordinary together. Reach out to us today!
             </p>
             <a
-              href="https://wa.me/15142192987?text=Hi! I'm interested in starting a project with LoMediaStudio. Can we discuss?"
+              href="https://wa.me/+19059224471?text=Hi! I'm interested in starting a project with LoMediaStudio. Can we discuss?"
               target="_blank"
               rel="noopener noreferrer"
             >
