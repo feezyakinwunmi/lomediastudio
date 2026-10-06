@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Search, X, Calendar, User, ArrowRight, Book, Video, PenTool, Mail, Camera } from "lucide-react";
-
+import { sendGAEvent } from '@next/third-parties/google'
 import { allBlogPosts } from '@/data/blogs';
 const blogPosts = allBlogPosts;
 
@@ -294,6 +294,7 @@ export default function Navbar() {
 
                 {navItems.map((item) => (
                   <Link key={item.name} href={item.href}>
+                    
                     <motion.div suppressHydrationWarning
                       onHoverStart={() => setHoverItem(item.name)}
                       onHoverEnd={() => setHoverItem(null)}
@@ -303,6 +304,13 @@ export default function Navbar() {
                           ? "rgba(239, 68, 68, 0.15)" 
                           : "rgba(255, 255, 255, 0)",
                       }}
+
+                      onClick={() =>
+                        sendGAEvent('event', 'button_click', {
+                          value: `${item.name} clicked`,
+                          // any other parameters
+                        })
+                      }
                       className="relative px-4 py-2 rounded-full transition-all duration-300 cursor-pointer"
                     >
                       <span className="relative text-black hover:text-purple-700 transition-colors font-medium">
@@ -364,7 +372,18 @@ export default function Navbar() {
                   <motion.div suppressHydrationWarning
                     whileHover={{ x: 10, backgroundColor: "#fef2f2" }}
                     className="px-4 py-3 text-gray-700 hover:text-purple-900 transition-colors rounded-lg"
-                    onClick={() => setIsOpen(false)}
+                    // onClick={() => setIsOpen(false)}
+                    onClick={() =>
+                    {
+                      setIsOpen(false);
+                      sendGAEvent('event', 'button_click', {
+                        value: `${item.name} clicked`,
+                        // any other parameters
+                        
+                      })
+                    }
+                      
+                    }
                   >
                     {item.name}
                   </motion.div>

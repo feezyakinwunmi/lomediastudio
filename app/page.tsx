@@ -5,6 +5,7 @@ import MissionVision from "./components/MissionVision";
 import Get from "./components/get";
 import Testimonials from "./components/testimonials";
 
+
 export const metadata: Metadata = {
   title: "Video Production, Photography & Digital Marketing in Ottawa",
   description:

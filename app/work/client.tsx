@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { sendGAEvent } from '@next/third-parties/google';
 import { 
   ArrowRight, 
   Eye, 
@@ -465,6 +466,12 @@ export default function WorkPage() {
               <motion.button suppressHydrationWarning
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() =>
+                    sendGAEvent('event', 'button_click', {
+                      value: 'Start Your Project clicked',
+                      // any other parameters
+                    })
+                  }
                 className="bg-white text-purple-900 px-8 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto hover:shadow-lg transition-all"
               >
                 Start Your Project

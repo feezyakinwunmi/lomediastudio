@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
+import {sendGAEvent} from "@next/third-parties/google"
 import { 
   PenTool,
   TrendingUp,
@@ -276,6 +277,12 @@ export default function Services() {
             <motion.button suppressHydrationWarning
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() =>
+                  sendGAEvent('event', 'button_click', {
+                    value: 'View All Services clicked',
+                    // any other parameters
+                  })
+                }
               className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold shadow-lg transition-all duration-300"
             >
               View All Services

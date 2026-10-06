@@ -4,7 +4,7 @@ import "./globals.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
-
+import {GoogleAnalytics} from "@next/third-parties/google"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -152,7 +152,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <Navbar />
-        <div className="flex-1 flex flex-col">{children}</div>
+        <div className="flex-1 flex flex-col">
+          {children}
+          {process.env.NEXT_PUBLIC_GA_ID && (
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+          )}
+          </div>
         <Footer />
         <FloatingWhatsApp />
       </body>
